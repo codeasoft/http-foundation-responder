@@ -1,0 +1,69 @@
+{
+  "name": "tuzex/symfony-responder",
+  "description": "Smart responder for Symfony 4.3<. From specific result to symfony response with middlewares!",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edo Barnas",
+      "email": "iam@edobarnas.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Tuzex\\Symfony\\Responder\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tuzex\\Symfony\\Responder\\Test\\Hook\\": "tests/hook",
+      "Tuzex\\Symfony\\Responder\\Test\\": "tests/src"
+    }
+  },
+  "require": {
+    "php": "7.4.*",
+    "ext-json": "*",
+    "beberlei/assert": "3.2.*",
+    "psr/log": "1.1.*",
+    "symfony/http-foundation": "4.3.*|4.4.*|5.*",
+    "symfony/routing": "4.3.*|4.4.*|5.*",
+    "twig/twig": "2.12.*|3.0.*"
+  },
+  "require-dev": {
+    "dg/bypass-finals": "1.2.*",
+    "mockery/mockery": "1.4.*",
+    "phpstan/phpstan": "0.12.*",
+    "phpstan/phpstan-mockery": "0.12.*",
+    "phpstan/phpstan-phpunit": "0.12.*",
+    "phpunit/phpunit": "9.3.*",
+    "symplify/easy-coding-standard": "8.3.*"
+  },
+  "scripts": {
+    "check:composer": "@composer validate --no-check-all --strict",
+    "check": [
+      "@check:composer"
+    ],
+    "test:unit": "phpunit -c phpunit.xml",
+    "test:static": "phpstan analyse -c phpstan.neon",
+    "test": [
+      "@test:unit",
+      "@test:static"
+    ],
+    "cs": [
+      "ecs check --config ecs.php"
+    ],
+    "cs:fix": [
+      "ecs check --config ecs.php --fix",
+      "@cs"
+    ]
+  },
+  "scripts-descriptions": {
+    "check": "Validate the composer.json file.",
+    "test": "Run all unit tests and the static analysis of codes.",
+    "cs": "Run coding standards checkers.",
+    "cs:fix": "Fix-ups the code in accordance with our coding standards."
+  }
+}
