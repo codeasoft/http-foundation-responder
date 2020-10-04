@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Symfony\Responder\Result\Payload;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Tuzex\Symfony\Responder\Bridge\Symfony\Response\JsonResponseFactory;
+use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\JsonResponseFactory;
 use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
 use Tuzex\Symfony\Responder\Result\Result;
 use Tuzex\Symfony\Responder\Result\ResultTransformer;

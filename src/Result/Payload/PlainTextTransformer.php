@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Symfony\Responder\Result\Payload;
 
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\Symfony\Response\ResponseFactory;
+use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
 use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
 use Tuzex\Symfony\Responder\Result\Result;
 use Tuzex\Symfony\Responder\Result\ResultTransformer;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Bridge\Symfony;
+namespace Tuzex\Symfony\Responder\Bridge\HttpFoundation;
 
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Request;

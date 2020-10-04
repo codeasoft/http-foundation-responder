@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Bridge\Symfony\Response;
+namespace Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response;
 
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Symfony\Responder\Result\HttpConfigs;

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Symfony\Responder\Result\Stream;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Tuzex\Symfony\Responder\Bridge\Symfony\Response\BinaryFileResponseFactory;
+use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\BinaryFileResponseFactory;
 use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
 use Tuzex\Symfony\Responder\Result\Result;
 use Tuzex\Symfony\Responder\Result\ResultTransformer;
