@@ -32,7 +32,7 @@ final class TwigTemplateRenderer implements TemplateRenderer
                 sprintf('Templating system: %s', $exception->getMessage())
             );
 
-            throw new RuntimeException($exception->getMessage(), $exception->getCode(), $exception);
+            throw $exception;
         }
     }
 }
