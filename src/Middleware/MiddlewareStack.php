@@ -11,12 +11,9 @@ final class MiddlewareStack
 {
     private array $middlewares;
 
-    /**
-     * @param Middleware[] $middlewares
-     */
-    public function __construct(array $middlewares)
+    public function __construct(Middleware ...$middlewares)
     {
-        $this->middlewares = array_filter($middlewares, fn ($middleware): bool => $middleware instanceof Middleware);
+        $this->middlewares = $middlewares;
     }
 
     public function next(): Middleware

@@ -25,7 +25,7 @@ final class Middlewares
 
     public function stack(): MiddlewareStack
     {
-        return new MiddlewareStack($this->middlewares);
+        return new MiddlewareStack(...$this->middlewares);
     }
 
     private function count(): int

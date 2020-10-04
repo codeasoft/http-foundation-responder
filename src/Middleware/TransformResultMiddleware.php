@@ -13,12 +13,9 @@ final class TransformResultMiddleware implements Middleware
 {
     private array $transformers;
 
-    /**
-     * @param ResultTransformer[] $transformers
-     */
-    public function __construct(array $transformers)
+    public function __construct(ResultTransformer ...$transformers)
     {
-        $this->transformers = array_filter($transformers, fn ($transformer): bool => $transformer instanceof ResultTransformer);
+        $this->transformers = $transformers;
     }
 
     public function execute(Result $result, MiddlewareStack $stack): Response
