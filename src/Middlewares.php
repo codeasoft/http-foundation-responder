@@ -10,16 +10,12 @@ use Tuzex\Symfony\Responder\Middleware\TransformResultMiddleware;
 
 final class Middlewares
 {
-    /**
-     * @param Middleware[] $transformResultMiddleware
-     */
+    /** @var Middleware[] */
     private array $middlewares = [];
 
     public function __construct(TransformResultMiddleware $transformResultMiddleware)
     {
-        $this->middlewares = [
-            $transformResultMiddleware,
-        ];
+        $this->middlewares = [$transformResultMiddleware];
     }
 
     public function add(Middleware $middleware): void
