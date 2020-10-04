@@ -19,8 +19,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tuzex\\Symfony\\Responder\\Test\\Hook\\": "tests/hook",
-      "Tuzex\\Symfony\\Responder\\Test\\": "tests/src"
+      "Tuzex\\Symfony\\Responder\\Test\\": "tests/"
     }
   },
   "require": {
