@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Bridge\Twig;
 
 use Psr\Log\LoggerInterface as Logger;
-use RuntimeException;
+use Tuzex\Responder\Service\TemplateRenderer;
 use Twig\Environment as Twig;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -22,7 +22,7 @@ final class TwigTemplateRenderer implements TemplateRenderer
         $this->logger = $logger;
     }
 
-    public function render(string $name, array $parameters): string
+    public function render(string $name, array $parameters = []): string
     {
         try {
             return $this->twig->render($name, $parameters);
