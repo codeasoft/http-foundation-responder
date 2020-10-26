@@ -1,40 +1,48 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Test\Bridge\HttpFoundation\Response;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Response;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
-use Tuzex\Symfony\Responder\Http\Header\ContentType;
-use Tuzex\Symfony\Responder\Http\MimeType;
-use Tuzex\Symfony\Responder\Http\StatusCode;
-use Tuzex\Symfony\Responder\Result\HttpConfigs;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
+use Tuzex\Responder\Http\Header\ContentType;
+use Tuzex\Responder\Result\HttpConfig;
 
 final class ResponseFactoryTest extends TestCase
 {
     /**
-     * @dataProvider provideHttpConfigs()
+     * @dataProvider provideResponseData
      */
-    public function testItCreatesResponse(HttpConfigs $httpConfigs): void
+    public function testItCreatesValidResponse(string $content, int $statusCode, array $headers): void
     {
         $responseFactory = new ResponseFactory();
-        $response = $responseFactory->create('Hello World!', $httpConfigs);
+        $response = $responseFactory->create($content, HttpConfig::set($statusCode, $headers));
 
-        $this->assertInstanceOf(Response::class, $response);
+        $this->assertSame($content, $response->getContent());
+        $this->assertSame($statusCode, $response->getStatusCode());
+
+        foreach ($headers as $header) {
+            $this->assertSame($header->getValue(), $response->headers->get($header->getName()));
+        }
     }
 
-    /**
-     * @return HttpConfigs[]
-     */
-    public function provideHttpConfigs(): array
+    public function provideResponseData(): array
     {
         return [
-            StatusCode::OK => [
-                'httpConfigs' => HttpConfigs::set(StatusCode::OK, [
-                    new ContentType(MimeType::HTML),
-                ]),
+            200 => [
+                'content' => 'Hello World!',
+                'statusCode' => 200,
+                'headers' => [
+                    new ContentType('text/html'),
+                ],
+            ],
+            202 => [
+                'content' => 'Accept World!',
+                'statusCode' => 202,
+                'headers' => [
+                    new ContentType('text/plain'),
+                ],
             ],
         ];
     }

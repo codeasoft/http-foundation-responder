@@ -1,41 +1,51 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Test\Bridge\HttpFoundation\Response;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Response;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\BinaryFileResponseFactory;
-use Tuzex\Symfony\Responder\Http\Header\ContentType;
-use Tuzex\Symfony\Responder\Http\MimeType;
-use Tuzex\Symfony\Responder\Http\StatusCode;
-use Tuzex\Symfony\Responder\Result\HttpConfigs;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\BinaryFileResponseFactory;
+use Tuzex\Responder\Http\Header\ContentDisposition;
+use Tuzex\Responder\Http\Header\ContentType;
+use Tuzex\Responder\Result\HttpConfig;
 
 final class BinaryFileResponseFactoryTest extends TestCase
 {
     /**
-     * @dataProvider provideHttpConfigs()
+     * @dataProvider provideResponseData
      */
-    public function testItCreatesResponse(string $filePath, HttpConfigs $httpConfigs): void
+    public function testItCreatesValidResponse(string $path, int $statusCode, array $headers): void
     {
         $responseFactory = new BinaryFileResponseFactory();
-        $response = $responseFactory->create($filePath, $httpConfigs);
+        $response = $responseFactory->create($path, HttpConfig::set($statusCode, $headers));
 
-        $this->assertInstanceOf(Response::class, $response);
+        $this->assertSame($path, $response->getFile()->getPathname());
+        $this->assertSame($statusCode, $response->getStatusCode());
+
+        foreach ($headers as $header) {
+            $this->assertSame($header->getValue(), $response->headers->get($header->getName()));
+        }
     }
 
-    /**
-     * @return HttpConfigs[]
-     */
-    public function provideHttpConfigs(): array
+    public function provideResponseData(): array
     {
         return [
-            StatusCode::OK => [
-                'filePath' => __DIR__ . '/example.pdf',
-                'httpConfigs' => HttpConfigs::set(StatusCode::OK, [
-                    new ContentType(MimeType::PDF),
-                ]),
+            200 => [
+                'path' => __DIR__.'/example-file',
+                'statusCode' => 200,
+                'headers' => [
+                    new ContentType('application/pdf'),
+                    new ContentDisposition('example.pdf'),
+                ],
+            ],
+            202 => [
+                'path' => __DIR__.'/example-file',
+                'statusCode' => 202,
+                'headers' => [
+                    new ContentType('application/xls'),
+                    new ContentDisposition('example.xls'),
+                ],
             ],
         ];
     }

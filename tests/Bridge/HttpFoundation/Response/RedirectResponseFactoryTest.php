@@ -1,36 +1,37 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Test\Bridge\HttpFoundation\Response;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Response;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\RedirectResponseFactory;
-use Tuzex\Symfony\Responder\Http\StatusCode;
-use Tuzex\Symfony\Responder\Result\HttpConfigs;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\RedirectResponseFactory;
+use Tuzex\Responder\Result\HttpConfig;
 
 final class RedirectResponseFactoryTest extends TestCase
 {
     /**
-     * @dataProvider provideHttpConfigs()
+     * @dataProvider provideResponseData
      */
-    public function testItCreatesResponse(HttpConfigs $httpConfigs): void
+    public function testItCreatesValidResponse(string $url, int $statusCode): void
     {
         $responseFactory = new RedirectResponseFactory();
-        $response = $responseFactory->create('https://google.com', $httpConfigs);
+        $response = $responseFactory->create($url, HttpConfig::set($statusCode));
 
-        $this->assertInstanceOf(Response::class, $response);
+        $this->assertSame($url, $response->getTargetUrl());
+        $this->assertSame($statusCode, $response->getStatusCode());
     }
 
-    /**
-     * @return HttpConfigs[]
-     */
-    public function provideHttpConfigs(): array
+    public function provideResponseData(): array
     {
         return [
-            StatusCode::FOUND => [
-                'httpConfigs' => HttpConfigs::set(StatusCode::FOUND),
+            301 => [
+                'url' => 'https://google.com',
+                'statusCode' => 301,
+            ],
+            302 => [
+                'url' => 'https://maps.google.com',
+                'statusCode' => 302,
             ],
         ];
     }
