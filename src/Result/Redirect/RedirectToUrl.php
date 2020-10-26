@@ -13,18 +13,18 @@ final class RedirectToUrl extends Result
 {
     private string $url;
 
-    public function __construct(string $url, HttpConfigs $httpConfigs)
+    public function __construct(string $url, HttpConfig $httpConfig)
     {
         Assertion::url($url);
 
         $this->url = $url;
 
-        parent::__construct($httpConfigs);
+        parent::__construct($httpConfig);
     }
 
-    public static function init(string $url, int $statusCode = StatusCode::OK): self
+    public static function order(string $url, int $statusCode = StatusCode::OK): self
     {
-        return new self($url, HttpConfigs::set($statusCode));
+        return new self($url, HttpConfig::set($statusCode));
     }
 
     public function getUrl(): string

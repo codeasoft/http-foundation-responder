@@ -9,8 +9,8 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class ResponseFactory
 {
-    public function create(string $content, HttpConfigs $httpConfigs): Response
+    public function create(string $content, HttpConfig $httpConfig): Response
     {
-        return new Response($content, $httpConfigs->getStatusCode(), $httpConfigs->getHeaders());
+        return new Response($content, $httpConfig->getStatusCode(), $httpConfig->getHeaders());
     }
 }

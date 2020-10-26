@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http\Header;
 
+use Assert\Assertion;
+use Tuzex\Responder\Http\Header;
+
 final class ContentDisposition implements Header
 {
     public const INLINE = 'inline';
@@ -14,18 +17,20 @@ final class ContentDisposition implements Header
 
     public function __construct(string $filename, string $disposition = self::ATTACHMENT)
     {
+        Assertion::choice($disposition, [self::INLINE, self::ATTACHMENT]);
+
         $this->filename = $filename;
         $this->disposition = $disposition;
     }
 
     public static function inline(string $filename): self
     {
-        return new self(self::INLINE, $filename);
+        return new self($filename, self::INLINE);
     }
 
     public static function attachment(string $filename): self
     {
-        return new self(self::ATTACHMENT, $filename);
+        return new self($filename, self::ATTACHMENT);
     }
 
     public function getName(): string

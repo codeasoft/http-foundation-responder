@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result\Payload;
+namespace Tuzex\Responder\Result\Payload;
 
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
-use Tuzex\Symfony\Responder\Bridge\Twig\TwigTemplateRenderer;
-use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
-use Tuzex\Symfony\Responder\Result\Result;
-use Tuzex\Symfony\Responder\Result\ResultTransformer;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
+use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
+use Tuzex\Responder\Exception\UnsupportedResultException;
+use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\ResultTransformer;
 
-final class TwigPayloadTransformer implements ResultTransformer
+final class TwigTransformer implements ResultTransformer
 {
     private TwigTemplateRenderer $twigTemplateRenderer;
     private ResponseFactory $responseFactory;
@@ -24,11 +24,11 @@ final class TwigPayloadTransformer implements ResultTransformer
 
     public function supports(Result $result): bool
     {
-        return $result instanceof TwigTemplate;
+        return $result instanceof Twig;
     }
 
     /**
-     * @param TwigTemplate $result
+     * @param Twig $result
      */
     public function transform(Result $result): Response
     {
@@ -38,7 +38,7 @@ final class TwigPayloadTransformer implements ResultTransformer
 
         return $this->responseFactory->create(
             $this->twigTemplateRenderer->render($result->getName(), $result->getParameters()),
-            $result->getHttpConfigs()
+            $result->getHttpConfig()
         );
     }
 }

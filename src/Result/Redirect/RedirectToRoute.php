@@ -14,19 +14,19 @@ final class RedirectToRoute extends Result
     private string $name;
     private array $parameters;
 
-    public function __construct(string $name, array $parameters, HttpConfigs $httpConfigs)
+    public function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
         Assertion::notEmpty($name);
 
         $this->name = $name;
         $this->parameters = $parameters;
 
-        parent::__construct($httpConfigs);
+        parent::__construct($httpConfig);
     }
 
-    public static function init(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self
+    public static function order(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self
     {
-        return new self($name, $parameters, HttpConfigs::set($statusCode));
+        return new self($name, $parameters, HttpConfig::set($statusCode));
     }
 
     public function getName(): string

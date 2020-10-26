@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http\Header;
 
+use Tuzex\Responder\Http\Header;
+
 final class ContentType implements Header
 {
     private string $value;

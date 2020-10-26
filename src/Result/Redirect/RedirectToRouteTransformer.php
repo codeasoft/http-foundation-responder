@@ -38,6 +38,6 @@ final class RedirectToRouteTransformer implements ResultTransformer
 
         $url = $this->urlGenerator->generate($result->getName(), $result->getParameters());
 
-        return $this->redirectResponseFactory->create($url, $result->getHttpConfigs());
+        return $this->redirectResponseFactory->create($url, $result->getHttpConfig());
     }
 }

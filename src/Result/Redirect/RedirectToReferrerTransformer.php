@@ -11,24 +11,24 @@ use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\ResultTransformer;
 use Tuzex\Responder\Service\ReferrerProvider;
 
-final class RedirectToRefererTransformer implements ResultTransformer
+final class RedirectToReferrerTransformer implements ResultTransformer
 {
-    private RefererProvider $refererProvider;
+    private ReferrerProvider $referrerProvider;
     private RedirectResponseFactory $redirectResponseFactory;
 
-    public function __construct(RefererProvider $refererProvider, RedirectResponseFactory $redirectResponseFactory)
+    public function __construct(ReferrerProvider $referrerProvider, RedirectResponseFactory $redirectResponseFactory)
     {
-        $this->refererProvider = $refererProvider;
+        $this->referrerProvider = $referrerProvider;
         $this->redirectResponseFactory = $redirectResponseFactory;
     }
 
     public function supports(Result $result): bool
     {
-        return $result instanceof RedirectToReferer;
+        return $result instanceof RedirectToReferrer;
     }
 
     /**
-     * @param RedirectToReferer $result
+     * @param RedirectToReferrer $result
      */
     public function transform(Result $result): RedirectResponse
     {
@@ -36,6 +36,6 @@ final class RedirectToRefererTransformer implements ResultTransformer
             throw new UnsupportedResultException($result, self::class);
         }
 
-        return $this->redirectResponseFactory->create($this->refererProvider->provide(), $result->getHttpConfigs());
+        return $this->redirectResponseFactory->create($this->referrerProvider->provide(), $result->getHttpConfig());
     }
 }

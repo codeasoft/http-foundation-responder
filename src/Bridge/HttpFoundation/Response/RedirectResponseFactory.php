@@ -9,8 +9,8 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class RedirectResponseFactory
 {
-    public function create(string $url, HttpConfigs $httpConfigs): RedirectResponse
+    public function create(string $url, HttpConfig $httpConfig): RedirectResponse
     {
-        return new RedirectResponse($url, $httpConfigs->getStatusCode(), $httpConfigs->getHeaders());
+        return new RedirectResponse($url, $httpConfig->getStatusCode(), $httpConfig->getHeaders());
     }
 }

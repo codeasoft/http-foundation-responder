@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http;
 
-use Tuzex\Symfony\Responder\Http\Header\Header;
-
 final class Headers
 {
     private array $headers = [];
@@ -17,13 +15,16 @@ final class Headers
         }
     }
 
-    public function getHeaders(): array
+    public function all(): array
     {
         return array_map(fn (Header $header): string => $header->getValue(), $this->headers);
     }
 
     public function unify(self $another): self
     {
-        return new self(...array_values(array_merge($this->headers, $another->headers)));
+        return new self(...array_merge(
+            array_values($this->headers),
+            array_values($another->headers)
+        ));
     }
 }

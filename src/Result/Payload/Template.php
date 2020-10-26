@@ -7,23 +7,24 @@ namespace Tuzex\Responder\Result\Payload;
 use Assert\Assertion;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Template extends Result
 {
     private string $name;
     private array $parameters;
 
-    public function __construct(string $name, array $parameters, HttpConfigs $httpConfigs)
+    public function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
         Assertion::endsWith($name, $this->getSuffix());
 
         $this->name = $name;
         $this->parameters = $parameters;
 
-        parent::__construct($httpConfigs);
+        parent::__construct($httpConfig);
     }
 
-    abstract public static function init(string $name, array $parameters = [], int $statusCode): self;
+    abstract public static function send(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self;
 
     public function getName(): string
     {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result\Stream;
+namespace Tuzex\Responder\Result\Payload;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\BinaryFileResponseFactory;
-use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
-use Tuzex\Symfony\Responder\Result\Result;
-use Tuzex\Symfony\Responder\Result\ResultTransformer;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\BinaryFileResponseFactory;
+use Tuzex\Responder\Exception\UnsupportedResultException;
+use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\ResultTransformer;
 
 final class FileTransformer implements ResultTransformer
 {
@@ -33,6 +33,6 @@ final class FileTransformer implements ResultTransformer
             throw new UnsupportedResultException($result, self::class);
         }
 
-        return $this->binaryFileResponseFactory->create($result->getPath(), $result->getHttpConfigs());
+        return $this->binaryFileResponseFactory->create($result->getPath(), $result->getHttpConfig());
     }
 }

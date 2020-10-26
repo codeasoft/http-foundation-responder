@@ -9,8 +9,8 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class JsonResponseFactory
 {
-    public function create(iterable $data, HttpConfigs $httpConfigs): JsonResponse
+    public function create(iterable $data, HttpConfig $httpConfig): JsonResponse
     {
-        return new JsonResponse($data, $httpConfigs->getStatusCode(), $httpConfigs->getHeaders());
+        return new JsonResponse($data, $httpConfig->getStatusCode(), $httpConfig->getHeaders());
     }
 }

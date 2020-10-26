@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Middleware;
+namespace Tuzex\Responder\Middleware;
 
 use LogicException;
-use Tuzex\Symfony\Responder\Middlewares;
+use Tuzex\Responder\Middleware;
 
 final class MiddlewareStack
 {
@@ -20,7 +20,7 @@ final class MiddlewareStack
     {
         $middleware = array_shift($this->middlewares);
         if (!$middleware) {
-            throw new LogicException(sprintf('There is no other middleware. Check implementation of "%s" and "%s".', Middlewares::class, TransformResultMiddleware::class));
+            throw new LogicException('There is no other middleware');
         }
 
         return $middleware;

@@ -8,10 +8,10 @@ use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class RedirectToReferer extends Result
+final class RedirectToReferrer extends Result
 {
-    public static function init(int $statusCode = StatusCode::FOUND): self
+    public static function order(int $statusCode = StatusCode::FOUND): self
     {
-        return new self(HttpConfigs::set($statusCode));
+        return new self(HttpConfig::set($statusCode));
     }
 }

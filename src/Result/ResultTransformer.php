@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Result;
 
 use Symfony\Component\HttpFoundation\Response;
+use Tuzex\Responder\Result;
 
 interface ResultTransformer
 {

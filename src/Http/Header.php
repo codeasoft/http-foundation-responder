@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Http\Header;
+namespace Tuzex\Responder\Http;
 
 interface Header
 {

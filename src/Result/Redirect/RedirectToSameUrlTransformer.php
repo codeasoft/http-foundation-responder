@@ -36,6 +36,6 @@ final class RedirectToSameUrlTransformer implements ResultTransformer
             throw new UnsupportedResultException($result, self::class);
         }
 
-        return $this->redirectResponseFactory->create($this->uriProvider->provide(), $result->getHttpConfigs());
+        return $this->redirectResponseFactory->create($this->uriProvider->provide(), $result->getHttpConfig());
     }
 }

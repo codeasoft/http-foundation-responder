@@ -9,8 +9,8 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class BinaryFileResponseFactory
 {
-    public function create(string $path, HttpConfigs $httpConfigs): BinaryFileResponse
+    public function create(string $path, HttpConfig $httpConfig): BinaryFileResponse
     {
-        return new BinaryFileResponse($path, $httpConfigs->getStatusCode(), $httpConfigs->getHeaders());
+        return new BinaryFileResponse($path, $httpConfig->getStatusCode(), $httpConfig->getHeaders());
     }
 }

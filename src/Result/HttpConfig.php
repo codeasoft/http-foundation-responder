@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result;
+namespace Tuzex\Responder\Result;
 
-use Tuzex\Symfony\Responder\Http\Headers;
-use Tuzex\Symfony\Responder\Http\StatusCode;
+use Tuzex\Responder\Http\Headers;
+use Tuzex\Responder\Http\StatusCode;
 
-final class HttpConfigs
+final class HttpConfig
 {
     private StatusCode $statusCode;
     private Headers $headers;
@@ -33,7 +33,7 @@ final class HttpConfigs
 
     public function getHeaders(): array
     {
-        return $this->headers->getHeaders();
+        return $this->headers->all();
     }
 
     public function joinHeaders(Headers $headers): self

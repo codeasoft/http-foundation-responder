@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Metadata;
+namespace Tuzex\Responder\Result;
 
 interface Metadata
 {

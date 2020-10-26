@@ -9,26 +9,20 @@ use Tuzex\Responder\Middleware\ProcessResultMiddleware;
 
 final class Middlewares
 {
-    /** @var Middleware[] */
     private array $middlewares = [];
 
-    public function __construct(TransformResultMiddleware $transformResultMiddleware)
+    public function __construct(ProcessResultMiddleware $transformResultMiddleware)
     {
-        $this->middlewares = [$transformResultMiddleware];
+        $this->middlewares[] = $transformResultMiddleware;
     }
 
-    public function add(Middleware $middleware): void
+    public function add(Middleware ...$middlewares): void
     {
-        array_splice($this->middlewares, $this->count() - 1, 0, [$middleware]);
+        $this->middlewares = array_merge($middlewares, $this->middlewares);
     }
 
     public function stack(): MiddlewareStack
     {
         return new MiddlewareStack(...$this->middlewares);
-    }
-
-    private function count(): int
-    {
-        return count($this->middlewares);
     }
 }

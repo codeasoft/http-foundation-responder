@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result\Payload;
+namespace Tuzex\Responder\Result\Payload;
 
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
-use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
-use Tuzex\Symfony\Responder\Result\Result;
-use Tuzex\Symfony\Responder\Result\ResultTransformer;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\ResponseFactory;
+use Tuzex\Responder\Exception\UnsupportedResultException;
+use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\ResultTransformer;
 
-final class PlainTextTransformer implements ResultTransformer
+final class TextTransformer implements ResultTransformer
 {
     private ResponseFactory $responseFactory;
 
@@ -21,11 +21,11 @@ final class PlainTextTransformer implements ResultTransformer
 
     public function supports(Result $result): bool
     {
-        return $result instanceof PlainText;
+        return $result instanceof Text;
     }
 
     /**
-     * @param PlainText $result
+     * @param Text|Html $result
      */
     public function transform(Result $result): Response
     {
@@ -33,6 +33,6 @@ final class PlainTextTransformer implements ResultTransformer
             throw new UnsupportedResultException($result, self::class);
         }
 
-        return $this->responseFactory->create($result->getContent(), $result->getHttpConfigs());
+        return $this->responseFactory->create($result->getContent(), $result->getHttpConfig());
     }
 }

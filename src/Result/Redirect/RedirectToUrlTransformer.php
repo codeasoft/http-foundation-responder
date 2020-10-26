@@ -33,6 +33,6 @@ final class RedirectToUrlTransformer implements ResultTransformer
             throw new UnsupportedResultException($result, self::class);
         }
 
-        return $this->redirectResponseFactory->create($result->getUrl(), $result->getHttpConfigs());
+        return $this->redirectResponseFactory->create($result->getUrl(), $result->getHttpConfig());
     }
 }
