@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Service;
+namespace Tuzex\Responder\Service;
 
 interface TemplateRenderer
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Exception;
+namespace Tuzex\Responder\Exception;
 
 use RuntimeException;
-use Tuzex\Symfony\Responder\Result\Result;
+use Tuzex\Responder\Result;
 
 final class UnknownResultException extends RuntimeException
 {

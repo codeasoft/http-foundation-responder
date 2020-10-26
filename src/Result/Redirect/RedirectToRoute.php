@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result\Redirect;
+namespace Tuzex\Responder\Result\Redirect;
 
 use Assert\Assertion;
-use Tuzex\Symfony\Responder\Http\StatusCode;
-use Tuzex\Symfony\Responder\Result\HttpConfigs;
-use Tuzex\Symfony\Responder\Result\Result;
+use Tuzex\Responder\Http\StatusCode;
+use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\HttpConfig;
 
 final class RedirectToRoute extends Result
 {

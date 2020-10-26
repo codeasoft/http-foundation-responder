@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Middleware;
+namespace Tuzex\Responder;
 
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Result\Result;
+use Tuzex\Responder\Middleware\MiddlewareStack;
 
 interface Middleware
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Http;
+namespace Tuzex\Responder\Http;
 
 use Tuzex\Symfony\Responder\Http\Header\Header;
 

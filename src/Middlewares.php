@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder;
+namespace Tuzex\Responder;
 
-use Tuzex\Symfony\Responder\Middleware\Middleware;
-use Tuzex\Symfony\Responder\Middleware\MiddlewareStack;
-use Tuzex\Symfony\Responder\Middleware\TransformResultMiddleware;
+use Tuzex\Responder\Middleware\MiddlewareStack;
+use Tuzex\Responder\Middleware\ProcessResultMiddleware;
 
 final class Middlewares
 {

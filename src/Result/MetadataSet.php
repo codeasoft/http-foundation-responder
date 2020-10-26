@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result;
+namespace Tuzex\Responder\Result;
 
 use Tuzex\Symfony\Responder\Metadata\Metadata;
 

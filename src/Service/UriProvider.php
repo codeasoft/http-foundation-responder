@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Service;
+namespace Tuzex\Responder\Service;
 
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\RequestAccessor;
+use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
 
 final class UriProvider
 {

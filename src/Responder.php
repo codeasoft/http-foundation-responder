@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder;
+namespace Tuzex\Responder;
 
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Symfony\Responder\Result\Result;
 
 final class Responder
 {

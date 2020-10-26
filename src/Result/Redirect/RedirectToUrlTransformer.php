@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Result\Redirect;
+namespace Tuzex\Responder\Result\Redirect;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Tuzex\Symfony\Responder\Bridge\HttpFoundation\Response\RedirectResponseFactory;
-use Tuzex\Symfony\Responder\Exception\UnsupportedResultException;
-use Tuzex\Symfony\Responder\Result\Result;
-use Tuzex\Symfony\Responder\Result\ResultTransformer;
+use Tuzex\Responder\Bridge\HttpFoundation\Response\RedirectResponseFactory;
+use Tuzex\Responder\Exception\UnsupportedResultException;
+use Tuzex\Responder\Result;
+use Tuzex\Responder\Result\ResultTransformer;
 
 final class RedirectToUrlTransformer implements ResultTransformer
 {

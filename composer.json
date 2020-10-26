@@ -1,6 +1,6 @@
 {
-  "name": "tuzex/symfony-responder",
-  "description": "Smart responder for Symfony 4.3<. From specific result to symfony response with middlewares!",
+  "name": "tuzex/responder",
+  "description": "Smart responder for Symfony 4.3<. From specific result to symfony response with middlewares.",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -14,12 +14,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Tuzex\\Symfony\\Responder\\": "src/"
+      "Tuzex\\Responder\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tuzex\\Symfony\\Responder\\Test\\": "tests/"
+      "Tuzex\\Responder\\Test\\": "tests"
     }
   },
   "require": {

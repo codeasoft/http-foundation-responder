@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Http\Header;
+namespace Tuzex\Responder\Http\Header;
 
 final class ContentDisposition implements Header
 {

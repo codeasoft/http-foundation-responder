@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Symfony\Responder\Bridge\Twig;
+namespace Tuzex\Responder\Bridge\Twig;
 
 use Psr\Log\LoggerInterface as Logger;
 use RuntimeException;
-use Tuzex\Symfony\Responder\Service\TemplateRenderer;
 use Twig\Environment as Twig;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
