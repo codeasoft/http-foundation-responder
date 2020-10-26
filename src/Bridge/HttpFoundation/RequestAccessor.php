@@ -21,7 +21,7 @@ final class RequestAccessor
     {
         $request = $this->requestStack->getCurrentRequest();
         if (!$request) {
-            throw new RuntimeException('The current / latest request is missing.');
+            throw new RuntimeException('The latest Symfony request is missing.');
         }
 
         return $request;
