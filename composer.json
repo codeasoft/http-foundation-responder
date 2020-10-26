@@ -32,10 +32,7 @@
     "twig/twig": "2.12.*|3.0.*"
   },
   "require-dev": {
-    "dg/bypass-finals": "1.2.*",
-    "mockery/mockery": "1.4.*",
     "phpstan/phpstan": "0.12.*",
-    "phpstan/phpstan-mockery": "0.12.*",
     "phpstan/phpstan-phpunit": "0.12.*",
     "phpunit/phpunit": "9.4.*",
     "symplify/easy-coding-standard": "8.3.*"
