@@ -1,12 +1,11 @@
 parameters:
-  level: max
+  level: 8
   paths:
     - src
-#    - tests
+    - tests
 
   checkMissingIterableValueType: false
 
 includes:
-  - vendor/phpstan/phpstan-mockery/extension.neon
   - vendor/phpstan/phpstan-phpunit/extension.neon
   - vendor/phpstan/phpstan-phpunit/rules.neon
