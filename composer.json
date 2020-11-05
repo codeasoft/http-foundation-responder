@@ -1,6 +1,6 @@
 {
   "name": "tuzex/responder",
-  "description": "Smart responder for Symfony 4.3<. From specific result to symfony response with middlewares.",
+  "description": "Smart responder with middlewares based on the Symfony HTTP Foundation",
   "type": "library",
   "license": "MIT",
   "authors": [
