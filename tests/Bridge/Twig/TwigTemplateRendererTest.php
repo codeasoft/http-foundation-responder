@@ -49,7 +49,7 @@ final class TwigTemplateRendererTest extends TestCase
                 'error' => new LoaderError('Loader error'),
             ],
             'syntax-error' => [
-                'error' => new SyntaxError('Syntax error.'),
+                'error' => new SyntaxError('Syntax error'),
             ],
             'runtime-error' => [
                 'error' => new RuntimeError('Runtime error'),
