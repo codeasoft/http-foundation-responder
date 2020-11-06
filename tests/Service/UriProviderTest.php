@@ -21,7 +21,7 @@ final class UriProviderTest extends TestCase
             new RequestAccessor($requestStack)
         );
 
-        $this->assertEquals($expectedUri, $uriProvider->provide());
+        $this->assertSame($expectedUri, $uriProvider->provide());
     }
 
     public function provideRequestData(): array
@@ -30,7 +30,7 @@ final class UriProviderTest extends TestCase
         $headers = [
             'only-domain' => [
                 'host' => $host,
-                'uri'=> sprintf('http://%s/', $host),
+                'uri' => sprintf('http://%s/', $host),
             ],
         ];
 
@@ -45,7 +45,7 @@ final class UriProviderTest extends TestCase
 
             return [
                 'requestStack' => $requestStack,
-                'expectedUri' => $data['uri']
+                'expectedUri' => $data['uri'],
             ];
         }, $headers);
     }

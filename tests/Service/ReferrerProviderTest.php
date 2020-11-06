@@ -21,7 +21,7 @@ final class ReferrerProviderTest extends TestCase
             new RequestAccessor($requestStack)
         );
 
-        $this->assertEquals($expectedReferrer, $referrerProvider->provide());
+        $this->assertSame($expectedReferrer, $referrerProvider->provide());
     }
 
     public function provideRequestData(): array
