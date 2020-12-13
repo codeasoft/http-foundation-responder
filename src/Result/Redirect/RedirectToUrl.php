@@ -22,7 +22,7 @@ final class RedirectToUrl extends Result
         parent::__construct($httpConfig);
     }
 
-    public static function order(string $url, int $statusCode = StatusCode::OK): self
+    public static function order(string $url, int $statusCode = StatusCode::FOUND): self
     {
         return new self($url, HttpConfig::set($statusCode));
     }

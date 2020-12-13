@@ -10,7 +10,7 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class RedirectToSameUrl extends Result
 {
-    public static function order(int $statusCode = StatusCode::OK): self
+    public static function order(int $statusCode = StatusCode::FOUND): self
     {
         return new self(HttpConfig::set($statusCode));
     }

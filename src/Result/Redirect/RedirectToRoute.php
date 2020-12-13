@@ -24,7 +24,7 @@ final class RedirectToRoute extends Result
         parent::__construct($httpConfig);
     }
 
-    public static function order(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self
+    public static function order(string $name, array $parameters = [], int $statusCode = StatusCode::FOUND): self
     {
         return new self($name, $parameters, HttpConfig::set($statusCode));
     }
