@@ -9,11 +9,11 @@ use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class Twig extends Template
+final class TwigTemplate extends Template
 {
     public static function send(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self
     {
-        return new static($name, $parameters, HttpConfig::set($statusCode, [
+        return new self($name, $parameters, HttpConfig::set($statusCode, [
             new ContentType(MimeType::HTML),
         ]));
     }

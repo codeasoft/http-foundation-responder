@@ -25,7 +25,7 @@ final class TextTransformer implements ResultTransformer
     }
 
     /**
-     * @param Text|Html $result
+     * @param Text $result
      */
     public function transform(Result $result): Response
     {

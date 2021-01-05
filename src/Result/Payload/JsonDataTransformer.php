@@ -10,7 +10,7 @@ use Tuzex\Responder\Exception\UnsupportedResultException;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\ResultTransformer;
 
-final class JsonTransformer implements ResultTransformer
+final class JsonDataTransformer implements ResultTransformer
 {
     private JsonResponseFactory $jsonResponseFactory;
 
@@ -21,11 +21,11 @@ final class JsonTransformer implements ResultTransformer
 
     public function supports(Result $result): bool
     {
-        return $result instanceof Json;
+        return $result instanceof JsonData;
     }
 
     /**
-     * @param Json $result
+     * @param JsonData $result
      */
     public function transform(Result $result): JsonResponse
     {

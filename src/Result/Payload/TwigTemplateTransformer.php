@@ -11,7 +11,7 @@ use Tuzex\Responder\Exception\UnsupportedResultException;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\ResultTransformer;
 
-final class TwigTransformer implements ResultTransformer
+final class TwigTemplateTransformer implements ResultTransformer
 {
     private TwigTemplateRenderer $twigTemplateRenderer;
     private ResponseFactory $responseFactory;
@@ -24,11 +24,11 @@ final class TwigTransformer implements ResultTransformer
 
     public function supports(Result $result): bool
     {
-        return $result instanceof Twig;
+        return $result instanceof TwigTemplate;
     }
 
     /**
-     * @param Twig $result
+     * @param TwigTemplate $result
      */
     public function transform(Result $result): Response
     {
