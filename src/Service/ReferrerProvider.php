@@ -8,16 +8,16 @@ use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
 
 final class ReferrerProvider
 {
-    private RequestAccessor $requestProvider;
+    private RequestAccessor $requestAccessor;
 
-    public function __construct(RequestAccessor $requestProvider)
+    public function __construct(RequestAccessor $requestAccessor)
     {
-        $this->requestProvider = $requestProvider;
+        $this->requestAccessor = $requestAccessor;
     }
 
     public function provide(): string
     {
-        $request = $this->requestProvider->get();
+        $request = $this->requestAccessor->get();
 
         $referer = $request->headers->get('referer');
         if (!$referer || !is_string($referer)) {
