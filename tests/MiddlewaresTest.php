@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Test;
 
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Middleware;
-use Tuzex\Responder\Middleware\ProcessResultMiddleware;
+use Tuzex\Responder\Middleware\TransformResultMiddleware;
 use Tuzex\Responder\Middlewares;
 
 final class MiddlewaresTest extends TestCase
@@ -16,7 +16,7 @@ final class MiddlewaresTest extends TestCase
      */
     public function testItContainsProperlyOrganizedMiddlewares(array $objects): void
     {
-        $middlewares = new Middlewares(new ProcessResultMiddleware());
+        $middlewares = new Middlewares(new TransformResultMiddleware());
         $middlewares->add(...$objects);
 
         $middlewareStack = $middlewares->stack();
@@ -24,7 +24,7 @@ final class MiddlewaresTest extends TestCase
             $middlewareStack->next();
         }
 
-        $this->assertInstanceOf(ProcessResultMiddleware::class, $middlewareStack->next());
+        $this->assertInstanceOf(TransformResultMiddleware::class, $middlewareStack->next());
     }
 
     public function provideMiddlewares(): array

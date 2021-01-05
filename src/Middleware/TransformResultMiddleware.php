@@ -10,7 +10,7 @@ use Tuzex\Responder\Middleware;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\ResultTransformer;
 
-final class ProcessResultMiddleware implements Middleware
+final class TransformResultMiddleware implements Middleware
 {
     private array $transformers;
 
