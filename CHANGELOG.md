@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[BC BREAK]** Change payload results class name based on their parent
 - **[BC BREAK]** Use constructor property promotion
 - **[BC BREAK]** Remove obsolete ```get_class``` from exceptions
+- **[BC BREAK]** Use a null safe operator in ```RequestAccessor```
 
 ## [0.1.1] - 2021-01-05
 ### Added
