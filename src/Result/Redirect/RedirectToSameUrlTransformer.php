@@ -13,14 +13,10 @@ use Tuzex\Responder\Service\UriProvider;
 
 final class RedirectToSameUrlTransformer implements ResultTransformer
 {
-    private UriProvider $uriProvider;
-    private RedirectResponseFactory $redirectResponseFactory;
-
-    public function __construct(UriProvider $uriProvider, RedirectResponseFactory $redirectResponseFactory)
-    {
-        $this->uriProvider = $uriProvider;
-        $this->redirectResponseFactory = $redirectResponseFactory;
-    }
+    public function __construct(
+        private UriProvider $uriProvider,
+        private RedirectResponseFactory $redirectResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

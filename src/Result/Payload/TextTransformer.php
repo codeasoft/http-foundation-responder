@@ -12,12 +12,9 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class TextTransformer implements ResultTransformer
 {
-    private ResponseFactory $responseFactory;
-
-    public function __construct(ResponseFactory $responseFactory)
-    {
-        $this->responseFactory = $responseFactory;
-    }
+    public function __construct(
+        private ResponseFactory $responseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

@@ -8,12 +8,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class Responder
 {
-    private Middlewares $middlewares;
-
-    public function __construct(Middlewares $middlewares)
-    {
-        $this->middlewares = $middlewares;
-    }
+    public function __construct(
+        private Middlewares $middlewares
+    ) {}
 
     public function reply(Result $result): Response
     {

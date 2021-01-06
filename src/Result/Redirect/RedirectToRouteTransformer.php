@@ -13,14 +13,10 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class RedirectToRouteTransformer implements ResultTransformer
 {
-    private UrlGenerator $urlGenerator;
-    private RedirectResponseFactory $redirectResponseFactory;
-
-    public function __construct(UrlGenerator $urlGenerator, RedirectResponseFactory $redirectResponseFactory)
-    {
-        $this->urlGenerator = $urlGenerator;
-        $this->redirectResponseFactory = $redirectResponseFactory;
-    }
+    public function __construct(
+        private UrlGenerator $urlGenerator,
+        private RedirectResponseFactory $redirectResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

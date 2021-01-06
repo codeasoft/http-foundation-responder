@@ -8,12 +8,9 @@ use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
 
 final class UriProvider
 {
-    private RequestAccessor $requestAccessor;
-
-    public function __construct(RequestAccessor $requestAccessor)
-    {
-        $this->requestAccessor = $requestAccessor;
-    }
+    public function __construct(
+        private RequestAccessor $requestAccessor
+    ) {}
 
     public function provide(): string
     {

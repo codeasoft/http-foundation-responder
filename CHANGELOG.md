@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
-- **[BC BREAK]** Change payload results class name based on their parent
 - Bump minimal PHP version to 8.*
+- **[BC BREAK]** Change payload results class name based on their parent
+- **[BC BREAK]** Use constructor property promotion
 
 ## [0.1.1] - 2021-01-05
 ### Added

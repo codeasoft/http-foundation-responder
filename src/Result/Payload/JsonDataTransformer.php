@@ -12,12 +12,9 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class JsonDataTransformer implements ResultTransformer
 {
-    private JsonResponseFactory $jsonResponseFactory;
-
-    public function __construct(JsonResponseFactory $jsonResponseFactory)
-    {
-        $this->jsonResponseFactory = $jsonResponseFactory;
-    }
+    public function __construct(
+        private JsonResponseFactory $jsonResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

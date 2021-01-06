@@ -8,12 +8,9 @@ use Tuzex\Responder\Http\Header;
 
 final class ContentType implements Header
 {
-    private string $value;
-
-    public function __construct(string $value)
-    {
-        $this->value = $value;
-    }
+    public function __construct(
+        private string $value,
+    ) {}
 
     public function getName(): string
     {

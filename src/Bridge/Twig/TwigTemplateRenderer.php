@@ -13,14 +13,10 @@ use Twig\Error\SyntaxError;
 
 final class TwigTemplateRenderer implements TemplateRenderer
 {
-    private Twig $twig;
-    private Logger $logger;
-
-    public function __construct(Twig $twig, Logger $logger)
-    {
-        $this->twig = $twig;
-        $this->logger = $logger;
-    }
+    public function __construct(
+        private Twig $twig,
+        private Logger $logger,
+    ) {}
 
     public function render(string $name, array $parameters = []): string
     {

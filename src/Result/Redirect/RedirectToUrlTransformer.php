@@ -12,12 +12,9 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class RedirectToUrlTransformer implements ResultTransformer
 {
-    private RedirectResponseFactory $redirectResponseFactory;
-
-    public function __construct(RedirectResponseFactory $redirectResponseFactory)
-    {
-        $this->redirectResponseFactory = $redirectResponseFactory;
-    }
+    public function __construct(
+        private RedirectResponseFactory $redirectResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

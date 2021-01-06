@@ -13,14 +13,10 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class TwigTemplateTransformer implements ResultTransformer
 {
-    private TwigTemplateRenderer $twigTemplateRenderer;
-    private ResponseFactory $responseFactory;
-
-    public function __construct(TwigTemplateRenderer $twigTemplateRenderer, ResponseFactory $responseFactory)
-    {
-        $this->twigTemplateRenderer = $twigTemplateRenderer;
-        $this->responseFactory = $responseFactory;
-    }
+    public function __construct(
+        private TwigTemplateRenderer $twigTemplateRenderer,
+        private ResponseFactory $responseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

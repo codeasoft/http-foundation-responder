@@ -9,14 +9,10 @@ use Tuzex\Responder\Http\StatusCode;
 
 final class HttpConfig
 {
-    private StatusCode $statusCode;
-    private Headers $headers;
-
-    public function __construct(StatusCode $statusCode, Headers $headers)
-    {
-        $this->statusCode = $statusCode;
-        $this->headers = $headers;
-    }
+    public function __construct(
+        private StatusCode $statusCode,
+        private Headers $headers,
+    ) {}
 
     public static function set(int $statusCode, array $headers = []): self
     {

@@ -12,12 +12,9 @@ use Tuzex\Responder\Result\ResultTransformer;
 
 final class FileTransformer implements ResultTransformer
 {
-    private BinaryFileResponseFactory $binaryFileResponseFactory;
-
-    public function __construct(BinaryFileResponseFactory $binaryFileResponseFactory)
-    {
-        $this->binaryFileResponseFactory = $binaryFileResponseFactory;
-    }
+    public function __construct(
+        private BinaryFileResponseFactory $binaryFileResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {

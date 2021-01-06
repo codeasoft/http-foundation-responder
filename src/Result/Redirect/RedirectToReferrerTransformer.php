@@ -13,14 +13,10 @@ use Tuzex\Responder\Service\ReferrerProvider;
 
 final class RedirectToReferrerTransformer implements ResultTransformer
 {
-    private ReferrerProvider $referrerProvider;
-    private RedirectResponseFactory $redirectResponseFactory;
-
-    public function __construct(ReferrerProvider $referrerProvider, RedirectResponseFactory $redirectResponseFactory)
-    {
-        $this->referrerProvider = $referrerProvider;
-        $this->redirectResponseFactory = $redirectResponseFactory;
-    }
+    public function __construct(
+        private ReferrerProvider $referrerProvider,
+        private RedirectResponseFactory $redirectResponseFactory,
+    ) {}
 
     public function supports(Result $result): bool
     {
