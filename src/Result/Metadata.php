@@ -8,10 +8,5 @@ interface Metadata
 {
     public function getType(): string;
 
-    /**
-     * @return mixed
-     *
-     * @todo PHP8 => :mixed
-     */
-    public function getValue();
+    public function getValue(): mixed;
 }
