@@ -9,15 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['8.0']
+        php: [ '8.0' ]
 
     name: PHP ${{ matrix.php }} - Coding Standards
     steps:
-        -   uses: actions/checkout@v2
-        -   uses: shivammathur/setup-php@v1
-            with:
-                php-version: ${{ matrix.php }}
-                coverage: none
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
 
-        -   run: composer install --no-progress
-        -   run: vendor/bin/ecs check -c ecs.php
+      - run: composer install --no-progress
+      - run: vendor/bin/ecs check -c ecs.php
