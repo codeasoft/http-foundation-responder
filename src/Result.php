@@ -4,40 +4,40 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder;
 
-use Tuzex\Responder\Http\Header;
-use Tuzex\Responder\Http\Headers;
+use Tuzex\Responder\Http\HttpHeader;
+use Tuzex\Responder\Http\HttpHeaders;
+use Tuzex\Responder\Result\FlashMessage;
+use Tuzex\Responder\Result\FlashMessageBag;
 use Tuzex\Responder\Result\HttpConfig;
-use Tuzex\Responder\Result\Metadata;
-use Tuzex\Responder\Result\MetadataSet;
 
 abstract class Result
 {
     private HttpConfig $httpConfig;
-    private MetadataSet $metadataSet;
+    private FlashMessageBag $flashMessageBag;
 
-    public function __construct(HttpConfig $httpConfig)
+    protected function __construct(HttpConfig $httpConfig)
     {
         $this->httpConfig = $httpConfig;
-        $this->metadataSet = new MetadataSet();
+        $this->flashMessageBag = new FlashMessageBag();
     }
 
-    public function getHttpConfig(): HttpConfig
+    public function httpConfig(): HttpConfig
     {
         return $this->httpConfig;
     }
 
-    public function getMetadataSet(): MetadataSet
+    public function flashMessageBag(): FlashMessageBag
     {
-        return $this->metadataSet;
+        return $this->flashMessageBag;
     }
 
-    public function addHeader(Header ...$headers): void
+    public function addHttpHeader(HttpHeader ...$headers): void
     {
-        $this->httpConfig = $this->httpConfig->joinHeaders(new Headers(...$headers));
+        $this->httpConfig = $this->httpConfig->setHeaders(new HttpHeaders(...$headers));
     }
 
-    public function addMetadata(Metadata ...$set): void
+    public function addFlashMessage(FlashMessage ...$messages): void
     {
-        $this->metadataSet = $this->metadataSet->push(...$set);
+        $this->flashMessageBag = $this->flashMessageBag->push(...$messages);
     }
 }

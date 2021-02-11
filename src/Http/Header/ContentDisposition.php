@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Http\Header;
 
 use Assert\Assertion;
-use Tuzex\Responder\Http\Header;
+use Tuzex\Responder\Http\HttpHeader;
 
-final class ContentDisposition implements Header
+final class ContentDisposition implements HttpHeader
 {
     public const INLINE = 'inline';
     public const ATTACHMENT = 'attachment';

@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Http;
 
 use InvalidArgumentException;
 
-final class StatusCode
+final class HttpStatusCode
 {
     public const CONTINUE = 100;
     public const SWITCHING_PROTOCOLS = 101;

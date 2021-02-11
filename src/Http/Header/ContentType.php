@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http\Header;
 
-use Tuzex\Responder\Http\Header;
+use Tuzex\Responder\Http\HttpHeader;
 
-final class ContentType implements Header
+final class ContentType implements HttpHeader
 {
     public function __construct(
-        private string $value,
+        private string $mimeType,
+        private string $charset = 'UTF-8',
     ) {}
 
     public function getName(): string

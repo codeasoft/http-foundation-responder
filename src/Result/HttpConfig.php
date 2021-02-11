@@ -4,36 +4,36 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Result;
 
-use Tuzex\Responder\Http\Headers;
-use Tuzex\Responder\Http\StatusCode;
+use Tuzex\Responder\Http\HttpHeaders;
+use Tuzex\Responder\Http\HttpStatusCode;
 
 final class HttpConfig
 {
     public function __construct(
-        private StatusCode $statusCode,
-        private Headers $headers,
+        private HttpStatusCode $statusCode,
+        private HttpHeaders $headers,
     ) {}
 
     public static function set(int $statusCode, array $headers = []): self
     {
         return new self(
-            new StatusCode($statusCode),
-            new Headers(...$headers)
+            new HttpStatusCode($statusCode),
+            new HttpHeaders(...$headers)
         );
     }
 
-    public function getStatusCode(): int
+    public function statusCode(): int
     {
         return $this->statusCode->getCode();
     }
 
-    public function getHeaders(): array
+    public function headers(): array
     {
-        return $this->headers->all();
+        return $this->headers->list();
     }
 
-    public function joinHeaders(Headers $headers): self
+    public function setHeaders(HttpHeaders $headers): self
     {
-        return new self($this->statusCode, $this->headers->unify($headers));
+        return new self($this->statusCode, $this->headers->push($headers));
     }
 }
