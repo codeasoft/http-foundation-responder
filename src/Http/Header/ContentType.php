@@ -20,7 +20,7 @@ final class ContentType implements HttpHeader
 
     public function getValue(): string
     {
-        return sprintf('%s; charset=UTF-8', $this->value);
+        return sprintf('%s; charset=%s', $this->mimeType, $this->charset);
     }
 
     public function getField(): string
