@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Service;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
-use Tuzex\Responder\Service\ReferrerProvider;
+use Tuzex\Responder\Bridge\HttpFoundation\RequestReferrerProvider;
 
-final class ReferrerProviderTest extends TestCase
+final class RequestReferrerProviderTest extends TestCase
 {
     /**
      * @dataProvider provideRequestData
      */
     public function testItReturnsReferrer(RequestStack $requestStack, string $expectedReferrer): void
     {
-        $referrerProvider = new ReferrerProvider(
+        $referrerProvider = new RequestReferrerProvider(
             new RequestAccessor($requestStack)
         );
 

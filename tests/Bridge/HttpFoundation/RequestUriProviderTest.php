@@ -2,24 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Service;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
-use Tuzex\Responder\Service\UriProvider;
+use Tuzex\Responder\Bridge\HttpFoundation\RequestUriProvider;
 
-final class UriProviderTest extends TestCase
+final class RequestUriProviderTest extends TestCase
 {
     /**
      * @dataProvider provideRequestData
      */
     public function testItReturnsUri(RequestStack $requestStack, string $expectedUri): void
     {
-        $uriProvider = new UriProvider(
-            new RequestAccessor($requestStack)
-        );
+        $requestAccessor = new RequestAccessor($requestStack);
+        $uriProvider = new RequestUriProvider($requestAccessor);
 
         $this->assertSame($expectedUri, $uriProvider->provide());
     }

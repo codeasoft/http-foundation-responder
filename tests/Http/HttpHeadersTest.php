@@ -7,23 +7,22 @@ namespace Tuzex\Responder\Test\Http;
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Http\Header\ContentDisposition;
 use Tuzex\Responder\Http\Header\ContentType;
-use Tuzex\Responder\Http\Headers;
+use Tuzex\Responder\Http\HttpHeaders;
 use Tuzex\Responder\Http\MimeType;
 
-final class HeadersTest extends TestCase
+final class HttpHeadersTest extends TestCase
 {
     /**
      * @dataProvider provideHeaders
      */
     public function testItContainsValidHeaders(array $data, array $results): void
     {
-        $headers = new Headers(...$data['primary']);
-
-        if ($data['secondary']) {
-            $headers = $headers->unify(new Headers(...$data['secondary']));
+        $httpHeaders = new HttpHeaders(...$data['default']);
+        if ($data['extended']) {
+            $httpHeaders = $httpHeaders->push(new HttpHeaders(...$data['extended']));
         }
 
-        foreach ($headers->all() as $type => $value) {
+        foreach ($httpHeaders->list() as $type => $value) {
             $this->assertSame($results[$type]->getValue(), $value);
         }
     }
@@ -38,32 +37,32 @@ final class HeadersTest extends TestCase
         return [
             'creation' => [
                 'headers' => [
-                    'primary' => [
+                    'default' => [
                         new ContentType(MimeType::HTML),
                         new ContentDisposition(''),
                     ],
-                    'secondary' => [],
+                    'extended' => [],
                 ],
                 'results' => $results,
             ],
             'overloading' => [
                 'headers' => [
-                    'primary' => [
+                    'default' => [
                         new ContentType(MimeType::TEXT),
                         new ContentDisposition(''),
                         new ContentType(MimeType::HTML),
                     ],
-                    'secondary' => [],
+                    'extended' => [],
                 ],
                 'results' => $results,
             ],
-            'unification' => [
+            'extending' => [
                 'headers' => [
-                    'primary' => [
-                        new ContentType(MimeType::TEXT),
-                    ],
-                    'secondary' => [
+                    'default' => [
                         new ContentType(MimeType::HTML),
+                    ],
+                    'extended' => [
+                        new ContentType(MimeType::TEXT),
                         new ContentDisposition(''),
                     ],
                 ],
