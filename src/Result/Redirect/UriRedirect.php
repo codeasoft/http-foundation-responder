@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Result\Redirect;
 
-use Tuzex\Responder\Http\StatusCode;
+use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class RedirectToReferrer extends Result
+final class UriRedirect extends Result
 {
-    public static function order(int $statusCode = StatusCode::FOUND): self
+    public static function define(int $statusCode = HttpStatusCode::FOUND): self
     {
         return new self(HttpConfig::set($statusCode));
     }

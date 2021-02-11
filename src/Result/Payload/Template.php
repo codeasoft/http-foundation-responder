@@ -5,36 +5,36 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Result\Payload;
 
 use Assert\Assertion;
-use Tuzex\Responder\Http\StatusCode;
+use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Template extends Result
 {
-    private string $name;
-    private array $parameters;
+    private string $templateName;
+    private array $templateParameters;
 
-    public function __construct(string $name, array $parameters, HttpConfig $httpConfig)
+    protected function __construct(string $templateName, array $templateParameters, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($name, $this->getSuffix());
+        Assertion::endsWith($templateName, sprintf('.%s', $this->templateType()));
 
-        $this->name = $name;
-        $this->parameters = $parameters;
+        $this->templateName = $templateName;
+        $this->templateParameters = $templateParameters;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function send(string $name, array $parameters = [], int $statusCode = StatusCode::OK): self;
+    abstract public static function define(string $templateName, array $templateParameters = [], int $statusCode = HttpStatusCode::OK): self;
 
-    public function getName(): string
+    public function templateName(): string
     {
-        return $this->name;
+        return $this->templateName;
     }
 
-    public function getParameters(): array
+    public function templateParameters(): array
     {
-        return $this->parameters;
+        return $this->templateParameters;
     }
 
-    abstract protected function getSuffix(): string;
+    abstract protected function templateType(): string;
 }

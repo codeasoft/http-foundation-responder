@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Result\Payload;
 
-use Tuzex\Responder\Http\StatusCode;
+use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Data extends Result
 {
-    private iterable $data;
+    private iterable $iterableData;
 
-    public function __construct(iterable $data, HttpConfig $httpConfig)
+    protected function __construct(iterable $iterableData, HttpConfig $httpConfig)
     {
-        $this->data = $data;
+        $this->iterableData = $iterableData;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function send(iterable $data, int $statusCode = StatusCode::OK): self;
+    abstract public static function define(iterable $iterableData, int $statusCode = HttpStatusCode::OK): self;
 
-    public function getData(): iterable
+    public function iterableData(): iterable
     {
-        return $this->data;
+        return $this->iterableData;
     }
 }

@@ -10,26 +10,26 @@ use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class PdfFile extends File
+final class PdfFileContent extends FileContent
 {
-    public static function display(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self
+    public static function display(string $fileContent, string $fileName, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::PDF),
             new ContentDisposition($fileName, ContentDisposition::INLINE),
         ]);
 
-        return new self($filePath, $fileName, $httpConfig);
+        return new self($fileContent, $fileName, $httpConfig);
     }
 
-    public static function download(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self
+    public static function download(string $fileContent, string $fileName, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::PDF),
             new ContentDisposition($fileName, ContentDisposition::ATTACHMENT),
         ]);
 
-        return new self($filePath, $fileName, $httpConfig);
+        return new self($fileContent, $fileName, $httpConfig);
     }
 
     public function fileMimeType(): string

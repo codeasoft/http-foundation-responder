@@ -6,32 +6,28 @@ namespace Tuzex\Responder\Result\Payload;
 
 use Assert\Assertion;
 use Tuzex\Responder\Http\HttpStatusCode;
-use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\HttpConfig;
 
-abstract class File extends Result
+abstract class FileContent extends Content
 {
-    private string $filePath;
     private string $fileName;
 
-    protected function __construct(string $filePath, string $fileName, HttpConfig $httpConfig)
+    protected function __construct(string $fileContent, string $fileName, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($filePath, $this->fileExtension());
         Assertion::endsWith($fileName, $this->fileExtension());
 
-        $this->filePath = $filePath;
         $this->fileName = $fileName;
 
-        parent::__construct($httpConfig);
+        parent::__construct($fileContent, $httpConfig);
     }
 
     abstract public static function download(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self;
 
     abstract public static function display(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self;
 
-    public function filePath(): string
+    public function fileContent(): string
     {
-        return $this->filePath;
+        return $this->textBody();
     }
 
     public function fileName(): string

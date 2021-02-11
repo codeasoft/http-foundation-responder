@@ -9,14 +9,14 @@ use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class JsonData extends Data
+final class HtmlContent extends Content
 {
-    public static function define(iterable $iterableData, int $statusCode = HttpStatusCode::OK): self
+    public static function define(string $htmlContent, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
-            new ContentType(MimeType::JSON),
+            new ContentType(MimeType::HTML),
         ]);
 
-        return new self($iterableData, $httpConfig);
+        return new self($htmlContent, $httpConfig);
     }
 }
