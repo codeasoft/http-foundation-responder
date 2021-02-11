@@ -9,14 +9,11 @@ use Symfony\Component\HttpFoundation\Response;
 final class Responder
 {
     public function __construct(
-        private Middlewares $middlewares
+        private MiddlewarePipe $middlewarePipe
     ) {}
 
-    public function reply(Result $result): Response
+    public function process(Result $result): Response
     {
-        $stack = $this->middlewares->stack();
-        $middleware = $stack->next();
-
-        return $middleware->execute($result, $stack);
+        return ($this->middlewarePipe->entrypoint())($result);
     }
 }
