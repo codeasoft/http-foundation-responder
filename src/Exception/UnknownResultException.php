@@ -11,6 +11,6 @@ final class UnknownResultException extends RuntimeException
 {
     public function __construct(Result $result)
     {
-        parent::__construct(sprintf('Result "%s" not have any transformer.', $result::class));
+        parent::__construct(sprintf('Result "%s" does not accept any response factory.', $result::class));
     }
 }
