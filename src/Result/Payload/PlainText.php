@@ -9,7 +9,7 @@ use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Result\HttpConfig;
 
-final class RawText extends Content
+final class PlainText extends Content
 {
     public static function define(string $rawContent, int $statusCode = HttpStatusCode::OK): self
     {
