@@ -6,9 +6,11 @@ namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Tuzex\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
+use Tuzex\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
 
-final class SessionFlashMessagePublisherTest extends TestCase
+final class TranslatableSessionFlashMessagePublisherTest extends TestCase
 {
     /**
      * @dataProvider provideFlashMessages
@@ -16,7 +18,7 @@ final class SessionFlashMessagePublisherTest extends TestCase
     public function testItPublishFlashMessageToFlashBag(array $flashMessages, int $numberOfFlashMessages): void
     {
         $flashBag = new FlashBag();
-        $flashMessagePublisher = new SessionFlashMessagePublisher($flashBag);
+        $flashMessagePublisher = new TranslatableSessionFlashMessagePublisher($flashBag, $this->mockTranslator($numberOfFlashMessages));
 
         foreach ($flashMessages as $type => $message) {
             $flashMessagePublisher->publish($type, $message);
@@ -46,5 +48,15 @@ final class SessionFlashMessagePublisherTest extends TestCase
                 'numberOfFlashMessages' => count($flashMessages),
             ];
         }
+    }
+
+    private function mockTranslator(int $numberOfCalls): TranslatorInterface
+    {
+        $translator = $this->createMock(TranslatorInterface::class);
+        $translator->expects($this->exactly($numberOfCalls))
+            ->method('trans')
+            ->willReturn($this->returnArgument(0));
+
+        return $translator;
     }
 }
