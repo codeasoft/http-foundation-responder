@@ -29,7 +29,7 @@ final class TwigTemplateRendererTest extends TestCase
     }
 
     /**
-     * @dataProvider provideRenderErrors
+     * @dataProvider provideErrors
      */
     public function testItThrowsExceptionOnError(Error $error): void
     {
@@ -42,7 +42,7 @@ final class TwigTemplateRendererTest extends TestCase
         $templateRenderer->render(self::FILENAME);
     }
 
-    public function provideRenderErrors(): array
+    public function provideErrors(): array
     {
         return [
             'loader-error' => [

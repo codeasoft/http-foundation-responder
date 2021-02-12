@@ -12,25 +12,28 @@ final class ContentTypeTest extends TestCase
     /**
      * @dataProvider provideHeaderData
      */
-    public function testItReturnsValidField(string $mimeType): void
+    public function testItReturnsValidHttpHeader(string $mimeType, string $charset): void
     {
-        $contentType = new ContentType($mimeType);
+        $contentType = new ContentType($mimeType, $charset);
 
         $this->assertSame(
-            sprintf('Content-Type: %s; charset=UTF-8', $mimeType),
+            sprintf('Content-Type: %s; charset=%s', $mimeType, $charset),
             $contentType->getField()
         );
     }
 
-    public function provideHeaderData(): array
+    public function provideHeaderData(): iterable
     {
-        return [
-            'text/plain' => [
-                'mimeType' => 'text/plain',
-            ],
-            'application/pdf' => [
-                'mimeType' => 'application/pdf',
-            ],
+        $data = [
+            'text/plain' => 'UTF-8',
+            'application/pdf' => 'UTF-16',
         ];
+
+        foreach ($data as $mimeType => $charset) {
+            yield $mimeType => [
+                'mimeType' => $mimeType,
+                'charset' => $charset,
+            ];
+        }
     }
 }

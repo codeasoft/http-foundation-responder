@@ -13,7 +13,7 @@ use Tuzex\Responder\Http\MimeType;
 final class HttpHeadersTest extends TestCase
 {
     /**
-     * @dataProvider provideHeaders
+     * @dataProvider provideUseCases
      */
     public function testItContainsValidHeaders(array $data, array $results): void
     {
@@ -27,7 +27,7 @@ final class HttpHeadersTest extends TestCase
         }
     }
 
-    public function provideHeaders(): array
+    public function provideUseCases(): array
     {
         $results = [
             'Content-Type' => new ContentType(MimeType::HTML),

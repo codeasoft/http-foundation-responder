@@ -23,18 +23,19 @@ final class ContentDispositionTest extends TestCase
         );
     }
 
-    public function provideHeaderData(): array
+    public function provideHeaderData(): iterable
     {
-        return [
-            'example.pdf' => [
-                'disposition' => ContentDisposition::INLINE,
-                'filename' => 'example.pdf',
-            ],
-            'example.xls' => [
-                'disposition' => ContentDisposition::ATTACHMENT,
-                'filename' => 'example.xls',
-            ],
+        $data = [
+            ContentDisposition::INLINE => 'example.pdf',
+            ContentDisposition::ATTACHMENT => 'example.xls',
         ];
+
+        foreach ($data as $disposition => $filename) {
+            yield $filename => [
+                'disposition' => $disposition,
+                'filename' => $filename,
+            ];
+        }
     }
 
     public function testItThrowsExceptionIfDispositionIsInvalid(): void

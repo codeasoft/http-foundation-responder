@@ -13,7 +13,7 @@ use Tuzex\Responder\Bridge\HttpFoundation\RequestReferrerProvider;
 final class RequestReferrerProviderTest extends TestCase
 {
     /**
-     * @dataProvider provideRequestData
+     * @dataProvider provideData
      */
     public function testItReturnsReferrer(RequestStack $requestStack, string $expectedReferrer): void
     {
@@ -24,34 +24,30 @@ final class RequestReferrerProviderTest extends TestCase
         $this->assertSame($expectedReferrer, $referrerProvider->provide());
     }
 
-    public function provideRequestData(): array
+    public function provideData(): array
     {
         $host = 'host.com';
-        $referrer = 'https://referrer.com';
-
         $headers = [
             'without-referrer' => [
                 'host' => $host,
+                'referer' => sprintf('http://%s/', $host),
             ],
             'with-referrer' => [
                 'host' => $host,
-                'referrer' => $referrer,
+                'referer' => 'https://referrer.com/',
             ],
         ];
 
         return array_map(function (array $data): array {
             $request = new Request();
-            $request->headers->add([
-                'host' => $data['host'],
-                'referer' => $data['referrer'] ?? '',
-            ]);
+            $request->headers->add($data);
 
             $requestStack = new RequestStack();
             $requestStack->push($request);
 
             return [
                 'requestStack' => $requestStack,
-                'expectedReferrer' => $data['referrer'] ?? sprintf('http://%s', $data['host']),
+                'expectedReferrer' => $data['referer'],
             ];
         }, $headers);
     }

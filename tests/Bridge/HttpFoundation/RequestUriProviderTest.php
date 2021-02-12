@@ -13,7 +13,7 @@ use Tuzex\Responder\Bridge\HttpFoundation\RequestUriProvider;
 final class RequestUriProviderTest extends TestCase
 {
     /**
-     * @dataProvider provideRequestData
+     * @dataProvider provideData
      */
     public function testItReturnsUri(RequestStack $requestStack, string $expectedUri): void
     {
@@ -23,7 +23,7 @@ final class RequestUriProviderTest extends TestCase
         $this->assertSame($expectedUri, $uriProvider->provide());
     }
 
-    public function provideRequestData(): array
+    public function provideData(): array
     {
         $host = 'host.com';
         $headers = [
