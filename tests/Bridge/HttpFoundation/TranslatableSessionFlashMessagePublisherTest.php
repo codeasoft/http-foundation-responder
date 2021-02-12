@@ -7,7 +7,6 @@ namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Tuzex\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
 use Tuzex\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
 
 final class TranslatableSessionFlashMessagePublisherTest extends TestCase
