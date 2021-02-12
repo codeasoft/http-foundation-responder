@@ -11,7 +11,7 @@ use Tuzex\Responder\ResponseFactory;
 use Tuzex\Responder\Result;
 use Tuzex\Responder\Result\Redirect\UrlRedirect;
 
-final class RedirectResponseFactory implements ResponseFactory
+final class UrlRedirectResponseFactory implements ResponseFactory
 {
     public function create(Result $result, Closure $processor): Response
     {
