@@ -17,7 +17,7 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
     /**
      * @dataProvider provideData
      */
-    public function test(Result $result, int $numberOfFlashMessages): void
+    public function testItProcessesFlashMessagesFromResults(Result $result, int $numberOfFlashMessages): void
     {
         $middleware = new PublishFlashMessagesMiddleware(
             $this->mockFlashMessagePublisher($numberOfFlashMessages)
