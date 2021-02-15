@@ -12,10 +12,10 @@ use Tuzex\Responder\Result\Payload\Content;
 
 final class ContentResponseFactory implements ResponseFactory
 {
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof Content) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

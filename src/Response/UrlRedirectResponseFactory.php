@@ -13,10 +13,10 @@ use Tuzex\Responder\Result\Redirect\UrlRedirect;
 
 final class UrlRedirectResponseFactory implements ResponseFactory
 {
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof UrlRedirect) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

@@ -17,10 +17,10 @@ final class TwigResponseFactory implements ResponseFactory
         private TwigTemplateRenderer $twigTemplateRenderer
     ) {}
 
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof TwigTemplate) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

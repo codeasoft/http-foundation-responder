@@ -18,10 +18,10 @@ final class UriRedirectResponseFactory implements ResponseFactory
         private UriProvider $uriProvider,
     ) {}
 
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof UriRedirect) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

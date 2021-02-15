@@ -18,10 +18,10 @@ final class ReferrerRedirectResponseFactory implements ResponseFactory
         private ReferrerProvider $referrerProvider,
     ) {}
 
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof ReferrerRedirect) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

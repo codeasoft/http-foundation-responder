@@ -13,10 +13,10 @@ use Tuzex\Responder\Result\Payload\File;
 
 final class FileResponseFactory implements ResponseFactory
 {
-    public function create(Result $result, Closure $processor): Response
+    public function create(Result $result, Closure $next): Response
     {
         if (!$result instanceof File) {
-            return $processor($result);
+            return $next($result);
         }
 
         $httpConfig = $result->httpConfig();

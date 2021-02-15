@@ -9,5 +9,5 @@ use Symfony\Component\HttpFoundation\Response;
 
 interface ResponseFactory
 {
-    public function create(Result $result, Closure $processor): Response;
+    public function create(Result $result, Closure $next): Response;
 }
