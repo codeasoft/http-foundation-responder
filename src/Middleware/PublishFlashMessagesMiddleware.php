@@ -16,12 +16,12 @@ final class PublishFlashMessagesMiddleware implements Middleware
         private FlashMessagePublisher $flashMessagePublisher
     ) {}
 
-    public function execute(Result $result, Closure $pipe): Response
+    public function execute(Result $result, Closure $next): Response
     {
         foreach ($result->flashMessageBag() as $flashMessage) {
             $this->flashMessagePublisher->publish($flashMessage->type(), $flashMessage->message());
         }
 
-        return $pipe($result);
+        return $next($result);
     }
 }

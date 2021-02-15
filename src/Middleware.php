@@ -9,5 +9,5 @@ use Symfony\Component\HttpFoundation\Response;
 
 interface Middleware
 {
-    public function execute(Result $result, Closure $pipe): Response;
+    public function execute(Result $result, Closure $next): Response;
 }

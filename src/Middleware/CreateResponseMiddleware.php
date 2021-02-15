@@ -26,9 +26,9 @@ final class CreateResponseMiddleware implements Middleware
         $this->processor = $processor;
     }
 
-    public function execute(Result $result, Closure $pipe): Response
+    public function execute(Result $result, Closure $next): Response
     {
-        $pipe($result);
+        $next($result);
 
         return ($this->processor)($result);
     }
