@@ -13,23 +13,21 @@ use Tuzex\Responder\Result;
 
 final class CreateResponseMiddleware implements Middleware
 {
-    private Closure $processor;
+    private Closure $factory;
 
     public function __construct(ResponseFactory ...$factories)
     {
-        $processor = static fn (Result $result) => throw new UnknownResultException($result);
+        $next = static fn (Result $result) => throw new UnknownResultException($result);
 
         foreach ($factories as $factory) {
-            $processor = static fn (Result $result): Response => $factory->create($result, $processor);
+            $this->factory = $next = static fn (Result $result): Response => $factory->create($result, $next);
         }
-
-        $this->processor = $processor;
     }
 
     public function execute(Result $result, Closure $next): Response
     {
         $next($result);
 
-        return ($this->processor)($result);
+        return ($this->factory)($result);
     }
 }
