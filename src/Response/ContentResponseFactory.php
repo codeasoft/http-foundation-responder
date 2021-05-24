@@ -14,7 +14,7 @@ final class ContentResponseFactory implements ResponseFactory
 {
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof Content) {
+        if (! $result instanceof Content) {
             return $next($result);
         }
 

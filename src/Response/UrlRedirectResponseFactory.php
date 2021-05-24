@@ -15,7 +15,7 @@ final class UrlRedirectResponseFactory implements ResponseFactory
 {
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof UrlRedirect) {
+        if (! $result instanceof UrlRedirect) {
             return $next($result);
         }
 

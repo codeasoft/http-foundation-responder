@@ -15,7 +15,7 @@ final class FileResponseFactory implements ResponseFactory
 {
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof File) {
+        if (! $result instanceof File) {
             return $next($result);
         }
 

@@ -19,7 +19,7 @@ final class TwigResponseFactory implements ResponseFactory
 
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof TwigTemplate) {
+        if (! $result instanceof TwigTemplate) {
             return $next($result);
         }
 

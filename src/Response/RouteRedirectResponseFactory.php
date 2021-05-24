@@ -20,7 +20,7 @@ final class RouteRedirectResponseFactory implements ResponseFactory
 
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof RouteRedirect) {
+        if (! $result instanceof RouteRedirect) {
             return $next($result);
         }
 

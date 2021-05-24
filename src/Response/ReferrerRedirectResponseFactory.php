@@ -20,7 +20,7 @@ final class ReferrerRedirectResponseFactory implements ResponseFactory
 
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof ReferrerRedirect) {
+        if (! $result instanceof ReferrerRedirect) {
             return $next($result);
         }
 

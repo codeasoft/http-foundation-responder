@@ -20,7 +20,7 @@ final class UriRedirectResponseFactory implements ResponseFactory
 
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof UriRedirect) {
+        if (! $result instanceof UriRedirect) {
             return $next($result);
         }
 

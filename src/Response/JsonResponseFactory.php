@@ -15,7 +15,7 @@ final class JsonResponseFactory implements ResponseFactory
 {
     public function create(Result $result, Closure $next): Response
     {
-        if (!$result instanceof JsonData) {
+        if (! $result instanceof JsonData) {
             return $next($result);
         }
 

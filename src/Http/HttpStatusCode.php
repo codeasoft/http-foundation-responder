@@ -75,7 +75,7 @@ final class HttpStatusCode
 
     public function __construct(int $code)
     {
-        if (!$this->supports($code)) {
+        if (! $this->supports($code)) {
             throw new InvalidArgumentException('Code "%s" is not a valid HTTP status code.', $code);
         }
 
