@@ -8,7 +8,7 @@ use Closure;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware\CreateResponseMiddleware;
 
-final class FlexResponder implements Responder
+final class PipeResponder implements Responder
 {
     private Closure $processor;
 
