@@ -21,6 +21,7 @@ final class PdfFile extends File
 
         return new self($path, $name, $httpConfig);
     }
+
     public static function display(string $path, string $name, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
