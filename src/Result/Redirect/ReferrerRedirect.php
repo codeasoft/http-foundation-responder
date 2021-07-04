@@ -10,7 +10,7 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class ReferrerRedirect extends Result
 {
-    public static function define(int $statusCode = HttpStatusCode::FOUND): self
+    public static function order(int $statusCode = HttpStatusCode::FOUND): self
     {
         return new self(HttpConfig::set($statusCode));
     }

@@ -24,7 +24,7 @@ final class RouteRedirect extends Result
         parent::__construct($httpConfig);
     }
 
-    public static function define(string $name, array $parameters = [], int $statusCode = HttpStatusCode::FOUND): self
+    public static function order(string $name, array $parameters = [], int $statusCode = HttpStatusCode::FOUND): self
     {
         return new self($name, $parameters, HttpConfig::set($statusCode));
     }

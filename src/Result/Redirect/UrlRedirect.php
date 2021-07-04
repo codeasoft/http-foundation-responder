@@ -11,24 +11,24 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class UrlRedirect extends Result
 {
-    private string $urlAddress;
+    private string $url;
 
-    private function __construct(string $urlAddress, HttpConfig $httpConfig)
+    private function __construct(string $url, HttpConfig $httpConfig)
     {
-        Assertion::url($urlAddress);
+        Assertion::url($url);
 
-        $this->urlAddress = $urlAddress;
+        $this->url = $url;
 
         parent::__construct($httpConfig);
     }
 
-    public static function define(string $urlAddress, int $statusCode = HttpStatusCode::FOUND): self
+    public static function order(string $url, int $statusCode = HttpStatusCode::FOUND): self
     {
-        return new self($urlAddress, HttpConfig::set($statusCode));
+        return new self($url, HttpConfig::set($statusCode));
     }
 
-    public function urlAddress(): string
+    public function url(): string
     {
-        return $this->urlAddress;
+        return $this->url;
     }
 }
