@@ -30,6 +30,6 @@ final class TwigResponseFactory implements ResponseFactory
 
     private function render(TwigTemplate $result): string
     {
-        return $this->twigTemplateRenderer->render($result->templateName(), $result->templateParameters());
+        return $this->twigTemplateRenderer->render($result->name(), $result->parameters());
     }
 }

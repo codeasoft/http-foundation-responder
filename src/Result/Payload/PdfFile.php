@@ -12,32 +12,31 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class PdfFile extends File
 {
-    public static function display(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self
+    public static function download(string $path, string $name, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::PDF),
-            new ContentDisposition($fileName, ContentDisposition::INLINE),
+            new ContentDisposition($name, ContentDisposition::ATTACHMENT),
         ]);
 
-        return new self($filePath, $fileName, $httpConfig);
+        return new self($path, $name, $httpConfig);
     }
-
-    public static function download(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self
+    public static function display(string $path, string $name, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::PDF),
-            new ContentDisposition($fileName, ContentDisposition::ATTACHMENT),
+            new ContentDisposition($name, ContentDisposition::INLINE),
         ]);
 
-        return new self($filePath, $fileName, $httpConfig);
+        return new self($path, $name, $httpConfig);
     }
 
-    public function fileMimeType(): string
+    public function mimeType(): string
     {
         return MimeType::PDF;
     }
 
-    protected function fileExtension(): string
+    protected function extension(): string
     {
         return '.pdf';
     }

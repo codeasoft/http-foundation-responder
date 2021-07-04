@@ -20,6 +20,6 @@ final class ContentResponseFactory implements ResponseFactory
 
         $httpConfig = $result->httpConfig();
 
-        return new Response($result->textBody(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new Response($result->body(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

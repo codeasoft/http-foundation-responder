@@ -11,12 +11,12 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class JsonData extends Data
 {
-    public static function define(iterable $iterableData, int $statusCode = HttpStatusCode::OK): self
+    public static function send(iterable $iterable, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::JSON),
         ]);
 
-        return new self($iterableData, $httpConfig);
+        return new self($iterable, $httpConfig);
     }
 }

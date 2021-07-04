@@ -11,12 +11,12 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class PlainText extends Content
 {
-    public static function define(string $rawContent, int $statusCode = HttpStatusCode::OK): self
+    public static function send(string $text, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::TEXT),
         ]);
 
-        return new self($rawContent, $httpConfig);
+        return new self($text, $httpConfig);
     }
 }

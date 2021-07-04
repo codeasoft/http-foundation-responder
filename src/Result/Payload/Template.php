@@ -11,30 +11,30 @@ use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Template extends Result
 {
-    private string $templateName;
-    private array $templateParameters;
+    private string $name;
+    private array $parameters;
 
-    protected function __construct(string $templateName, array $templateParameters, HttpConfig $httpConfig)
+    protected function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($templateName, sprintf('.%s', $this->templateType()));
+        Assertion::endsWith($name, sprintf('.%s', $this->type()));
 
-        $this->templateName = $templateName;
-        $this->templateParameters = $templateParameters;
+        $this->name = $name;
+        $this->parameters = $parameters;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function define(string $templateName, array $templateParameters = [], int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function render(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
 
-    public function templateName(): string
+    public function name(): string
     {
-        return $this->templateName;
+        return $this->name;
     }
 
-    public function templateParameters(): array
+    public function parameters(): array
     {
-        return $this->templateParameters;
+        return $this->parameters;
     }
 
-    abstract protected function templateType(): string;
+    abstract protected function type(): string;
 }

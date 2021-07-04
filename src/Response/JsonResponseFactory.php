@@ -21,6 +21,6 @@ final class JsonResponseFactory implements ResponseFactory
 
         $httpConfig = $result->httpConfig();
 
-        return new JsonResponse($result->iterableData(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new JsonResponse($result->iterable(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

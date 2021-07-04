@@ -9,17 +9,17 @@ use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Content extends Result
 {
-    private string $textBody;
+    private string $body;
 
-    protected function __construct(string $textBody, HttpConfig $httpConfig)
+    protected function __construct(string $body, HttpConfig $httpConfig)
     {
-        $this->textBody = $textBody;
+        $this->body = $body;
 
         parent::__construct($httpConfig);
     }
 
-    public function textBody(): string
+    public function body(): string
     {
-        return $this->textBody;
+        return $this->body;
     }
 }

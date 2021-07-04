@@ -11,35 +11,35 @@ use Tuzex\Responder\Result\HttpConfig;
 
 abstract class File extends Result
 {
-    private string $filePath;
-    private string $fileName;
+    private string $path;
+    private string $name;
 
-    protected function __construct(string $filePath, string $fileName, HttpConfig $httpConfig)
+    protected function __construct(string $path, string $name, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($filePath, $this->fileExtension());
-        Assertion::endsWith($fileName, $this->fileExtension());
+        Assertion::endsWith($path, $this->extension());
+        Assertion::endsWith($name, $this->extension());
 
-        $this->filePath = $filePath;
-        $this->fileName = $fileName;
+        $this->path = $path;
+        $this->name = $name;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function download(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function download(string $path, string $name, int $statusCode = HttpStatusCode::OK): self;
 
-    abstract public static function display(string $filePath, string $fileName, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function display(string $path, string $name, int $statusCode = HttpStatusCode::OK): self;
 
-    public function filePath(): string
+    public function path(): string
     {
-        return $this->filePath;
+        return $this->path;
     }
 
-    public function fileName(): string
+    public function name(): string
     {
-        return $this->fileName;
+        return $this->name;
     }
 
-    abstract public function fileMimeType(): string;
+    abstract public function mimeType(): string;
 
-    abstract protected function fileExtension(): string;
+    abstract protected function extension(): string;
 }

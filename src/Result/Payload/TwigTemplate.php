@@ -11,16 +11,16 @@ use Tuzex\Responder\Result\HttpConfig;
 
 final class TwigTemplate extends Template
 {
-    public static function define(string $templateName, array $templateParameters = [], int $statusCode = HttpStatusCode::OK): self
+    public static function render(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::HTML),
         ]);
 
-        return new self($templateName, $templateParameters, $httpConfig);
+        return new self($name, $parameters, $httpConfig);
     }
 
-    protected function templateType(): string
+    protected function type(): string
     {
         return 'twig';
     }

@@ -10,19 +10,19 @@ use Tuzex\Responder\Result\HttpConfig;
 
 abstract class Data extends Result
 {
-    private iterable $iterableData;
+    private iterable $iterable;
 
-    protected function __construct(iterable $iterableData, HttpConfig $httpConfig)
+    protected function __construct(iterable $iterable, HttpConfig $httpConfig)
     {
-        $this->iterableData = $iterableData;
+        $this->iterable = $iterable;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function define(iterable $iterableData, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function send(iterable $iterable, int $statusCode = HttpStatusCode::OK): self;
 
-    public function iterableData(): iterable
+    public function iterable(): iterable
     {
-        return $this->iterableData;
+        return $this->iterable;
     }
 }
