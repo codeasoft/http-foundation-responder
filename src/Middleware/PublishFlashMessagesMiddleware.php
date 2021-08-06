@@ -7,7 +7,7 @@ namespace Tuzex\Responder\Middleware;
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware;
-use Tuzex\Responder\Result;
+use Tuzex\Responder\Response\ResponseDefinition;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class PublishFlashMessagesMiddleware implements Middleware
@@ -16,12 +16,12 @@ final class PublishFlashMessagesMiddleware implements Middleware
         private FlashMessagePublisher $flashMessagePublisher
     ) {}
 
-    public function execute(Result $result, Closure $next): Response
+    public function execute(ResponseDefinition $responseDefinition, Closure $nextMiddleware): Response
     {
-        foreach ($result->flashMessageBag() as $flashMessage) {
+        foreach ($responseDefinition->flashMessageBag() as $flashMessage) {
             $this->flashMessagePublisher->publish($flashMessage->type(), $flashMessage->message());
         }
 
-        return $next($result);
+        return $nextMiddleware($responseDefinition);
     }
 }

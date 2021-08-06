@@ -7,9 +7,9 @@ namespace Tuzex\Responder\Test\Middleware;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware\PublishFlashMessagesMiddleware;
-use Tuzex\Responder\Result;
-use Tuzex\Responder\Result\FlashMessage;
-use Tuzex\Responder\Result\Payload\PlainText;
+use Tuzex\Responder\Response\Definition\PlainText;
+use Tuzex\Responder\Response\FlashMessage;
+use Tuzex\Responder\Response\ResponseDefinition;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class PublishFlashMessagesMiddlewareTest extends TestCase
@@ -17,13 +17,13 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
     /**
      * @dataProvider provideData
      */
-    public function testItProcessesFlashMessagesFromResults(Result $result, int $numberOfFlashMessages): void
+    public function testItProcessesFlashMessagesFromResults(ResponseDefinition $responseDefinition, int $numberOfFlashMessages): void
     {
         $middleware = new PublishFlashMessagesMiddleware(
             $this->mockFlashMessagePublisher($numberOfFlashMessages)
         );
 
-        $middleware->execute($result, fn (Result $result): Response => new Response());
+        $middleware->execute($responseDefinition, fn (ResponseDefinition $responseDefinition): Response => new Response());
 
         $this->assertTrue(true);
     }
@@ -43,13 +43,13 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
         ];
 
         foreach ($data as $dataName => $flashMessages) {
-            $result = PlainText::send('');
-            $result->addFlashMessage(
+            $responseDefinition = PlainText::define('');
+            $responseDefinition->addFlashMessage(
                 ...$this->createFlashMessages($flashMessages)
             );
 
             yield $dataName => [
-                'result' => $result,
+                'result' => $responseDefinition,
                 'numberOfFlashMessages' => count($flashMessages),
             ];
         }

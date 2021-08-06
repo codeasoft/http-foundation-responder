@@ -6,28 +6,26 @@ namespace Tuzex\Responder\Middleware;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Exception\UnknownResultException;
+use Tuzex\Responder\Exception\UnknownResponseDefinitionException;
 use Tuzex\Responder\Middleware;
-use Tuzex\Responder\ResponseFactory;
-use Tuzex\Responder\Result;
+use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\ResponseFactory;
 
 final class CreateResponseMiddleware implements Middleware
 {
-    private Closure $factory;
+    private Closure $producer;
 
     public function __construct(ResponseFactory ...$factories)
     {
-        $next = static fn (Result $result) => throw new UnknownResultException($result);
+        $producer = fn (ResponseDefinition $responseDefinition) => throw new UnknownResponseDefinitionException($responseDefinition);
 
         foreach ($factories as $factory) {
-            $this->factory = $next = static fn (Result $result): Response => $factory->create($result, $next);
+            $this->producer = $producer = fn (ResponseDefinition $responseDefinition): Response => $factory->create($responseDefinition, $producer);
         }
     }
 
-    public function execute(Result $result, Closure $next): Response
+    public function execute(ResponseDefinition $responseDefinition, Closure $nextMiddleware): Response
     {
-        $next($result);
-
-        return ($this->factory)($result);
+        return ($this->producer)($responseDefinition);
     }
 }
