@@ -23,9 +23,7 @@ final class TwigTemplateRenderer implements TemplateRenderer
         try {
             return $this->twig->render($name, $parameters);
         } catch (LoaderError | SyntaxError | RuntimeError $exception) {
-            $this->logger->error(
-                sprintf('Templating system: %s', $exception->getMessage())
-            );
+            $this->logger->error(sprintf('Templating system: %s', $exception->getMessage()));
 
             throw $exception;
         }

@@ -34,7 +34,7 @@ final class RequestReferrerProviderTest extends TestCase
             ],
             'with-referrer' => [
                 'host' => $host,
-                'referer' => 'https://referrer.com/',
+                'referer' => 'https://google.com/',
             ],
         ];
 

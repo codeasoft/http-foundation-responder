@@ -15,8 +15,7 @@ final class RequestReferrerProvider implements ReferrerProvider
     public function provide(): string
     {
         $request = $this->requestAccessor->get();
-        $referrer = $request->headers->get('referer');
 
-        return $referrer ?: $request->getSchemeAndHttpHost();
+        return $request->headers->get('referer') ?? $request->getSchemeAndHttpHost();
     }
 }
