@@ -9,12 +9,11 @@ use Tuzex\Responder\Response\ResponseDefinition;
 
 abstract class Text extends ResponseDefinition
 {
-    private string $body;
-
-    protected function __construct(string $body, HttpConfig $httpConfig)
+    protected function __construct(
+        private string $body,
+        HttpConfig $httpConfig
+    )
     {
-        $this->body = $body;
-
         parent::__construct($httpConfig);
     }
 

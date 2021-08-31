@@ -10,12 +10,11 @@ use Tuzex\Responder\Response\ResponseDefinition;
 
 abstract class Data extends ResponseDefinition
 {
-    private iterable $iterable;
-
-    protected function __construct(iterable $iterable, HttpConfig $httpConfig)
+    protected function __construct(
+        private iterable $iterable,
+        HttpConfig $httpConfig
+    )
     {
-        $this->iterable = $iterable;
-
         parent::__construct($httpConfig);
     }
 

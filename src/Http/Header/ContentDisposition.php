@@ -11,14 +11,10 @@ final class ContentDisposition implements HttpHeader
     public const INLINE = 'inline';
     public const ATTACHMENT = 'attachment';
 
-    private string $filename;
-    private string $disposition;
-
-    private function __construct(string $filename, string $disposition = self::ATTACHMENT)
-    {
-        $this->filename = $filename;
-        $this->disposition = $disposition;
-    }
+    private function __construct(
+        private string $filename,
+        private string $disposition = self::ATTACHMENT
+    ) {}
 
     public static function inline(string $filename): self
     {
