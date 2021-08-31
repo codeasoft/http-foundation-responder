@@ -15,7 +15,7 @@ final class HttpStatusCodeTest extends TestCase
      */
     public function testItCreatesWithValidHttpStatusCode(int $code): void
     {
-        $this->assertSame($code, (new HttpStatusCode($code))->getCode());
+        $this->assertSame($code, (new HttpStatusCode($code))->code());
     }
 
     public function provideValidStatusCodes(): array

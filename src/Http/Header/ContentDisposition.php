@@ -30,18 +30,18 @@ final class ContentDisposition implements HttpHeader
         return new self($filename, self::ATTACHMENT);
     }
 
-    public function getName(): string
+    public function name(): string
     {
         return 'Content-Disposition';
     }
 
-    public function getValue(): string
+    public function value(): string
     {
         return sprintf('%s; filename="%s"', $this->disposition, $this->filename);
     }
 
-    public function getField(): string
+    public function field(): string
     {
-        return sprintf('%s: %s', $this->getName(), $this->getValue());
+        return sprintf('%s: %s', $this->name(), $this->value());
     }
 }

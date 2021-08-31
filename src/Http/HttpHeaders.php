@@ -11,13 +11,13 @@ final class HttpHeaders
     public function __construct(HttpHeader ...$headers)
     {
         foreach ($headers as $header) {
-            $this->headers[$header->getName()] = $header;
+            $this->headers[$header->name()] = $header;
         }
     }
 
     public function list(): array
     {
-        return array_map(fn (HttpHeader $header): string => $header->getValue(), $this->headers);
+        return array_map(fn (HttpHeader $header): string => $header->value(), $this->headers);
     }
 
     public function push(self $another): self

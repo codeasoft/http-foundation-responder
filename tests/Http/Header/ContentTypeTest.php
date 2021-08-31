@@ -18,7 +18,7 @@ final class ContentTypeTest extends TestCase
 
         $this->assertSame(
             sprintf('Content-Type: %s; charset=%s', $mimeType, $charset),
-            $contentType->getField()
+            $contentType->field()
         );
     }
 

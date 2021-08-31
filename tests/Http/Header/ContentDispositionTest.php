@@ -18,7 +18,7 @@ final class ContentDispositionTest extends TestCase
 
         $this->assertSame(
             sprintf('Content-Disposition: %s; filename="%s"', $disposition, $filename),
-            $contentDisposition->getField()
+            $contentDisposition->field()
         );
     }
 

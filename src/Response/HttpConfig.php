@@ -24,7 +24,7 @@ final class HttpConfig
 
     public function statusCode(): int
     {
-        return $this->statusCode->getCode();
+        return $this->statusCode->code();
     }
 
     public function headers(): array

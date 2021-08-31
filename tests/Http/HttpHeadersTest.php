@@ -23,7 +23,7 @@ final class HttpHeadersTest extends TestCase
         }
 
         foreach ($httpHeaders->list() as $type => $value) {
-            $this->assertSame($responseDefinitions[$type]->getValue(), $value);
+            $this->assertSame($responseDefinitions[$type]->value(), $value);
         }
     }
 

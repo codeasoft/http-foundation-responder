@@ -82,7 +82,7 @@ final class HttpStatusCode
         $this->code = $code;
     }
 
-    public function getCode(): int
+    public function code(): int
     {
         return $this->code;
     }

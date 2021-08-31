@@ -6,9 +6,9 @@ namespace Tuzex\Responder\Http;
 
 interface HttpHeader
 {
-    public function getName(): string;
+    public function name(): string;
 
-    public function getValue(): string;
+    public function value(): string;
 
-    public function getField(): string;
+    public function field(): string;
 }
