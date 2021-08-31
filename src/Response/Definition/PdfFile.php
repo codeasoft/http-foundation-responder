@@ -16,7 +16,7 @@ final class PdfFile extends File
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             new ContentType(MimeType::PDF),
-            new ContentDisposition($name, ContentDisposition::ATTACHMENT),
+            ContentDisposition::attachment($name),
         ]);
 
         return new self($path, $name, $httpConfig);
@@ -26,7 +26,7 @@ final class PdfFile extends File
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             new ContentType(MimeType::PDF),
-            new ContentDisposition($name, ContentDisposition::INLINE),
+            ContentDisposition::inline($name),
         ]);
 
         return new self($path, $name, $httpConfig);

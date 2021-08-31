@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http\Header;
 
-use Assert\Assertion;
 use Tuzex\Responder\Http\HttpHeader;
 
 final class ContentDisposition implements HttpHeader
@@ -15,10 +14,8 @@ final class ContentDisposition implements HttpHeader
     private string $filename;
     private string $disposition;
 
-    public function __construct(string $filename, string $disposition = self::ATTACHMENT)
+    private function __construct(string $filename, string $disposition = self::ATTACHMENT)
     {
-        Assertion::choice($disposition, [self::INLINE, self::ATTACHMENT]);
-
         $this->filename = $filename;
         $this->disposition = $disposition;
     }

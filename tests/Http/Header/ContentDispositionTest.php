@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Test\Http\Header;
 
-use Assert\AssertionFailedException;
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Http\Header\ContentDisposition;
 
@@ -36,12 +35,5 @@ final class ContentDispositionTest extends TestCase
                 'filename' => $filename,
             ];
         }
-    }
-
-    public function testItThrowsExceptionIfDispositionIsInvalid(): void
-    {
-        $this->expectException(AssertionFailedException::class);
-
-        new ContentDisposition('example.pdf', 'online');
     }
 }

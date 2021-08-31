@@ -31,7 +31,7 @@ final class HttpHeadersTest extends TestCase
     {
         $responseDefinitions = [
             'Content-Type' => new ContentType(MimeType::HTML),
-            'Content-Disposition' => new ContentDisposition(''),
+            'Content-Disposition' => ContentDisposition::inline(''),
         ];
 
         return [
@@ -39,7 +39,7 @@ final class HttpHeadersTest extends TestCase
                 'headers' => [
                     'default' => [
                         new ContentType(MimeType::HTML),
-                        new ContentDisposition(''),
+                        ContentDisposition::inline(''),
                     ],
                     'extended' => [],
                 ],
@@ -49,7 +49,7 @@ final class HttpHeadersTest extends TestCase
                 'headers' => [
                     'default' => [
                         new ContentType(MimeType::TEXT),
-                        new ContentDisposition(''),
+                        ContentDisposition::inline(''),
                         new ContentType(MimeType::HTML),
                     ],
                     'extended' => [],
@@ -63,7 +63,7 @@ final class HttpHeadersTest extends TestCase
                     ],
                     'extended' => [
                         new ContentType(MimeType::TEXT),
-                        new ContentDisposition(''),
+                        ContentDisposition::inline(''),
                     ],
                 ],
                 'results' => $responseDefinitions,
