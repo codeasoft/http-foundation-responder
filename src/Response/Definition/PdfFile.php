@@ -15,7 +15,7 @@ final class PdfFile extends File
     public static function defineForDownload(string $path, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
-            new ContentType(MimeType::PDF),
+            ContentType::utf8(MimeType::PDF),
             ContentDisposition::attachment($name),
         ]);
 
@@ -25,7 +25,7 @@ final class PdfFile extends File
     public static function defineForDisplay(string $path, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
-            new ContentType(MimeType::PDF),
+            ContentType::utf8(MimeType::PDF),
             ContentDisposition::inline($name),
         ]);
 

@@ -13,7 +13,11 @@ final class ContentType implements HttpHeader
         private string $charset = 'UTF-8',
     ) {}
 
-    public function getName(): string
+    public static function utf8(string $mimeType): self
+    {
+        return new self($mimeType);
+    }
+
     public function name(): string
     {
         return 'Content-Type';

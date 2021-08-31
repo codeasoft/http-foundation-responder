@@ -30,7 +30,7 @@ final class HttpHeadersTest extends TestCase
     public function provideUseCases(): array
     {
         $responseDefinitions = [
-            'Content-Type' => new ContentType(MimeType::HTML),
+            'Content-Type' => ContentType::utf8(MimeType::HTML),
             'Content-Disposition' => ContentDisposition::inline(''),
         ];
 
@@ -38,7 +38,7 @@ final class HttpHeadersTest extends TestCase
             'creation' => [
                 'headers' => [
                     'default' => [
-                        new ContentType(MimeType::HTML),
+                        ContentType::utf8(MimeType::HTML),
                         ContentDisposition::inline(''),
                     ],
                     'extended' => [],
@@ -48,9 +48,9 @@ final class HttpHeadersTest extends TestCase
             'overloading' => [
                 'headers' => [
                     'default' => [
-                        new ContentType(MimeType::TEXT),
+                        ContentType::utf8(MimeType::TEXT),
                         ContentDisposition::inline(''),
-                        new ContentType(MimeType::HTML),
+                        ContentType::utf8(MimeType::HTML),
                     ],
                     'extended' => [],
                 ],
@@ -59,10 +59,10 @@ final class HttpHeadersTest extends TestCase
             'extending' => [
                 'headers' => [
                     'default' => [
-                        new ContentType(MimeType::HTML),
+                        ContentType::utf8(MimeType::HTML),
                     ],
                     'extended' => [
-                        new ContentType(MimeType::TEXT),
+                        ContentType::utf8(MimeType::TEXT),
                         ContentDisposition::inline(''),
                     ],
                 ],

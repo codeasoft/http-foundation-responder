@@ -12,7 +12,20 @@ final class ContentTypeTest extends TestCase
     /**
      * @dataProvider provideHeaderData
      */
-    public function testItReturnsValidHttpHeader(string $mimeType, string $charset): void
+    public function testItCreateValidHttpHeader(string $mimeType): void
+    {
+        $contentType = ContentType::utf8($mimeType);
+
+        $this->assertSame(
+            sprintf('Content-Type: %s; charset=%s', $mimeType, 'UTF-8'),
+            $contentType->field()
+        );
+    }
+
+    /**
+     * @dataProvider provideHeaderData
+     */
+    public function testItReturnsValidField(string $mimeType, string $charset): void
     {
         $contentType = new ContentType($mimeType, $charset);
 
