@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.7.0] - 2021-09-28
 
 - **[BC BREAK]** Rename `ResponseDefinition` to `ResponseResource`
 
@@ -77,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix a default redirect status code
 - Fix reference variable name for `RequestAccessor`
 
-[Unreleased]: https://github.com/Tuzex/responder/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/Tuzex/responder/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/Tuzex/responder/releases/tag/v0.7.0
 [0.6.0]: https://github.com/Tuzex/responder/releases/tag/v0.6.0
 [0.5.0]: https://github.com/Tuzex/responder/releases/tag/v0.5.0
 [0.4.0]: https://github.com/Tuzex/responder/releases/tag/v0.4.0
