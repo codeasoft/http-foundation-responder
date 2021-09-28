@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Definition;
+namespace Tuzex\Responder\Response\Resource;
 
 use Tuzex\Responder\Http\Header\ContentType;
 use Tuzex\Responder\Http\HttpStatusCode;

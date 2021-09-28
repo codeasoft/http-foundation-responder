@@ -8,9 +8,9 @@ use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Http\ReferrerProvider;
-use Tuzex\Responder\Response\Definition\ReferrerRedirect;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\ReferrerRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class ReferrerRedirectResponseFactory implements ResponseFactory
 {
@@ -18,13 +18,13 @@ final class ReferrerRedirectResponseFactory implements ResponseFactory
         private ReferrerProvider $referrerProvider,
     ) {}
 
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof ReferrerRedirect) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof ReferrerRedirect) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
         return new RedirectResponse($this->referrerProvider->provide(), $httpConfig->statusCode(), $httpConfig->headers());
     }

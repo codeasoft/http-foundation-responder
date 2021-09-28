@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Definition;
+namespace Tuzex\Responder\Response\Resource;
 
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\ResponseResource;
 
-abstract class Data extends ResponseDefinition
+abstract class Data extends ResponseResource
 {
     protected function __construct(
         private iterable $iterable,

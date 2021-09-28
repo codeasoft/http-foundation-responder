@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Definition;
+namespace Tuzex\Responder\Response\Resource;
 
 use Assert\Assertion;
 use Tuzex\Responder\Response\HttpConfig;

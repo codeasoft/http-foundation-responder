@@ -7,20 +7,20 @@ namespace Tuzex\Responder\Response\Factory;
 use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Definition\UrlRedirect;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\UrlRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class UrlRedirectResponseFactory implements ResponseFactory
 {
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof UrlRedirect) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof UrlRedirect) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
-        return new RedirectResponse($responseDefinition->url(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new RedirectResponse($responseResource->url(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

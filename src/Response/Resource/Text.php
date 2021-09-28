@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Definition;
+namespace Tuzex\Responder\Response\Resource;
 
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\ResponseResource;
 
-abstract class Text extends ResponseDefinition
+abstract class Text extends ResponseResource
 {
     protected function __construct(
         private string $body,

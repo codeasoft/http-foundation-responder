@@ -6,20 +6,20 @@ namespace Tuzex\Responder\Response\Factory;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Definition\Text;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\Text;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class TextResponseFactory implements ResponseFactory
 {
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof Text) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof Text) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
-        return new Response($responseDefinition->body(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new Response($responseResource->body(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

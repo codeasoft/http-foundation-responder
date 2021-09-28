@@ -7,20 +7,20 @@ namespace Tuzex\Responder\Response\Factory;
 use Closure;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Definition\JsonDocument;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\JsonDocument;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class JsonResponseFactory implements ResponseFactory
 {
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof JsonDocument) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof JsonDocument) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
-        return new JsonResponse($responseDefinition->iterable(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new JsonResponse($responseResource->iterable(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

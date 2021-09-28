@@ -8,9 +8,9 @@ use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Http\UriProvider;
-use Tuzex\Responder\Response\Definition\UriRedirect;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\UriRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class UriRedirectResponseFactory implements ResponseFactory
 {
@@ -18,13 +18,13 @@ final class UriRedirectResponseFactory implements ResponseFactory
         private UriProvider $uriProvider,
     ) {}
 
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof UriRedirect) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof UriRedirect) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
         return new RedirectResponse($this->uriProvider->provide(), $httpConfig->statusCode(), $httpConfig->headers());
     }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Definition;
+namespace Tuzex\Responder\Response\Resource;
 
 use Assert\Assertion;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\ResponseResource;
 
-abstract class File extends ResponseDefinition
+abstract class File extends ResponseResource
 {
     private string $path;
     private string $name;

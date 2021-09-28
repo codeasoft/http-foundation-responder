@@ -8,9 +8,9 @@ use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Tuzex\Responder\Response\Definition\RouteRedirect;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\RouteRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class RouteRedirectResponseFactory implements ResponseFactory
 {
@@ -18,19 +18,19 @@ final class RouteRedirectResponseFactory implements ResponseFactory
         private UrlGeneratorInterface $urlGenerator,
     ) {}
 
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof RouteRedirect) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof RouteRedirect) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
-        return new RedirectResponse($this->route($responseDefinition), $httpConfig->statusCode(), $httpConfig->headers());
+        return new RedirectResponse($this->route($responseResource), $httpConfig->statusCode(), $httpConfig->headers());
     }
 
-    private function route(RouteRedirect $responseDefinition): string
+    private function route(RouteRedirect $responseResource): string
     {
-        return $this->urlGenerator->generate($responseDefinition->name(), $responseDefinition->parameters());
+        return $this->urlGenerator->generate($responseResource->name(), $responseResource->parameters());
     }
 }

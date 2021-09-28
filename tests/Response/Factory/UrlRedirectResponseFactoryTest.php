@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Test\Response\Factory;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Tuzex\Responder\Response\Definition\RouteRedirect;
-use Tuzex\Responder\Response\Definition\UrlRedirect;
 use Tuzex\Responder\Response\Factory\UrlRedirectResponseFactory;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\RouteRedirect;
+use Tuzex\Responder\Response\Resource\UrlRedirect;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
 {
     /**
-     * @param UrlRedirect $responseDefinition
+     * @param UrlRedirect $responseResource
      * @dataProvider provideSupportedResults
      */
-    public function testItReturnsValidResponse(ResponseDefinition $responseDefinition): void
+    public function testItReturnsValidResponse(ResponseResource $responseResource): void
     {
         /** @var RedirectResponse $response */
-        $response = $this->createResponse($responseDefinition);
+        $response = $this->createResponse($responseResource);
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
-        $this->assertSame($responseDefinition->url(), $response->getTargetUrl());
+        $this->assertSame($responseResource->url(), $response->getTargetUrl());
     }
 
     public function provideSupportedResults(): iterable

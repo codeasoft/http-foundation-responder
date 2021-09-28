@@ -7,7 +7,7 @@ namespace Tuzex\Responder\Response;
 use Tuzex\Responder\Http\HttpHeader;
 use Tuzex\Responder\Http\HttpHeaders;
 
-abstract class ResponseDefinition
+abstract class ResponseResource
 {
     private HttpConfig $httpConfig;
     private FlashMessageBag $flashMessageBag;

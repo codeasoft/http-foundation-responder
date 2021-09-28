@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Test\Response\Factory;
 
-use Tuzex\Responder\Response\Definition\HtmlDocument;
-use Tuzex\Responder\Response\Definition\JsonDocument;
-use Tuzex\Responder\Response\Definition\PdfFileContent;
-use Tuzex\Responder\Response\Definition\PlainText;
-use Tuzex\Responder\Response\Definition\Text;
 use Tuzex\Responder\Response\Factory\TextResponseFactory;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\HtmlDocument;
+use Tuzex\Responder\Response\Resource\JsonDocument;
+use Tuzex\Responder\Response\Resource\PdfFileContent;
+use Tuzex\Responder\Response\Resource\PlainText;
+use Tuzex\Responder\Response\Resource\Text;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class TextResponseFactoryTest extends ResponseFactoryTest
 {
     /**
-     * @param Text $responseDefinition
+     * @param Text $responseResource
      * @dataProvider provideSupportedResults
      */
-    public function testItReturnsValidResponse(ResponseDefinition $responseDefinition): void
+    public function testItReturnsValidResponse(ResponseResource $responseResource): void
     {
-        $response = $this->createResponse($responseDefinition);
+        $response = $this->createResponse($responseResource);
 
-        $this->assertSame($responseDefinition->body(), $response->getContent());
+        $this->assertSame($responseResource->body(), $response->getContent());
     }
 
     public function provideSupportedResults(): iterable
@@ -33,9 +33,9 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
             PdfFileContent::defineForDownload('example.pdf', 'example.pdf'),
         ];
 
-        foreach ($data as $responseDefinition) {
-            yield $responseDefinition::class => [
-                'result' => $responseDefinition,
+        foreach ($data as $responseResource) {
+            yield $responseResource::class => [
+                'result' => $responseResource,
             ];
         }
     }

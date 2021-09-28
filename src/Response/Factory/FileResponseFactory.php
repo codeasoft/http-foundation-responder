@@ -7,20 +7,20 @@ namespace Tuzex\Responder\Response\Factory;
 use Closure;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Definition\File;
-use Tuzex\Responder\Response\ResponseDefinition;
+use Tuzex\Responder\Response\Resource\File;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Response\ResponseResource;
 
 final class FileResponseFactory implements ResponseFactory
 {
-    public function create(ResponseDefinition $responseDefinition, Closure $nextResponseFactory): Response
+    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
     {
-        if (! $responseDefinition instanceof File) {
-            return $nextResponseFactory($responseDefinition);
+        if (! $responseResource instanceof File) {
+            return $nextResponseFactory($responseResource);
         }
 
-        $httpConfig = $responseDefinition->httpConfig();
+        $httpConfig = $responseResource->httpConfig();
 
-        return new BinaryFileResponse($responseDefinition->path(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new BinaryFileResponse($responseResource->path(), $httpConfig->statusCode(), $httpConfig->headers());
     }
 }
