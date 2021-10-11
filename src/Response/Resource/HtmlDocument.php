@@ -11,12 +11,12 @@ use Tuzex\Responder\Response\HttpConfig;
 
 final class HtmlDocument extends Text
 {
-    public static function set(string $html): self
+    public static function set(string $payload): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             new ContentType(MimeType::HTML),
         ]);
 
-        return new self($html, $httpConfig);
+        return new self($payload, $httpConfig);
     }
 }

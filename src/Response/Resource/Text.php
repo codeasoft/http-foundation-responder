@@ -10,15 +10,15 @@ use Tuzex\Responder\Response\ResponseResource;
 abstract class Text extends ResponseResource
 {
     protected function __construct(
-        private string $body,
+        private string $payload,
         HttpConfig $httpConfig
     )
     {
         parent::__construct($httpConfig);
     }
 
-    public function body(): string
+    public function payload(): string
     {
-        return $this->body;
+        return $this->payload;
     }
 }

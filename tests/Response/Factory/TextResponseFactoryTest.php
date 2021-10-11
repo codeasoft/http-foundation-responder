@@ -22,7 +22,7 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
     {
         $response = $this->createResponse($responseResource);
 
-        $this->assertSame($responseResource->body(), $response->getContent());
+        $this->assertSame($responseResource->payload(), $response->getContent());
     }
 
     public function provideSupportedResults(): iterable
