@@ -8,8 +8,8 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware\PublishFlashMessagesMiddleware;
 use Tuzex\Responder\Response\FlashMessage;
+use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\PlainText;
-use Tuzex\Responder\Response\ResponseResource;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class PublishFlashMessagesMiddlewareTest extends TestCase
@@ -17,13 +17,13 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
     /**
      * @dataProvider provideData
      */
-    public function testItProcessesFlashMessagesFromResults(ResponseResource $responseResource, int $numberOfFlashMessages): void
+    public function testItProcessesFlashMessagesFromResults(Resource $resource, int $numberOfFlashMessages): void
     {
         $middleware = new PublishFlashMessagesMiddleware(
             $this->mockFlashMessagePublisher($numberOfFlashMessages)
         );
 
-        $middleware->execute($responseResource, fn (ResponseResource $responseResource): Response => new Response());
+        $middleware->execute($resource, fn (Resource $resource): Response => new Response());
 
         $this->assertTrue(true);
     }
@@ -43,13 +43,13 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
         ];
 
         foreach ($data as $dataName => $flashMessages) {
-            $responseResource = PlainText::set('');
-            $responseResource->addFlashMessage(
+            $resource = PlainText::set('');
+            $resource->addFlashMessage(
                 ...$this->createFlashMessages($flashMessages)
             );
 
             yield $dataName => [
-                'result' => $responseResource,
+                'result' => $resource,
                 'numberOfFlashMessages' => count($flashMessages),
             ];
         }

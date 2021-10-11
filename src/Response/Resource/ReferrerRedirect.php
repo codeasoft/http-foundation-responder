@@ -6,9 +6,9 @@ namespace Tuzex\Responder\Response\Resource;
 
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseResource;
+use Tuzex\Responder\Response\Resource;
 
-final class ReferrerRedirect extends ResponseResource
+final class ReferrerRedirect extends Resource
 {
     public static function set(int $statusCode = HttpStatusCode::FOUND): self
     {

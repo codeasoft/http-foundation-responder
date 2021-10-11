@@ -7,25 +7,25 @@ namespace Tuzex\Responder\Test\Response\Factory;
 use Closure;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Exception\UnknownResponseResourceException;
+use Tuzex\Responder\Exception\UnknownResourceException;
+use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\ResponseFactory;
-use Tuzex\Responder\Response\ResponseResource;
 
 abstract class ResponseFactoryTest extends TestCase
 {
     /**
      * @dataProvider provideSupportedResults
      */
-    abstract public function testItReturnsValidResponse(ResponseResource $responseResource): void;
+    abstract public function testItReturnsValidResponse(Resource $resource): void;
 
     /**
      * @dataProvider provideSupportedResults
      */
-    public function testItSetsResponseHttpConfig(ResponseResource $responseResource): void
+    public function testItSetsResponseHttpConfig(Resource $resource): void
     {
-        $response = $this->createResponse($responseResource);
+        $response = $this->createResponse($resource);
 
-        $httpConfig = $responseResource->httpConfig();
+        $httpConfig = $resource->httpConfig();
 
         $this->assertSame($httpConfig->statusCode(), $response->getStatusCode());
 
@@ -37,28 +37,28 @@ abstract class ResponseFactoryTest extends TestCase
     /**
      * @dataProvider provideUnsupportedResults
      */
-    public function testItCallsNextResponseFactory(ResponseResource $responseResource): void
+    public function testItCallsNextResponseFactory(Resource $resource): void
     {
         $responseFactory = $this->provideSuitableResponseFactory();
 
-        $this->expectException(UnknownResponseResourceException::class);
-        $responseFactory->create($responseResource, $this->provideNextResponseFactory());
+        $this->expectException(UnknownResourceException::class);
+        $responseFactory->create($resource, $this->provideNextResponseFactory());
     }
 
     abstract public function provideSupportedResults(): iterable;
 
     abstract public function provideUnsupportedResults(): iterable;
 
-    protected function createResponse(ResponseResource $responseResource): Response
+    protected function createResponse(Resource $resource): Response
     {
         $responseFactory = $this->provideSuitableResponseFactory();
 
-        return $responseFactory->create($responseResource, $this->provideNextResponseFactory());
+        return $responseFactory->create($resource, $this->provideNextResponseFactory());
     }
 
     protected function provideNextResponseFactory(): Closure
     {
-        return fn (ResponseResource $responseResource) => throw new UnknownResponseResourceException($responseResource);
+        return fn (Resource $resource) => throw new UnknownResourceException($resource);
     }
 
     abstract protected function provideSuitableResponseFactory(): ResponseFactory;

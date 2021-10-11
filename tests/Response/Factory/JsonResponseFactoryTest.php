@@ -6,20 +6,20 @@ namespace Tuzex\Responder\Test\Response\Factory;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Tuzex\Responder\Response\Factory\JsonResponseFactory;
+use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\JsonDocument;
 use Tuzex\Responder\Response\Resource\PlainText;
-use Tuzex\Responder\Response\ResponseResource;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest
 {
     /**
-     * @param JsonDocument $responseResource
+     * @param JsonDocument $resource
      * @dataProvider provideSupportedResults
      */
-    public function testItReturnsValidResponse(ResponseResource $responseResource): void
+    public function testItReturnsValidResponse(Resource $resource): void
     {
-        $response = $this->createResponse($responseResource);
-        $responseData = json_encode($responseResource->payload());
+        $response = $this->createResponse($resource);
+        $responseData = json_encode($resource->payload());
 
         $this->assertInstanceOf(JsonResponse::class, $response);
         $this->assertSame($responseData, $response->getContent());

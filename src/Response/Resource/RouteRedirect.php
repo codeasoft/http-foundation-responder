@@ -7,9 +7,9 @@ namespace Tuzex\Responder\Response\Resource;
 use Assert\Assertion;
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseResource;
+use Tuzex\Responder\Response\Resource;
 
-final class RouteRedirect extends ResponseResource
+final class RouteRedirect extends Resource
 {
     private string $route;
     private array $parameters;

@@ -7,9 +7,9 @@ namespace Tuzex\Responder\Response\Factory;
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
+use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\TwigTemplate;
 use Tuzex\Responder\Response\ResponseFactory;
-use Tuzex\Responder\Response\ResponseResource;
 
 final class TwigResponseFactory implements ResponseFactory
 {
@@ -17,20 +17,20 @@ final class TwigResponseFactory implements ResponseFactory
         private TwigTemplateRenderer $twigTemplateRenderer
     ) {}
 
-    public function create(ResponseResource $responseResource, Closure $nextResponseFactory): Response
+    public function create(Resource $resource, Closure $nextResponseFactory): Response
     {
-        if (! $responseResource instanceof TwigTemplate) {
-            return $nextResponseFactory($responseResource);
+        if (! $resource instanceof TwigTemplate) {
+            return $nextResponseFactory($resource);
         }
 
-        $httpConfig = $responseResource->httpConfig();
-        $plainContent = $this->render($responseResource);
+        $httpConfig = $resource->httpConfig();
+        $plainContent = $this->render($resource);
 
         return new Response($plainContent, $httpConfig->statusCode(), $httpConfig->headers());
     }
 
-    private function render(TwigTemplate $responseResource): string
+    private function render(TwigTemplate $resource): string
     {
-        return $this->twigTemplateRenderer->render($responseResource->path(), $responseResource->parameters());
+        return $this->twigTemplateRenderer->render($resource->path(), $resource->parameters());
     }
 }

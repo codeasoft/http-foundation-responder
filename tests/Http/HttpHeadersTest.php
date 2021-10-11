@@ -15,7 +15,7 @@ final class HttpHeadersTest extends TestCase
     /**
      * @dataProvider provideUseCases
      */
-    public function testItContainsValidHeaders(array $data, array $responseResources): void
+    public function testItContainsValidHeaders(array $data, array $resources): void
     {
         $httpHeaders = new HttpHeaders(...$data['default']);
         if ($data['extended']) {
@@ -23,13 +23,13 @@ final class HttpHeadersTest extends TestCase
         }
 
         foreach ($httpHeaders->list() as $type => $value) {
-            $this->assertSame($responseResources[$type]->value(), $value);
+            $this->assertSame($resources[$type]->value(), $value);
         }
     }
 
     public function provideUseCases(): array
     {
-        $responseResources = [
+        $resources = [
             'Content-Type' => ContentType::utf8(MimeType::HTML),
             'Content-Disposition' => ContentDisposition::inline(''),
         ];
@@ -43,7 +43,7 @@ final class HttpHeadersTest extends TestCase
                     ],
                     'extended' => [],
                 ],
-                'results' => $responseResources,
+                'results' => $resources,
             ],
             'overloading' => [
                 'headers' => [
@@ -54,7 +54,7 @@ final class HttpHeadersTest extends TestCase
                     ],
                     'extended' => [],
                 ],
-                'results' => $responseResources,
+                'results' => $resources,
             ],
             'extending' => [
                 'headers' => [
@@ -66,7 +66,7 @@ final class HttpHeadersTest extends TestCase
                         ContentDisposition::inline(''),
                     ],
                 ],
-                'results' => $responseResources,
+                'results' => $resources,
             ],
         ];
     }

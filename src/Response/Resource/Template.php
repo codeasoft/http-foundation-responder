@@ -7,9 +7,9 @@ namespace Tuzex\Responder\Response\Resource;
 use Assert\Assertion;
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseResource;
+use Tuzex\Responder\Response\Resource;
 
-abstract class Template extends ResponseResource
+abstract class Template extends Resource
 {
     private string $path;
     private array $parameters;

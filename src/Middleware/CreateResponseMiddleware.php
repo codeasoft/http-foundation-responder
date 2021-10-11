@@ -6,10 +6,10 @@ namespace Tuzex\Responder\Middleware;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Exception\UnknownResponseResourceException;
+use Tuzex\Responder\Exception\UnknownResourceException;
 use Tuzex\Responder\Middleware;
+use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\ResponseFactory;
-use Tuzex\Responder\Response\ResponseResource;
 
 final class CreateResponseMiddleware implements Middleware
 {
@@ -17,15 +17,15 @@ final class CreateResponseMiddleware implements Middleware
 
     public function __construct(ResponseFactory ...$factories)
     {
-        $producer = fn (ResponseResource $responseResource) => throw new UnknownResponseResourceException($responseResource);
+        $producer = fn (Resource $resource) => throw new UnknownResourceException($resource);
 
         foreach ($factories as $factory) {
-            $this->producer = $producer = fn (ResponseResource $responseResource): Response => $factory->create($responseResource, $producer);
+            $this->producer = $producer = fn (Resource $resource): Response => $factory->create($resource, $producer);
         }
     }
 
-    public function execute(ResponseResource $responseResource, Closure $nextMiddleware): Response
+    public function execute(Resource $resource, Closure $nextMiddleware): Response
     {
-        return ($this->producer)($responseResource);
+        return ($this->producer)($resource);
     }
 }

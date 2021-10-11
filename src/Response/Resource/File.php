@@ -6,9 +6,9 @@ namespace Tuzex\Responder\Response\Resource;
 
 use Assert\Assertion;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseResource;
+use Tuzex\Responder\Response\Resource;
 
-abstract class File extends ResponseResource
+abstract class File extends Resource
 {
     private string $path;
     private string $name;

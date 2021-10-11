@@ -6,9 +6,9 @@ namespace Tuzex\Responder\Response\Resource;
 
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\ResponseResource;
+use Tuzex\Responder\Response\Resource;
 
-abstract class Data extends ResponseResource
+abstract class Data extends Resource
 {
     protected function __construct(
         private iterable $payload,
