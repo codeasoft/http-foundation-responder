@@ -24,7 +24,7 @@ abstract class Template extends ResponseResource
         parent::__construct($httpConfig);
     }
 
-    abstract public static function define(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function set(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
 
     public function name(): string
     {

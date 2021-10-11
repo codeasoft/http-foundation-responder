@@ -28,9 +28,9 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
     public function provideSupportedResults(): iterable
     {
         $data = [
-            PlainText::define('Hello World!'),
-            HtmlDocument::define('<h1>Hello World!</h1>'),
-            PdfFileContent::defineForDownload('example.pdf', 'example.pdf'),
+            PlainText::set('Hello World!'),
+            HtmlDocument::set('<h1>Hello World!</h1>'),
+            PdfFileContent::setForDownload('example.pdf', 'example.pdf'),
         ];
 
         foreach ($data as $responseResource) {
@@ -43,7 +43,7 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
     public function provideUnsupportedResults(): iterable
     {
         yield JsonDocument::class => [
-            'result' => JsonDocument::define([]),
+            'result' => JsonDocument::set([]),
         ];
     }
 

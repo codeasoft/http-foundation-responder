@@ -18,7 +18,7 @@ abstract class Data extends ResponseResource
         parent::__construct($httpConfig);
     }
 
-    abstract public static function define(iterable $iterable, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function set(iterable $iterable, int $statusCode = HttpStatusCode::OK): self;
 
     public function iterable(): iterable
     {

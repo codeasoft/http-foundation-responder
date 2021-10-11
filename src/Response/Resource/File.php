@@ -24,9 +24,9 @@ abstract class File extends ResponseResource
         parent::__construct($httpConfig);
     }
 
-    abstract public static function defineForDownload(string $path, string $name): self;
+    abstract public static function setForDownload(string $path, string $name): self;
 
-    abstract public static function defineForDisplay(string $path, string $name): self;
+    abstract public static function setForDisplay(string $path, string $name): self;
 
     public function path(): string
     {

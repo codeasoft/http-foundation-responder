@@ -11,7 +11,7 @@ use Tuzex\Responder\Response\HttpConfig;
 
 final class HtmlDocument extends Text
 {
-    public static function define(string $html): self
+    public static function set(string $html): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             new ContentType(MimeType::HTML),

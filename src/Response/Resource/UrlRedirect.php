@@ -22,7 +22,7 @@ final class UrlRedirect extends ResponseResource
         parent::__construct($httpConfig);
     }
 
-    public static function define(string $url, int $statusCode = HttpStatusCode::FOUND): self
+    public static function set(string $url, int $statusCode = HttpStatusCode::FOUND): self
     {
         return new self($url, HttpConfig::set($statusCode));
     }

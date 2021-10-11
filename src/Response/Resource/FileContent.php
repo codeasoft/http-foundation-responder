@@ -20,9 +20,9 @@ abstract class FileContent extends Text
         parent::__construct($content, $httpConfig);
     }
 
-    abstract public static function defineForDownload(string $content, string $name): self;
+    abstract public static function setForDownload(string $content, string $name): self;
 
-    abstract public static function defineForDisplay(string $content, string $name): self;
+    abstract public static function setForDisplay(string $content, string $name): self;
 
     public function name(): string
     {

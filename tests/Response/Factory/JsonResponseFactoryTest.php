@@ -28,14 +28,14 @@ final class JsonResponseFactoryTest extends ResponseFactoryTest
     public function provideSupportedResults(): iterable
     {
         yield JsonDocument::class => [
-            'result' => JsonDocument::define(['first', 'second']),
+            'result' => JsonDocument::set(['first', 'second']),
         ];
     }
 
     public function provideUnsupportedResults(): iterable
     {
         yield PlainText::class => [
-            'result' => PlainText::define(''),
+            'result' => PlainText::set(''),
         ];
     }
 

@@ -43,7 +43,7 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
         ];
 
         foreach ($data as $dataName => $flashMessages) {
-            $responseResource = PlainText::define('');
+            $responseResource = PlainText::set('');
             $responseResource->addFlashMessage(
                 ...$this->createFlashMessages($flashMessages)
             );

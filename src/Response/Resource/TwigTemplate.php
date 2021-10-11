@@ -11,7 +11,7 @@ use Tuzex\Responder\Response\HttpConfig;
 
 final class TwigTemplate extends Template
 {
-    public static function define(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self
+    public static function set(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::HTML),

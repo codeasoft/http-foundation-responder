@@ -12,7 +12,7 @@ use Tuzex\Responder\Response\HttpConfig;
 
 final class PdfFileContent extends FileContent
 {
-    public static function defineForDownload(string $content, string $name): self
+    public static function setForDownload(string $content, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             ContentType::utf8(MimeType::PDF),
@@ -22,7 +22,7 @@ final class PdfFileContent extends FileContent
         return new self($content, $name, $httpConfig);
     }
 
-    public static function defineForDisplay(string $content, string $name): self
+    public static function setForDisplay(string $content, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
             ContentType::utf8(MimeType::PDF),
