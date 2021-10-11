@@ -19,7 +19,7 @@ final class JsonResponseFactoryTest extends ResponseFactoryTest
     public function testItReturnsValidResponse(ResponseResource $responseResource): void
     {
         $response = $this->createResponse($responseResource);
-        $responseData = json_encode($responseResource->iterable());
+        $responseData = json_encode($responseResource->payload());
 
         $this->assertInstanceOf(JsonResponse::class, $response);
         $this->assertSame($responseData, $response->getContent());

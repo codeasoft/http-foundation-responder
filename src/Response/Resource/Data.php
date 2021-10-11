@@ -11,17 +11,17 @@ use Tuzex\Responder\Response\ResponseResource;
 abstract class Data extends ResponseResource
 {
     protected function __construct(
-        private iterable $iterable,
+        private iterable $payload,
         HttpConfig $httpConfig
     )
     {
         parent::__construct($httpConfig);
     }
 
-    abstract public static function set(iterable $iterable, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function set(iterable $data, int $statusCode = HttpStatusCode::OK): self;
 
-    public function iterable(): iterable
+    public function payload(): iterable
     {
-        return $this->iterable;
+        return $this->payload;
     }
 }
