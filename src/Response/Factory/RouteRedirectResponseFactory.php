@@ -31,6 +31,6 @@ final class RouteRedirectResponseFactory implements ResponseFactory
 
     private function route(RouteRedirect $responseResource): string
     {
-        return $this->urlGenerator->generate($responseResource->name(), $responseResource->parameters());
+        return $this->urlGenerator->generate($responseResource->route(), $responseResource->parameters());
     }
 }
