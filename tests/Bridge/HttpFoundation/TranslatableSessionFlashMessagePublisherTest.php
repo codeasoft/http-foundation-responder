@@ -7,7 +7,6 @@ namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Tuzex\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
-use Tuzex\Responder\Response\FlashMessage;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 use Tuzex\Responder\Test\FlashMessagesGenerator;
 

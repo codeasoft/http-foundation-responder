@@ -7,7 +7,6 @@ namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Tuzex\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
-use Tuzex\Responder\Response\FlashMessage;
 use Tuzex\Responder\Test\FlashMessagesGenerator;
 
 final class SessionFlashMessagePublisherTest extends TestCase
