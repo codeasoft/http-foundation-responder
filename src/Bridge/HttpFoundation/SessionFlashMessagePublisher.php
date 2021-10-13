@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Bridge\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Tuzex\Responder\Response\FlashMessage;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class SessionFlashMessagePublisher implements FlashMessagePublisher
@@ -13,8 +14,8 @@ final class SessionFlashMessagePublisher implements FlashMessagePublisher
         private FlashBagInterface $flashBag,
     ) {}
 
-    public function publish(string $type, string $message): void
+    public function publish(FlashMessage $flashMessage): void
     {
-        $this->flashBag->add($type, $message);
+        $this->flashBag->add($flashMessage->type(), $flashMessage->message());
     }
 }

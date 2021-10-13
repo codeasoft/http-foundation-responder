@@ -4,19 +4,24 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Bridge\HttpFoundation;
 
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Tuzex\Responder\Response\FlashMessage;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class TranslatableSessionFlashMessagePublisher implements FlashMessagePublisher
 {
     public function __construct(
-        private FlashBagInterface $flashBag,
+        private FlashMessagePublisher $flashMessagePublisher,
         private TranslatorInterface $translator,
     ) {}
 
-    public function publish(string $type, string $message): void
+    public function publish(FlashMessage $flashMessage): void
     {
-        $this->flashBag->add($type, $this->translator->trans($message));
+        $translatedFlashMessage = new FlashMessage(
+            $flashMessage->type(),
+            $this->translator->trans($flashMessage->message()),
+        );
+
+        $this->flashMessagePublisher->publish($translatedFlashMessage);
     }
 }
