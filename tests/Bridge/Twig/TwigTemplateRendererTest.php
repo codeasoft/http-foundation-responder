@@ -7,6 +7,7 @@ namespace Tuzex\Responder\Test\Bridge\Twig;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface as Logger;
 use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
+use Tuzex\Responder\Response\Resource\TwigTemplate;
 use Twig\Environment as Twig;
 use Twig\Error\Error;
 use Twig\Error\LoaderError;
@@ -15,17 +16,18 @@ use Twig\Error\SyntaxError;
 
 final class TwigTemplateRendererTest extends TestCase
 {
-    private const FILENAME = 'example.html.twig';
-    private const OUTPUT = 'Hello World!';
+    private const NAME = 'example.html.twig';
+    private const CONTENT = 'Hello World!';
 
     public function testItRendersTemplate(): void
     {
+        $resource = TwigTemplate::set(self::NAME);
         $templateRenderer = new TwigTemplateRenderer(
             $this->mockRenderer(),
             $this->mockLogger()
         );
 
-        $this->assertSame(self::OUTPUT, $templateRenderer->render(self::FILENAME));
+        $this->assertSame(self::CONTENT, $templateRenderer->render($resource));
     }
 
     /**
@@ -33,13 +35,14 @@ final class TwigTemplateRendererTest extends TestCase
      */
     public function testItThrowsExceptionOnError(Error $error): void
     {
+        $resource = TwigTemplate::set(self::NAME);
         $templateRenderer = new TwigTemplateRenderer(
             $this->mockRenderer($error),
             $this->mockLogger($error)
         );
 
-        $this->expectException(Error::class);
-        $templateRenderer->render(self::FILENAME);
+        $this->expectException($error::class);
+        $templateRenderer->render($resource);
     }
 
     public function provideErrors(): array
@@ -62,8 +65,8 @@ final class TwigTemplateRendererTest extends TestCase
         $renderer = $this->createMock(Twig::class);
         $renderMethod = $renderer->expects($this->once())
             ->method('render')
-            ->with(self::FILENAME)
-            ->willReturn(self::OUTPUT);
+            ->with(self::NAME)
+            ->willReturn(self::CONTENT);
 
         if ($error) {
             $renderMethod->willThrowException($error);
