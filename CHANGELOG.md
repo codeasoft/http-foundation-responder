@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2021-10-11
+
+- **[BC BREAK]** Rename `ResponseResource` to `Resource`
 - **[BC BREAK]** Rename `ResponseResource` static factories
 
 ## [0.7.0] - 2021-09-28
@@ -81,7 +84,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix a default redirect status code
 - Fix reference variable name for `RequestAccessor`
 
-[Unreleased]: https://github.com/Tuzex/responder/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/Tuzex/responder/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/Tuzex/responder/releases/tag/v0.8.0
 [0.7.0]: https://github.com/Tuzex/responder/releases/tag/v0.7.0
 [0.6.0]: https://github.com/Tuzex/responder/releases/tag/v0.6.0
 [0.5.0]: https://github.com/Tuzex/responder/releases/tag/v0.5.0
