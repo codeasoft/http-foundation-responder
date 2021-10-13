@@ -11,24 +11,24 @@ use Tuzex\Responder\Response\Resource;
 
 abstract class Template extends Resource
 {
-    private string $path;
+    private string $name;
     private array $parameters;
 
-    protected function __construct(string $path, array $parameters, HttpConfig $httpConfig)
+    protected function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($path, sprintf('.%s', $this->type()));
+        Assertion::endsWith($name, sprintf('.%s', $this->type()));
 
-        $this->path = $path;
+        $this->name = $name;
         $this->parameters = $parameters;
 
         parent::__construct($httpConfig);
     }
 
-    abstract public static function set(string $path, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function set(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
 
-    public function path(): string
+    public function name(): string
     {
-        return $this->path;
+        return $this->name;
     }
 
     public function parameters(): array

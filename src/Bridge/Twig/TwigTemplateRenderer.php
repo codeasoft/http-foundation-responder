@@ -22,7 +22,7 @@ final class TwigTemplateRenderer implements TemplateRenderer
     public function render(Template $template): string
     {
         try {
-            return $this->twig->render($template->path(), $template->parameters());
+            return $this->twig->render($template->name(), $template->parameters());
         } catch (LoaderError | SyntaxError | RuntimeError $exception) {
             $this->logger->error(sprintf('Templating system: %s', $exception->getMessage()));
 
