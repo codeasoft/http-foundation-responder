@@ -15,7 +15,7 @@ final class ContextResponder implements Responder
 
     public function __construct(ResponseProducer $responseProducer)
     {
-        $this->processor = fn (Resource $resource) => null;
+        $this->processor = fn () => null;
         $this->extend($responseProducer);
     }
 
