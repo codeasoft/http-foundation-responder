@@ -11,7 +11,7 @@ use Tuzex\Responder\Middleware;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\ResponseFactory;
 
-final class CreateResponseMiddleware implements Middleware
+final class ResponseProducer implements Middleware
 {
     private Closure $producer;
 

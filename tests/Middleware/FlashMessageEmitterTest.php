@@ -6,20 +6,20 @@ namespace Tuzex\Responder\Test\Middleware;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Middleware\PublishFlashMessagesMiddleware;
-use Tuzex\Responder\Response\FlashMessage;
+use Tuzex\Responder\Middleware\FlashMessageEmitter;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\PlainText;
 use Tuzex\Responder\Service\FlashMessagePublisher;
+use Tuzex\Responder\Test\FlashMessagesGenerator;
 
-final class PublishFlashMessagesMiddlewareTest extends TestCase
+final class FlashMessageEmitterTest extends TestCase
 {
     /**
      * @dataProvider provideData
      */
     public function testItProcessesFlashMessagesFromResults(Resource $resource, int $numberOfFlashMessages): void
     {
-        $middleware = new PublishFlashMessagesMiddleware(
+        $middleware = new FlashMessageEmitter(
             $this->mockFlashMessagePublisher($numberOfFlashMessages)
         );
 
@@ -30,25 +30,11 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
 
     public function provideData(): iterable
     {
-        $data = [
-            'anyone' => [],
-            'one' => [
-                'success' => 'Success!',
-            ],
-            'several' => [
-                'error' => 'Failed!',
-                'success' => 'Success!',
-                'warning' => 'Warning!',
-            ],
-        ];
-
-        foreach ($data as $dataName => $flashMessages) {
+        foreach (FlashMessagesGenerator::generate() as $groupName => $flashMessages) {
             $resource = PlainText::set('');
-            $resource->addFlashMessage(
-                ...$this->createFlashMessages($flashMessages)
-            );
+            $resource->addFlashMessage(...$flashMessages);
 
-            yield $dataName => [
+            yield $groupName => [
                 'result' => $resource,
                 'numberOfFlashMessages' => count($flashMessages),
             ];
@@ -62,12 +48,5 @@ final class PublishFlashMessagesMiddlewareTest extends TestCase
             ->method('publish');
 
         return $publisher;
-    }
-
-    private function createFlashMessages(array $definitions): array
-    {
-        $factory = fn (string $type, string $message): FlashMessage => new FlashMessage($type, $message);
-
-        return array_map($factory, array_keys($definitions), $definitions);
     }
 }

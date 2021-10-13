@@ -10,7 +10,7 @@ use Tuzex\Responder\Middleware;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 
-final class PublishFlashMessagesMiddleware implements Middleware
+final class FlashMessageEmitter implements Middleware
 {
     public function __construct(
         private FlashMessagePublisher $flashMessagePublisher
@@ -18,8 +18,10 @@ final class PublishFlashMessagesMiddleware implements Middleware
 
     public function execute(Resource $resource, Closure $nextMiddleware): Response
     {
-        foreach ($resource->flashMessageBag() as $flashMessage) {
-            $this->flashMessagePublisher->publish($flashMessage->type(), $flashMessage->message());
+        $flashMessageBag = $resource->flashMessageBag();
+
+        foreach ($flashMessageBag as $flashMessage) {
+            $this->flashMessagePublisher->publish($flashMessage);
         }
 
         return $nextMiddleware($resource);

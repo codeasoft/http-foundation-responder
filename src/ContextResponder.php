@@ -6,17 +6,17 @@ namespace Tuzex\Responder;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Middleware\CreateResponseMiddleware;
+use Tuzex\Responder\Middleware\ResponseProducer;
 use Tuzex\Responder\Response\Resource;
 
 final class ContextResponder implements Responder
 {
     private Closure $processor;
 
-    public function __construct(CreateResponseMiddleware $createResponseMiddleware)
+    public function __construct(ResponseProducer $responseProducer)
     {
         $this->processor = fn (Resource $resource) => null;
-        $this->extend($createResponseMiddleware);
+        $this->extend($responseProducer);
     }
 
     public function process(Resource $resource): Response
