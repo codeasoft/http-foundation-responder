@@ -6,15 +6,15 @@ namespace Tuzex\Responder\Response\Factory;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\TwigTemplate;
 use Tuzex\Responder\Response\ResponseFactory;
+use Tuzex\Responder\Service\TemplateRenderer;
 
 final class TwigResponseFactory implements ResponseFactory
 {
     public function __construct(
-        private TwigTemplateRenderer $twigTemplateRenderer
+        private TemplateRenderer $templateRenderer
     ) {}
 
     public function create(Resource $resource, Closure $nextResponseFactory): Response
@@ -24,13 +24,8 @@ final class TwigResponseFactory implements ResponseFactory
         }
 
         $httpConfig = $resource->httpConfig();
-        $plainContent = $this->render($resource);
+        $renderedContent = $this->templateRenderer->render($resource);
 
-        return new Response($plainContent, $httpConfig->statusCode(), $httpConfig->headers());
-    }
-
-    private function render(TwigTemplate $resource): string
-    {
-        return $this->twigTemplateRenderer->render($resource->path(), $resource->parameters());
+        return new Response($renderedContent, $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

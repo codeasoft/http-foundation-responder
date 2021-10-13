@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Bridge\Twig;
 
 use Psr\Log\LoggerInterface as Logger;
+use Tuzex\Responder\Response\Resource\Template;
 use Tuzex\Responder\Service\TemplateRenderer;
 use Twig\Environment as Twig;
 use Twig\Error\LoaderError;
@@ -18,10 +19,10 @@ final class TwigTemplateRenderer implements TemplateRenderer
         private Logger $logger,
     ) {}
 
-    public function render(string $name, array $parameters = []): string
+    public function render(Template $template): string
     {
         try {
-            return $this->twig->render($name, $parameters);
+            return $this->twig->render($template->path(), $template->parameters());
         } catch (LoaderError | SyntaxError | RuntimeError $exception) {
             $this->logger->error(sprintf('Templating system: %s', $exception->getMessage()));
 
