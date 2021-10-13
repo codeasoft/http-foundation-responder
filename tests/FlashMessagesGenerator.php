@@ -8,9 +8,9 @@ use Tuzex\Responder\Response\FlashMessage;
 
 final class FlashMessagesGenerator
 {
-    public static function generate(): array
+    public static function generate(): iterable
     {
-        $messages = [
+        $groups = [
             'anyone' => [],
             'one' => [
                 'success' => 'Success!',
@@ -23,7 +23,8 @@ final class FlashMessagesGenerator
         ];
 
         $factory = fn (string $type, string $message): FlashMessage => new FlashMessage($type, $message);
-
-        return array_map($factory, array_keys($messages), $messages);
+        foreach ($groups as $name => $messages) {
+            yield $name => array_map($factory, array_keys($messages), $messages);
+        }
     }
 }
