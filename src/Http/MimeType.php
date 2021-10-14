@@ -12,4 +12,5 @@ final class MimeType
     public const JSON = 'application/json';
     public const PDF = 'application/pdf';
     public const XML = 'application/xml';
+    public const ZIP = 'application/zip';
 }
