@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
+namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Request;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Tuzex\Responder\Bridge\HttpFoundation\RequestAccessor;
-use Tuzex\Responder\Bridge\HttpFoundation\RequestUriProvider;
+use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestAccessor;
+use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestUriProvider;
 
 final class RequestUriProviderTest extends TestCase
 {

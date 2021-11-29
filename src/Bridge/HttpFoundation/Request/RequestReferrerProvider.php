@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation;
+namespace Tuzex\Responder\Bridge\HttpFoundation\Request;
 
 use Tuzex\Responder\Http\ReferrerProvider;
 
