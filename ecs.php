@@ -15,6 +15,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set(Option::SKIP, [
         PhpCsFixer\Fixer\Basic\BracesFixer::class => null,
+        PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class => null,
     ]);
 
     $containerConfigurator->import(SetList::COMMON);
