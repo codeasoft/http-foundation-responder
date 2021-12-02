@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Tuzex\Responder\Http\HttpStatusCode;
+use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource;
 
@@ -18,5 +18,5 @@ abstract class Data extends Resource
         parent::__construct($httpConfig);
     }
 
-    abstract public static function set(iterable $list, int $statusCode = HttpStatusCode::OK): self;
+    abstract public static function set(iterable $list, StatusCode $statusCode = StatusCode::OK): self;
 }

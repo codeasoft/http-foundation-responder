@@ -5,26 +5,23 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Response;
 
 use Tuzex\Responder\Http\HttpHeaders;
-use Tuzex\Responder\Http\HttpStatusCode;
+use Tuzex\Responder\Http\StatusCode;
 
 final class HttpConfig
 {
     public function __construct(
-        private HttpStatusCode $statusCode,
+        private StatusCode  $statusCode,
         private HttpHeaders $headers,
     ) {}
 
-    public static function set(int $statusCode, array $headers = []): self
+    public static function set(StatusCode $statusCode, array $headers = []): self
     {
-        return new self(
-            new HttpStatusCode($statusCode),
-            new HttpHeaders(...$headers)
-        );
+        return new self($statusCode, new HttpHeaders(...$headers));
     }
 
     public function statusCode(): int
     {
-        return $this->statusCode->code();
+        return $this->statusCode->value;
     }
 
     public function headers(): array

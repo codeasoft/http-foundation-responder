@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Response\Resource\Redirect;
 
 use Assert\Assertion;
-use Tuzex\Responder\Http\HttpStatusCode;
+use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource\Redirect;
 
@@ -24,7 +24,7 @@ final class RouteRedirect extends Redirect
         parent::__construct($httpConfig);
     }
 
-    public static function set(string $route, array $parameters = [], int $statusCode = HttpStatusCode::FOUND): self
+    public static function set(string $route, array $parameters = [], StatusCode $statusCode = StatusCode::FOUND): self
     {
         return new self($route, $parameters, HttpConfig::set($statusCode));
     }

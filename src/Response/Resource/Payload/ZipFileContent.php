@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Response\Resource\Payload;
 
 use Tuzex\Responder\Http\Header\ContentDisposition;
 use Tuzex\Responder\Http\Header\ContentType;
-use Tuzex\Responder\Http\HttpStatusCode;
+use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource\FileContent;
@@ -15,7 +15,7 @@ final class ZipFileContent extends FileContent
 {
     public static function setForDownload(string $content, string $name): self
     {
-        $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
+        $httpConfig = HttpConfig::set(StatusCode::OK, [
             ContentType::utf8(MimeType::ZIP),
             ContentDisposition::attachment($name),
         ]);
@@ -25,7 +25,7 @@ final class ZipFileContent extends FileContent
 
     public static function setForDisplay(string $content, string $name): self
     {
-        $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
+        $httpConfig = HttpConfig::set(StatusCode::OK, [
             ContentType::utf8(MimeType::ZIP),
             ContentDisposition::inline($name),
         ]);
