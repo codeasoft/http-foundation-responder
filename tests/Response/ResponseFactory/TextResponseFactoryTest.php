@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Response\Factory;
+namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
-use Tuzex\Responder\Response\Factory\TextResponseFactory;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\Payload\HtmlDocument;
 use Tuzex\Responder\Response\Resource\Payload\JsonDocument;
 use Tuzex\Responder\Response\Resource\Payload\PdfFileContent;
 use Tuzex\Responder\Response\Resource\Payload\PlainText;
 use Tuzex\Responder\Response\Resource\Text;
+use Tuzex\Responder\Response\ResponseFactory\TextResponseFactory;
 
 final class TextResponseFactoryTest extends ResponseFactoryTest
 {

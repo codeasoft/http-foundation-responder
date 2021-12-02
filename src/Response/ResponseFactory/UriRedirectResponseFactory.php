@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Factory;
+namespace Tuzex\Responder\Response\ResponseFactory;
 
 use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;

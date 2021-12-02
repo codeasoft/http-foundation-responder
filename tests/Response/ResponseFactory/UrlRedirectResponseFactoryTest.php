@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Response\Factory;
+namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Tuzex\Responder\Response\Factory\UrlRedirectResponseFactory;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\Redirect\RouteRedirect;
 use Tuzex\Responder\Response\Resource\Redirect\UrlRedirect;
+use Tuzex\Responder\Response\ResponseFactory\UrlRedirectResponseFactory;
 
 final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
 {

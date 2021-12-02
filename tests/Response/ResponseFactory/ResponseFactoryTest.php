@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Response\Factory;
+namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
 use Closure;
 use PHPUnit\Framework\TestCase;
