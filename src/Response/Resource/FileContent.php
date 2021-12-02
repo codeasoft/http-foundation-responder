@@ -9,7 +9,7 @@ use Tuzex\Responder\Response\HttpConfig;
 
 abstract class FileContent extends Text
 {
-    private string $name;
+    public readonly string $name;
 
     protected function __construct(string $content, string $name, HttpConfig $httpConfig)
     {
@@ -23,11 +23,6 @@ abstract class FileContent extends Text
     abstract public static function setForDownload(string $content, string $name): self;
 
     abstract public static function setForDisplay(string $content, string $name): self;
-
-    public function name(): string
-    {
-        return $this->name;
-    }
 
     abstract public function mimeType(): string;
 

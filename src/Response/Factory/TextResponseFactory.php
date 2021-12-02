@@ -20,6 +20,6 @@ final class TextResponseFactory implements ResponseFactory
 
         $httpConfig = $resource->httpConfig();
 
-        return new Response($resource->payload(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new Response($resource->content, $httpConfig->statusCode(), $httpConfig->headers());
     }
 }

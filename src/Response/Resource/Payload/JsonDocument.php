@@ -12,12 +12,12 @@ use Tuzex\Responder\Response\Resource\Data;
 
 final class JsonDocument extends Data
 {
-    public static function set(iterable $data, int $statusCode = HttpStatusCode::OK): self
+    public static function set(iterable $list, int $statusCode = HttpStatusCode::OK): self
     {
         $httpConfig = HttpConfig::set($statusCode, [
             new ContentType(MimeType::JSON),
         ]);
 
-        return new self($data, $httpConfig);
+        return new self($list, $httpConfig);
     }
 }

@@ -11,7 +11,7 @@ use Tuzex\Responder\Response\Resource\Redirect;
 
 final class UrlRedirect extends Redirect
 {
-    private string $url;
+    public readonly string $url;
 
     private function __construct(string $url, HttpConfig $httpConfig)
     {
@@ -25,10 +25,5 @@ final class UrlRedirect extends Redirect
     public static function set(string $url, int $statusCode = HttpStatusCode::FOUND): self
     {
         return new self($url, HttpConfig::set($statusCode));
-    }
-
-    public function url(): string
-    {
-        return $this->url;
     }
 }

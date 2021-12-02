@@ -10,8 +10,8 @@ use Tuzex\Responder\Response\Resource;
 
 abstract class File extends Resource
 {
-    private string $path;
-    private string $name;
+    public readonly string $path;
+    public readonly string $name;
 
     protected function __construct(string $path, string $name, HttpConfig $httpConfig)
     {
@@ -27,16 +27,6 @@ abstract class File extends Resource
     abstract public static function setForDownload(string $path, string $name): self;
 
     abstract public static function setForDisplay(string $path, string $name): self;
-
-    public function path(): string
-    {
-        return $this->path;
-    }
-
-    public function name(): string
-    {
-        return $this->name;
-    }
 
     abstract public function mimeType(): string;
 

@@ -11,8 +11,8 @@ use Tuzex\Responder\Response\Resource;
 
 abstract class Template extends Resource
 {
-    private string $name;
-    private array $parameters;
+    public readonly string $name;
+    public readonly array $parameters;
 
     protected function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
@@ -25,16 +25,6 @@ abstract class Template extends Resource
     }
 
     abstract public static function set(string $name, array $parameters = [], int $statusCode = HttpStatusCode::OK): self;
-
-    public function name(): string
-    {
-        return $this->name;
-    }
-
-    public function parameters(): array
-    {
-        return $this->parameters;
-    }
 
     abstract protected function type(): string;
 }

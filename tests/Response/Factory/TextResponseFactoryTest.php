@@ -22,7 +22,7 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
     {
         $response = $this->createResponse($resource);
 
-        $this->assertSame($resource->payload(), $response->getContent());
+        $this->assertSame($resource->content, $response->getContent());
     }
 
     public function provideSupportedResults(): iterable
@@ -35,7 +35,7 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
 
         foreach ($data as $resource) {
             yield $resource::class => [
-                'result' => $resource,
+                'resource' => $resource,
             ];
         }
     }
@@ -43,7 +43,7 @@ final class TextResponseFactoryTest extends ResponseFactoryTest
     public function provideUnsupportedResults(): iterable
     {
         yield JsonDocument::class => [
-            'result' => JsonDocument::set([]),
+            'resource' => JsonDocument::set([]),
         ];
     }
 

@@ -19,7 +19,7 @@ final class JsonResponseFactoryTest extends ResponseFactoryTest
     public function testItReturnsValidResponse(Resource $resource): void
     {
         $response = $this->createResponse($resource);
-        $responseData = json_encode($resource->payload());
+        $responseData = json_encode($resource->list);
 
         $this->assertInstanceOf(JsonResponse::class, $response);
         $this->assertSame($responseData, $response->getContent());
@@ -28,14 +28,14 @@ final class JsonResponseFactoryTest extends ResponseFactoryTest
     public function provideSupportedResults(): iterable
     {
         yield JsonDocument::class => [
-            'result' => JsonDocument::set(['first', 'second']),
+            'resource' => JsonDocument::set(['first', 'second']),
         ];
     }
 
     public function provideUnsupportedResults(): iterable
     {
         yield PlainText::class => [
-            'result' => PlainText::set(''),
+            'resource' => PlainText::set(''),
         ];
     }
 

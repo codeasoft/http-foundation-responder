@@ -22,20 +22,20 @@ final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
         $response = $this->createResponse($resource);
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
-        $this->assertSame($resource->url(), $response->getTargetUrl());
+        $this->assertSame($resource->url, $response->getTargetUrl());
     }
 
     public function provideSupportedResults(): iterable
     {
         yield UrlRedirect::class => [
-            'result' => UrlRedirect::set('https://www.google.com'),
+            'resource' => UrlRedirect::set('https://www.google.com'),
         ];
     }
 
     public function provideUnsupportedResults(): iterable
     {
         yield RouteRedirect::class => [
-            'result' => RouteRedirect::set('index'),
+            'resource' => RouteRedirect::set('index'),
         ];
     }
 
