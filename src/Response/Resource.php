@@ -9,13 +9,9 @@ use Tuzex\Responder\Http\HttpHeaders;
 
 abstract class Resource
 {
-    private HttpConfig $httpConfig;
-    private FlashMessageBag $flashMessageBag;
-
-    protected function __construct(HttpConfig $httpConfig)
-    {
-        $this->httpConfig = $httpConfig;
-        $this->flashMessageBag = new FlashMessageBag();
+    protected function __construct(
+        private HttpConfig $httpConfig
+    ) {
     }
 
     public function httpConfig(): HttpConfig
@@ -23,18 +19,8 @@ abstract class Resource
         return $this->httpConfig;
     }
 
-    public function flashMessageBag(): FlashMessageBag
-    {
-        return $this->flashMessageBag;
-    }
-
     public function addHttpHeader(HttpHeader ...$headers): void
     {
         $this->httpConfig = $this->httpConfig->setHeaders(new HttpHeaders(...$headers));
-    }
-
-    public function addFlashMessage(FlashMessage ...$messages): void
-    {
-        $this->flashMessageBag = $this->flashMessageBag->push(...$messages);
     }
 }
