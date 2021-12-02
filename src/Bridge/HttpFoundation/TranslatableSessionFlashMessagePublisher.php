@@ -18,8 +18,8 @@ final class TranslatableSessionFlashMessagePublisher implements FlashMessagePubl
     public function publish(FlashMessage $flashMessage): void
     {
         $translatedFlashMessage = new FlashMessage(
-            $flashMessage->type(),
-            $this->translator->trans($flashMessage->message()),
+            $flashMessage->type,
+            $this->translator->trans($flashMessage->message),
         );
 
         $this->flashMessagePublisher->publish($translatedFlashMessage);

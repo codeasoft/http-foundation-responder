@@ -17,6 +17,6 @@ final class SessionFlashMessagePublisher implements FlashMessagePublisher
     public function publish(FlashMessage $flashMessage): void
     {
         $flashBag = $this->requestFlashBagProvider->provide();
-        $flashBag->add($flashMessage->type(), $flashMessage->message());
+        $flashBag->add($flashMessage->type, $flashMessage->message);
     }
 }

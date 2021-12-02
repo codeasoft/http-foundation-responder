@@ -31,7 +31,7 @@ final class SessionFlashMessagePublisherTest extends TestCase
         foreach ($flashMessages as $flashMessage) {
             $flashMessagePublisher->publish($flashMessage);
             $this->assertTrue(
-                $flashBag->has($flashMessage->type())
+                $flashBag->has($flashMessage->type)
             );
         }
 
