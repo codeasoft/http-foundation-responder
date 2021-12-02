@@ -8,7 +8,7 @@ use Closure;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\JsonDocument;
+use Tuzex\Responder\Response\Resource\Payload\JsonDocument;
 use Tuzex\Responder\Response\ResponseFactory;
 
 final class JsonResponseFactory implements ResponseFactory

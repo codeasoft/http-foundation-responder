@@ -8,7 +8,7 @@ use Closure;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\UrlRedirect;
+use Tuzex\Responder\Response\Resource\Redirect\UrlRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
 
 final class UrlRedirectResponseFactory implements ResponseFactory

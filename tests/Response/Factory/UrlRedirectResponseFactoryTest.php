@@ -7,8 +7,8 @@ namespace Tuzex\Responder\Test\Response\Factory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Tuzex\Responder\Response\Factory\UrlRedirectResponseFactory;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\RouteRedirect;
-use Tuzex\Responder\Response\Resource\UrlRedirect;
+use Tuzex\Responder\Response\Resource\Redirect\RouteRedirect;
+use Tuzex\Responder\Response\Resource\Redirect\UrlRedirect;
 
 final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
 {

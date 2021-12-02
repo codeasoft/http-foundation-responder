@@ -2,20 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Tuzex\Responder\Response\Resource\Payload;
 
 use Tuzex\Responder\Http\Header\ContentDisposition;
 use Tuzex\Responder\Http\Header\ContentType;
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Response\HttpConfig;
+use Tuzex\Responder\Response\Resource\FileContent;
 
-final class ZipFileContent extends FileContent
+final class JpgFileContent extends FileContent
 {
     public static function setForDownload(string $content, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
-            ContentType::utf8(MimeType::ZIP),
+            ContentType::utf8(MimeType::JPG),
             ContentDisposition::attachment($name),
         ]);
 
@@ -25,7 +26,7 @@ final class ZipFileContent extends FileContent
     public static function setForDisplay(string $content, string $name): self
     {
         $httpConfig = HttpConfig::set(HttpStatusCode::OK, [
-            ContentType::utf8(MimeType::ZIP),
+            ContentType::utf8(MimeType::JPG),
             ContentDisposition::inline($name),
         ]);
 
@@ -34,11 +35,11 @@ final class ZipFileContent extends FileContent
 
     public function mimeType(): string
     {
-        return MimeType::ZIP;
+        return MimeType::JPG;
     }
 
     protected function extension(): string
     {
-        return '.zip';
+        return '.jpg';
     }
 }

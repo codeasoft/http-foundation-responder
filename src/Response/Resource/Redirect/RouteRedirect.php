@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Tuzex\Responder\Response\Resource\Redirect;
 
 use Assert\Assertion;
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\Resource;
+use Tuzex\Responder\Response\Resource\Redirect;
 
-final class RouteRedirect extends Resource
+final class RouteRedirect extends Redirect
 {
     private string $route;
     private array $parameters;

@@ -7,7 +7,7 @@ namespace Tuzex\Responder\Test\Bridge\Twig;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface as Logger;
 use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
-use Tuzex\Responder\Response\Resource\TwigTemplate;
+use Tuzex\Responder\Response\Resource\Payload\TwigTemplate;
 use Twig\Environment as Twig;
 use Twig\Error\Error;
 use Twig\Error\LoaderError;

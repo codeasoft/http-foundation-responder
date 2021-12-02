@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Http\ReferrerProvider;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\ReferrerRedirect;
+use Tuzex\Responder\Response\Resource\Redirect\ReferrerRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
 
 final class ReferrerRedirectResponseFactory implements ResponseFactory

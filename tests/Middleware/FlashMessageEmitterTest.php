@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware\FlashMessageEmitter;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\PlainText;
+use Tuzex\Responder\Response\Resource\Payload\PlainText;
 use Tuzex\Responder\Service\FlashMessagePublisher;
 use Tuzex\Responder\Test\FlashMessagesGenerator;
 

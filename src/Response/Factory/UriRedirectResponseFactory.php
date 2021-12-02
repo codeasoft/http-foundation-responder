@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Http\UriProvider;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\UriRedirect;
+use Tuzex\Responder\Response\Resource\Redirect\UriRedirect;
 use Tuzex\Responder\Response\ResponseFactory;
 
 final class UriRedirectResponseFactory implements ResponseFactory

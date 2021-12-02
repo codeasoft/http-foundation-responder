@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Tuzex\Responder\Response\Resource\Payload;
 
 use Tuzex\Responder\Http\Header\ContentDisposition;
 use Tuzex\Responder\Http\Header\ContentType;
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Response\HttpConfig;
+use Tuzex\Responder\Response\Resource\File;
 
 final class PdfFile extends File
 {

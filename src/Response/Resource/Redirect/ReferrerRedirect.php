@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Tuzex\Responder\Response\Resource\Redirect;
 
 use Tuzex\Responder\Http\HttpStatusCode;
 use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\Resource;
+use Tuzex\Responder\Response\Resource\Redirect;
 
-final class UriRedirect extends Resource
+final class ReferrerRedirect extends Redirect
 {
     public static function set(int $statusCode = HttpStatusCode::FOUND): self
     {
