@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Payload;
 
+use Tuzex\Responder\File\FileType;
+use Tuzex\Responder\File\FileType\TemplateFileType;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\HttpHeader\ContentType\UnicodeContentType;
 use Tuzex\Responder\Http\MimeType\TextMimeType;
@@ -22,8 +24,8 @@ final class TwigTemplate extends Template
         return new self($filename, $parameters, $httpConfig);
     }
 
-    protected function type(): string
+    protected function fileType(): FileType
     {
-        return 'twig';
+        return TemplateFileType::TWIG;
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Response\Resource;
 
 use Assert\Assertion;
+use Tuzex\Responder\File\FileType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource;
@@ -16,7 +17,7 @@ abstract class Template extends Resource
 
     protected function __construct(string $name, array $parameters, HttpConfig $httpConfig)
     {
-        Assertion::endsWith($name, sprintf('.%s', $this->type()));
+        Assertion::endsWith($name, $this->fileType()->extension());
 
         $this->name = $name;
         $this->parameters = $parameters;
@@ -26,5 +27,5 @@ abstract class Template extends Resource
 
     abstract public static function set(string $name, array $parameters = [], StatusCode $statusCode = StatusCode::OK): self;
 
-    abstract protected function type(): string;
+    abstract protected function fileType(): FileType;
 }

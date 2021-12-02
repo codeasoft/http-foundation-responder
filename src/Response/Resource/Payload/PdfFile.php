@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Payload;
 
+use Tuzex\Responder\File\FileType;
+use Tuzex\Responder\File\FileType\DocumentFileType;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\HttpHeader\ContentDisposition\AttachmentContentDisposition;
 use Tuzex\Responder\Http\HttpHeader\ContentDisposition\InlineContentDisposition;
@@ -35,8 +37,8 @@ final class PdfFile extends File
         return new self($path, $name, $httpConfig);
     }
 
-    protected function extension(): string
+    protected function fileType(): FileType
     {
-        return '.pdf';
+        return DocumentFileType::PDF;
     }
 }
