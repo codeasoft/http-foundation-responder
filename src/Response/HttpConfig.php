@@ -10,7 +10,7 @@ use Tuzex\Responder\Http\StatusCode;
 final class HttpConfig
 {
     public function __construct(
-        private StatusCode  $statusCode,
+        private StatusCode $statusCode,
         private HttpHeaders $headers,
     ) {}
 

@@ -28,7 +28,5 @@ abstract class File extends Resource
 
     abstract public static function setForDisplay(string $path, string $name): self;
 
-    abstract public function mimeType(): string;
-
     abstract protected function extension(): string;
 }

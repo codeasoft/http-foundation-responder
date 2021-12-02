@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Test\Http;
 
 use PHPUnit\Framework\TestCase;
-use Tuzex\Responder\Http\Header\ContentDisposition;
-use Tuzex\Responder\Http\Header\ContentType;
+use Tuzex\Responder\Http\Charset\UnicodeCharset;
+use Tuzex\Responder\Http\HttpHeader\ContentDisposition\InlineContentDisposition;
+use Tuzex\Responder\Http\HttpHeader\ContentType\UnicodeContentType;
 use Tuzex\Responder\Http\HttpHeaders;
-use Tuzex\Responder\Http\MimeType;
+use Tuzex\Responder\Http\MimeType\TextMimeType;
 
 final class HttpHeadersTest extends TestCase
 {
@@ -30,16 +31,16 @@ final class HttpHeadersTest extends TestCase
     public function provideUseCases(): array
     {
         $resources = [
-            'Content-Type' => ContentType::utf8(MimeType::HTML),
-            'Content-Disposition' => ContentDisposition::inline(''),
+            'Content-Type' => new UnicodeContentType(TextMimeType::HTML, UnicodeCharset::UTF8),
+            'Content-Disposition' => new InlineContentDisposition(''),
         ];
 
         return [
             'creation' => [
                 'headers' => [
                     'default' => [
-                        ContentType::utf8(MimeType::HTML),
-                        ContentDisposition::inline(''),
+                        new UnicodeContentType(TextMimeType::HTML, UnicodeCharset::UTF8),
+                        new InlineContentDisposition(''),
                     ],
                     'extended' => [],
                 ],
@@ -48,9 +49,9 @@ final class HttpHeadersTest extends TestCase
             'overloading' => [
                 'headers' => [
                     'default' => [
-                        ContentType::utf8(MimeType::TEXT),
-                        ContentDisposition::inline(''),
-                        ContentType::utf8(MimeType::HTML),
+                        new UnicodeContentType(TextMimeType::PLAIN, UnicodeCharset::UTF8),
+                        new InlineContentDisposition(''),
+                        new UnicodeContentType(TextMimeType::HTML, UnicodeCharset::UTF8),
                     ],
                     'extended' => [],
                 ],
@@ -59,11 +60,11 @@ final class HttpHeadersTest extends TestCase
             'extending' => [
                 'headers' => [
                     'default' => [
-                        ContentType::utf8(MimeType::HTML),
+                        new UnicodeContentType(TextMimeType::HTML, UnicodeCharset::UTF8),
                     ],
                     'extended' => [
-                        ContentType::utf8(MimeType::TEXT),
-                        ContentDisposition::inline(''),
+                        new UnicodeContentType(TextMimeType::PLAIN, UnicodeCharset::UTF8),
+                        new InlineContentDisposition(''),
                     ],
                 ],
                 'results' => $resources,

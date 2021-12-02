@@ -24,7 +24,5 @@ abstract class FileContent extends Text
 
     abstract public static function setForDisplay(string $content, string $name): self;
 
-    abstract public function mimeType(): string;
-
     abstract protected function extension(): string;
 }
