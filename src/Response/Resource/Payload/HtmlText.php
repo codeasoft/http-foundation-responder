@@ -12,7 +12,7 @@ use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\Text;
 
-final class PlainText extends Resource implements Text
+final class HtmlText extends Resource implements Text
 {
     public function __construct(
         private string $content,

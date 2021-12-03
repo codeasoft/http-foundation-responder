@@ -4,16 +4,7 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Tuzex\Responder\Response\HttpConfig;
-use Tuzex\Responder\Response\Resource;
-
-abstract class Text extends Resource
+interface Text
 {
-    protected function __construct(
-        public readonly string $content,
-        HttpConfig $httpConfig
-    )
-    {
-        parent::__construct($httpConfig);
-    }
+    public function content(): string;
 }

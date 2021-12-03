@@ -4,30 +4,36 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Assert\Assertion;
-use Tuzex\Responder\File\FileType;
-use Tuzex\Responder\Response\HttpConfig;
+use Tuzex\Responder\File\FileInfo;
+use Tuzex\Responder\Http\Charset;
+use Tuzex\Responder\Http\Charset\UnicodeCharset;
+use Tuzex\Responder\Http\Disposition;
+use Tuzex\Responder\Http\HttpHeader\ContentDisposition;
+use Tuzex\Responder\Http\HttpHeader\ContentType;
+use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
 
 abstract class File extends Resource
 {
-    public readonly string $path;
-    public readonly string $name;
+    public readonly string $pathname;
 
-    protected function __construct(string $path, string $name, HttpConfig $httpConfig)
-    {
-        Assertion::endsWith($path, $this->fileType()->extension());
-        Assertion::endsWith($name, $this->fileType()->extension());
+    public function __construct(
+        FileInfo $fileInfo,
+        StatusCode $statusCode = StatusCode::OK,
+        Disposition $disposition = Disposition::ATTACHMENT,
+        Charset $charset = UnicodeCharset::UTF8,
+    ) {
+        $this->pathname = $fileInfo->path;
 
-        $this->path = $path;
-        $this->name = $name;
+        $httpHeaders = [
+            new ContentType($fileInfo->mime(), $charset),
+            new ContentDisposition($disposition, $fileInfo->name),
+        ];
 
-        parent::__construct($httpConfig);
+        parent::__construct($statusCode, ...$httpHeaders);
     }
 
-    abstract public static function setForDownload(string $path, string $name): self;
+    abstract public static function forDownload(string $filepath, string $filename): self;
 
-    abstract public static function setForDisplay(string $path, string $name): self;
-
-    abstract protected function fileType(): FileType;
+    abstract public static function forDisplay(string $filepath, string $filename): self;
 }

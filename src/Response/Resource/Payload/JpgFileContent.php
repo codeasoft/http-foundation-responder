@@ -4,41 +4,37 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Payload;
 
-use Tuzex\Responder\File\FileType;
-use Tuzex\Responder\File\FileType\ImageFileType;
+use Tuzex\Responder\File\FileData\JpgFileData;
+use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition\AttachmentContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition\InlineContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\ContentType\UnicodeContentType;
-use Tuzex\Responder\Http\MimeType\ImageMimeType;
+use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource\FileContent;
 
 final class JpgFileContent extends FileContent
 {
-    public static function setForDownload(string $content, string $name): self
-    {
-        $httpConfig = HttpConfig::set(StatusCode::OK, [
-            new UnicodeContentType(ImageMimeType::JPG, UnicodeCharset::UTF8),
-            new AttachmentContentDisposition($name),
-        ]);
-
-        return new self($content, $name, $httpConfig);
+    public function __construct(
+        JpgFileData $fileData,
+        StatusCode $statusCode = StatusCode::OK,
+        Disposition $disposition = Disposition::ATTACHMENT,
+        Charset $charset = UnicodeCharset::UTF8,
+    ) {
+        parent::__construct($fileData, $statusCode, $disposition, $charset);
     }
 
-    public static function setForDisplay(string $content, string $name): self
+    public static function forDownload(string $filename, string $content): self
     {
-        $httpConfig = HttpConfig::set(StatusCode::OK, [
-            new UnicodeContentType(ImageMimeType::JPG, UnicodeCharset::UTF8),
-            new InlineContentDisposition($name),
-        ]);
-
-        return new self($content, $name, $httpConfig);
+        return new self(
+            fileData: new JpgFileData($filename, $content),
+            disposition: Disposition::ATTACHMENT
+        );
     }
 
-    protected function fileType(): FileType
+    public static function forDisplay(string $filename, string $content): self
     {
-        return ImageFileType::JPG;
+        return new self(
+            fileData: new JpgFileData($filename, $content),
+            disposition: Disposition::INLINE
+        );
     }
 }

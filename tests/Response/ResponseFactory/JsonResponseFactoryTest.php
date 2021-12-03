@@ -6,20 +6,20 @@ namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Payload\JsonDocument;
+use Tuzex\Responder\Response\Resource\Payload\JsonData;
 use Tuzex\Responder\Response\Resource\Payload\PlainText;
 use Tuzex\Responder\Response\ResponseFactory\JsonResponseFactory;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest
 {
     /**
-     * @param JsonDocument $resource
+     * @param JsonData $resource
      * @dataProvider provideSupportedResults
      */
     public function testItReturnsValidResponse(Resource $resource): void
     {
         $response = $this->createResponse($resource);
-        $responseData = json_encode($resource->list);
+        $responseData = json_encode($resource->datalist());
 
         $this->assertInstanceOf(JsonResponse::class, $response);
         $this->assertSame($responseData, $response->getContent());
@@ -27,15 +27,15 @@ final class JsonResponseFactoryTest extends ResponseFactoryTest
 
     public function provideSupportedResults(): iterable
     {
-        yield JsonDocument::class => [
-            'resource' => JsonDocument::set(['first', 'second']),
+        yield JsonData::class => [
+            'resource' => new JsonData(['first', 'second']),
         ];
     }
 
     public function provideUnsupportedResults(): iterable
     {
         yield PlainText::class => [
-            'resource' => PlainText::set(''),
+            'resource' => new PlainText(''),
         ];
     }
 

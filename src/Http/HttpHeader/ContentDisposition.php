@@ -4,19 +4,28 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Http\HttpHeader;
 
+use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\HttpHeader;
 
-abstract class ContentDisposition implements HttpHeader
+final class ContentDisposition implements HttpHeader
 {
+    public function __construct(
+        private Disposition $disposition,
+        private string $filename,
+        private string $field = '',
+    ) {
+    }
+
     public function name(): string
     {
         return 'Content-Disposition';
     }
 
-    public function field(): string
+    public function value(): string
     {
-        return sprintf('%s: %s', $this->name(), $this->value());
+        return match($this->disposition) {
+            Disposition::FORMDATA => sprintf('%s; name="%s" filename="%s"', $this->disposition->value, $this->field, $this->filename),
+            default => sprintf('%s; filename="%s"', $this->disposition->value, $this->filename),
+        };
     }
-
-    abstract public function value(): string;
 }

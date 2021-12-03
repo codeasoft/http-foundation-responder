@@ -26,6 +26,6 @@ final class ReferrerRedirectResponseFactory implements ResponseFactory
 
         $httpConfig = $resource->httpConfig();
 
-        return new RedirectResponse($this->referrerProvider->provide(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new RedirectResponse($this->referrerProvider->provide(), $httpConfig->statusCode(), $httpConfig->httpHeaders());
     }
 }

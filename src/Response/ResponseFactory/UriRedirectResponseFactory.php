@@ -26,6 +26,6 @@ final class UriRedirectResponseFactory implements ResponseFactory
 
         $httpConfig = $resource->httpConfig();
 
-        return new RedirectResponse($this->uriProvider->provide(), $httpConfig->statusCode(), $httpConfig->headers());
+        return new RedirectResponse($this->uriProvider->provide(), $httpConfig->statusCode(), $httpConfig->httpHeaders());
     }
 }

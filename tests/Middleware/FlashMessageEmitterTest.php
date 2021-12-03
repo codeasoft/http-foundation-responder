@@ -18,7 +18,7 @@ final class FlashMessageEmitterTest extends TestCase
 {
     public function testItSkipPublishFlashMessageIfResourceIsNotRedirect(): void
     {
-        $resource = PlainText::set('No redirect');
+        $resource = new PlainText('No redirect');
         $middleware = new FlashMessageEmitter($this->mockFlashMessagePublisher(0));
 
         $middleware->execute($resource, fn (Resource $resource): Response => new Response());
@@ -43,7 +43,7 @@ final class FlashMessageEmitterTest extends TestCase
     public function provideData(): iterable
     {
         foreach (FlashMessagesGenerator::generate() as $groupName => $flashMessages) {
-            $redirect = ReferrerRedirect::set();
+            $redirect = new ReferrerRedirect();
             $redirect->addFlashMessage(...$flashMessages);
 
             yield $groupName => [

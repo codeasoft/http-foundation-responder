@@ -4,41 +4,37 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Payload;
 
-use Tuzex\Responder\File\FileType;
-use Tuzex\Responder\File\FileType\ArchiveFileType;
+use Tuzex\Responder\File\FileInfo\ZipFileInfo;
+use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition\AttachmentContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition\InlineContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\ContentType\UnicodeContentType;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
+use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource\File;
 
 final class ZipFile extends File
 {
-    public static function setForDownload(string $path, string $name): self
-    {
-        $httpConfig = HttpConfig::set(StatusCode::OK, [
-            new UnicodeContentType(ApplicationMimeType::ZIP, UnicodeCharset::UTF8),
-            new AttachmentContentDisposition($name),
-        ]);
-
-        return new self($path, $name, $httpConfig);
+    public function __construct(
+        ZipFileInfo $fileInfo,
+        StatusCode $statusCode = StatusCode::OK,
+        Disposition $disposition = Disposition::ATTACHMENT,
+        Charset $charset = UnicodeCharset::UTF8,
+    ) {
+        parent::__construct($fileInfo, $statusCode, $disposition, $charset);
     }
 
-    public static function setForDisplay(string $path, string $name): self
+    public static function forDownload(string $filepath, string $filename): self
     {
-        $httpConfig = HttpConfig::set(StatusCode::OK, [
-            new UnicodeContentType(ApplicationMimeType::ZIP, UnicodeCharset::UTF8),
-            new InlineContentDisposition($name),
-        ]);
-
-        return new self($path, $name, $httpConfig);
+        return new self(
+            fileInfo: new ZipFileInfo($filepath, $filename),
+            disposition: Disposition::ATTACHMENT
+        );
     }
 
-    protected function fileType(): FileType
+    public static function forDisplay(string $filepath, string $filename): self
     {
-        return ArchiveFileType::ZIP;
+        return new self(
+            fileInfo: new ZipFileInfo($filepath, $filename),
+            disposition: Disposition::INLINE
+        );
     }
 }

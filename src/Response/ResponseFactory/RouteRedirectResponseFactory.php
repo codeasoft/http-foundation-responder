@@ -27,6 +27,6 @@ final class RouteRedirectResponseFactory implements ResponseFactory
         $httpConfig = $resource->httpConfig();
         $targetRoute = $this->urlGenerator->generate($resource->route, $resource->parameters);
 
-        return new RedirectResponse($targetRoute, $httpConfig->statusCode(), $httpConfig->headers());
+        return new RedirectResponse($targetRoute, $httpConfig->statusCode(), $httpConfig->httpHeaders());
     }
 }

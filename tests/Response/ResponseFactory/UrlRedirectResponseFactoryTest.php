@@ -28,14 +28,14 @@ final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
     public function provideSupportedResults(): iterable
     {
         yield UrlRedirect::class => [
-            'resource' => UrlRedirect::set('https://www.google.com'),
+            'resource' => new UrlRedirect('https://www.google.com'),
         ];
     }
 
     public function provideUnsupportedResults(): iterable
     {
         yield RouteRedirect::class => [
-            'resource' => RouteRedirect::set('index'),
+            'resource' => new RouteRedirect('index'),
         ];
     }
 

@@ -9,6 +9,4 @@ interface HttpHeader
     public function name(): string;
 
     public function value(): string;
-
-    public function field(): string;
 }

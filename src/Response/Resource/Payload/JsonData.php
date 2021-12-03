@@ -7,23 +7,26 @@ namespace Tuzex\Responder\Response\Resource\Payload;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\HttpHeader\ContentType;
-use Tuzex\Responder\Http\MimeType\TextMimeType;
+use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Text;
+use Tuzex\Responder\Response\Resource\Data;
 
-final class PlainText extends Resource implements Text
+final class JsonData extends Resource implements Data
 {
     public function __construct(
-        private string $content,
+        private iterable $datalist,
         StatusCode $statusCode = StatusCode::OK,
         Charset $charset = UnicodeCharset::UTF8,
     ) {
-        parent::__construct($statusCode, new ContentType(TextMimeType::PLAIN, $charset));
+        parent::__construct(
+            $statusCode,
+            new ContentType(ApplicationMimeType::JSON, $charset)
+        );
     }
 
-    public function content(): string
+    public function datalist(): iterable
     {
-        return $this->content;
+        return $this->datalist;
     }
 }

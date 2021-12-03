@@ -26,6 +26,6 @@ final class TwigResponseFactory implements ResponseFactory
         $httpConfig = $resource->httpConfig();
         $renderedContent = $this->templateRenderer->render($resource);
 
-        return new Response($renderedContent, $httpConfig->statusCode(), $httpConfig->headers());
+        return new Response($renderedContent, $httpConfig->statusCode(), $httpConfig->httpHeaders());
     }
 }

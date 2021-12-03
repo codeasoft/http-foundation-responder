@@ -4,20 +4,23 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
+use Tuzex\Responder\Http\HttpHeader;
+use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\FlashMessage;
 use Tuzex\Responder\Response\FlashMessageBag;
-use Tuzex\Responder\Response\HttpConfig;
 use Tuzex\Responder\Response\Resource;
 
 abstract class Redirect extends Resource
 {
     private FlashMessageBag $flashMessageBag;
 
-    protected function __construct(HttpConfig $httpConfig)
-    {
-        parent::__construct($httpConfig);
-
+    public function __construct(
+        StatusCode $statusCode = StatusCode::FOUND,
+        HttpHeader ...$httpHeaders
+    ) {
         $this->flashMessageBag = new FlashMessageBag();
+
+        parent::__construct($statusCode, ...$httpHeaders);
     }
 
     public function flashMessageBag(): FlashMessageBag

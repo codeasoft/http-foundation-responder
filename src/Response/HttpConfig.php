@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response;
 
-use Tuzex\Responder\Http\HttpHeaders;
+use Tuzex\Responder\Http\HttpHeader;
 use Tuzex\Responder\Http\StatusCode;
 
 final class HttpConfig
 {
+    private array $httpHeaders = [];
+
     public function __construct(
         private StatusCode $statusCode,
-        private HttpHeaders $headers,
-    ) {}
-
-    public static function set(StatusCode $statusCode, array $headers = []): self
-    {
-        return new self($statusCode, new HttpHeaders(...$headers));
+        HttpHeader ...$httpHeaders,
+    ) {
+        foreach ($httpHeaders as $httpHeader) {
+            $this->httpHeaders[$httpHeader->name()] = $httpHeader;
+        }
     }
 
     public function statusCode(): int
@@ -24,13 +25,13 @@ final class HttpConfig
         return $this->statusCode->value;
     }
 
-    public function headers(): array
+    public function httpHeaders(): array
     {
-        return $this->headers->list();
+        return array_map(fn (HttpHeader $httpHeader): string => $httpHeader->value(), $this->httpHeaders);
     }
 
-    public function setHeaders(HttpHeaders $headers): self
+    public function extend(HttpHeader ...$httpHeaders): self
     {
-        return new self($this->statusCode, $this->headers->push($headers));
+        return new self($this->statusCode, ...$httpHeaders);
     }
 }

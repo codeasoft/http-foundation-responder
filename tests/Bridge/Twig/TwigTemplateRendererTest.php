@@ -21,7 +21,7 @@ final class TwigTemplateRendererTest extends TestCase
 
     public function testItRendersTemplate(): void
     {
-        $resource = TwigTemplate::set(self::NAME);
+        $resource = new TwigTemplate(self::NAME);
         $templateRenderer = new TwigTemplateRenderer(
             $this->mockRenderer(),
             $this->mockLogger()
@@ -35,7 +35,7 @@ final class TwigTemplateRendererTest extends TestCase
      */
     public function testItThrowsExceptionOnError(Error $error): void
     {
-        $resource = TwigTemplate::set(self::NAME);
+        $resource = new TwigTemplate(self::NAME);
         $templateRenderer = new TwigTemplateRenderer(
             $this->mockRenderer($error),
             $this->mockLogger($error)

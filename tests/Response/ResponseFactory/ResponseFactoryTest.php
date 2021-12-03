@@ -29,7 +29,7 @@ abstract class ResponseFactoryTest extends TestCase
 
         $this->assertSame($httpConfig->statusCode(), $response->getStatusCode());
 
-        foreach ($httpConfig->headers() as $headerType => $headerValue) {
+        foreach ($httpConfig->httpHeaders() as $headerType => $headerValue) {
             $this->assertTrue($response->headers->contains($headerType, $headerValue));
         }
     }
