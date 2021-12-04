@@ -12,7 +12,7 @@ final class TwigFileInfo extends FileInfo
 {
     public function __construct(string $path)
     {
-        parent::__construct($path, $path);
+        parent::__construct($path, substr(strrchr($path, "/"), 1));
     }
 
     public function mime(): MimeType
