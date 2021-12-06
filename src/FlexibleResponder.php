@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Middleware\ResponseProducer;
 use Tuzex\Responder\Response\Resource;
 
-final class ContextResponder implements Responder
+final class FlexibleResponder implements Responder
 {
     private Closure $processor;
 
