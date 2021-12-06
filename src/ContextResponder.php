@@ -13,23 +13,25 @@ final class ContextResponder implements Responder
 {
     private Closure $processor;
 
-    public function __construct(ResponseProducer $responseProducer)
+    public function __construct(ResponseProducer $responseProducer, Middleware ...$middlewares)
     {
         $this->processor = fn () => null;
-        $this->extend($responseProducer);
+        $this->setup(
+            ...array_merge($middlewares, [$responseProducer])
+        );
     }
 
-    public function process(Resource $resource): Response
-    {
-        return ($this->processor)($resource);
-    }
-
-    public function extend(Middleware ...$middlewares): void
+    private function setup(Middleware $middlewares): void
     {
         $processor = $this->processor;
 
         foreach ($middlewares as $middleware) {
             $this->processor = $processor = fn (Resource $resource): Response => $middleware->execute($resource, $processor);
         }
+    }
+
+    public function process(Resource $resource): Response
+    {
+        return ($this->processor)($resource);
     }
 }
