@@ -21,7 +21,7 @@ final class FlexibleResponder implements Responder
         );
     }
 
-    private function setup(Middleware $middlewares): void
+    private function setup(Middleware ...$middlewares): void
     {
         $processor = $this->processor;
 
