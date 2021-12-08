@@ -52,8 +52,7 @@ final class TranslatableSessionFlashMessagePublisherTest extends TestCase
     {
         $translator = $this->createMock(TranslatorInterface::class);
         $translator->expects($this->exactly($numberOfCalls))
-            ->method('trans')
-            ->willReturn($this->returnArgument(0));
+            ->method('trans');
 
         return $translator;
     }
