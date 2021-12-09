@@ -8,5 +8,4 @@ enum Disposition: string
 {
     case ATTACHMENT = 'attachment';
     case INLINE = 'inline';
-    case FORMDATA = 'form-data';
 }
