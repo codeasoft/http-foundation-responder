@@ -4,7 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.9.0] - 2021-29-11
+## [0.10.0] - 2021-12-11
+
+- **[BC BREAK]** Add SF6 support
+- **[BC BREAK]** Extract `flashMessage` from `Resource`
+- **[BC BREAK]** Focus `FlashMessageEmitter` only on `Redirect
+- **[BC BREAK]** Rename `ResponseFactory` main directory
+- **[BC BREAK]** Remove `ContextResponder::extend` public method
+- **[BC BREAK]** Rename `ContextResponder` to `FlexibleResponder`
+- **[BC BREAK]** Rework response resources
+- **[BC BREAK]** Rework HTTP headers
+- **[BC BREAK]** Split to create `MultipartContentDisposition` HTTP header
+- Bump PHP version to 8.1 and higher
+- Rework `StatusCode` to `Enum`
+- Bump PHPStan library
+
+## [0.9.0] - 2021-11-29
 
 - **[BC BREAK]** Add SF6 support
 - Bump PHPStan library
@@ -92,7 +107,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix a default redirect status code
 - Fix reference variable name for `RequestAccessor`
 
-[Unreleased]: https://github.com/Tuzex/responder/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/Tuzex/responder/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/Tuzex/responder/releases/tag/v0.10.0
 [0.9.0]: https://github.com/Tuzex/responder/releases/tag/v0.9.0
 [0.8.2]: https://github.com/Tuzex/responder/releases/tag/v0.8.2
 [0.8.0]: https://github.com/Tuzex/responder/releases/tag/v0.8.0
