@@ -21,7 +21,7 @@ abstract class Template extends Resource
         StatusCode $statusCode,
         Charset $charset
     ) {
-        $this->name = $fileInfo->name;
+        $this->name = $fileInfo->path;
         $this->parameters = $parameters;
 
         parent::__construct($statusCode, new ContentType($fileInfo->mime(), $charset));
