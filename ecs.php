@@ -17,7 +17,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         PhpCsFixer\Fixer\Basic\BracesFixer::class => null,
         PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class => null,
         PhpCsFixer\Fixer\ControlStructure\SwitchCaseSemicolonToColonFixer::class => null,
-
+        PhpCsFixer\Fixer\Phpdoc\PhpdocTypesFixer::class => null,
     ]);
 
     $containerConfigurator->import(SetList::COMMON);
