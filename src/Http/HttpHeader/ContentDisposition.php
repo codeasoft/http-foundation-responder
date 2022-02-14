@@ -6,6 +6,7 @@ namespace Tuzex\Responder\Http\HttpHeader;
 
 use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\HttpHeader;
+use Webmozart\Assert\Assert;
 
 class ContentDisposition implements HttpHeader
 {
@@ -13,6 +14,10 @@ class ContentDisposition implements HttpHeader
         private Disposition $disposition,
         private string $filename,
     ) {
+        Assert::regex($this->filename, '/^[\x20-\x7e]*$/', 'The filename of ContentDisposition must only contain ASCII characters.');
+        Assert::notContains('xxx', '%', 'The filename of Content Disposition cannot contain the "%%" character.');
+        Assert::notContains($this->filename, '/', 'The filename of Content Disposition cannot contain the "/" character.');
+        Assert::notContains($this->filename, '\\', 'The filename of Content Disposition cannot contain the "\\" character.');
     }
 
     public function name(): string
@@ -22,6 +27,6 @@ class ContentDisposition implements HttpHeader
 
     public function value(): string
     {
-        return sprintf('%s; filename="%s"', $this->disposition->value, $this->filename);
+        return sprintf('%s; filename="%s"', $this->disposition->value, rawurlencode($this->filename));
     }
 }
