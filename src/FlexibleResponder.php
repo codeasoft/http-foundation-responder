@@ -17,7 +17,7 @@ final class FlexibleResponder implements Responder
     {
         $this->processor = fn () => null;
         $this->setup(
-            ...array_merge($middlewares, [$responseProducer])
+            ...array_merge([$responseProducer], $middlewares)
         );
     }
 
