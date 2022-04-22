@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.2] - 2022-04-22
+
+### Added
+- Add validation of `ContentDisposition` constructor attributes
+
+### Changed
+- Fix middlewares order
+
 ## [0.10.1] - 2021-12-12
 
 ### Changed
@@ -118,7 +126,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix a default redirect status code
 - Fix reference variable name for `RequestAccessor`
 
-[Unreleased]: https://github.com/Tuzex/responder/compare/v0.10.1...HEAD
+[Unreleased]: https://github.com/Tuzex/responder/compare/v0.10.2...HEAD
+[0.10.2]: https://github.com/Tuzex/responder/releases/tag/v0.10.2
 [0.10.1]: https://github.com/Tuzex/responder/releases/tag/v0.10.1
 [0.10.0]: https://github.com/Tuzex/responder/releases/tag/v0.10.0
 [0.9.0]: https://github.com/Tuzex/responder/releases/tag/v0.9.0
