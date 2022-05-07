@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2022-05-07
+
+### Added
+- Define the `XAccelBuffering` HTTP header
+- Create the `Stream` response factory
+- Create the `ZipFileStream` payload
+- Add `webmozart/assert` as dependency
+
+### Changed
+- **[BC BREAK]** Rename the `Responder` implementation
+- **[BC BREAK]** Rework file payloads
+- Define HTTP header name to the `HttpHeader` interface
+- Rename the `MimeType` getter
+- Bump `PHP` dependencies
+
+### Removed
+Remove `PdfFileInfo`
+
+### Fixed
+- Fix `Resource` object assertions
+
 ## [0.10.2] - 2022-04-22
 
 ### Added
@@ -126,7 +147,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix a default redirect status code
 - Fix reference variable name for `RequestAccessor`
 
-[Unreleased]: https://github.com/Tuzex/responder/compare/v0.10.2...HEAD
+[Unreleased]: https://github.com/Tuzex/responder/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/Tuzex/responder/releases/tag/v0.11.0
 [0.10.2]: https://github.com/Tuzex/responder/releases/tag/v0.10.2
 [0.10.1]: https://github.com/Tuzex/responder/releases/tag/v0.10.1
 [0.10.0]: https://github.com/Tuzex/responder/releases/tag/v0.10.0
