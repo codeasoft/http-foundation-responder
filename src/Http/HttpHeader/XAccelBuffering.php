@@ -13,7 +13,7 @@ enum XAccelBuffering:string implements HttpHeader
 
     public function name(): string
     {
-        return 'X-Accel-Buffering';
+        return HttpHeader::X_ACCEL_BUFFERING;
     }
 
     public function value(): string

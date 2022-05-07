@@ -22,7 +22,7 @@ class ContentDisposition implements HttpHeader
 
     public function name(): string
     {
-        return 'Content-Disposition';
+        return HttpHeader::CONTENT_DISPOSITION;
     }
 
     public function value(): string

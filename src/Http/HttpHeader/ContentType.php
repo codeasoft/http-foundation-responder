@@ -18,7 +18,7 @@ class ContentType implements HttpHeader
 
     public function name(): string
     {
-        return 'Content-Type';
+        return HttpHeader::CONTENT_TYPE;
     }
 
     public function value(): string
