@@ -14,7 +14,7 @@ enum ApplicationMimeType: string implements MimeType
     case XML = 'application/xml';
     case ZIP = 'application/zip';
 
-    public function value(): string
+    public function type(): string
     {
         return $this->value;
     }

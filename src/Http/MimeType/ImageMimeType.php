@@ -16,7 +16,7 @@ enum ImageMimeType: string implements MimeType
     case SVG = 'image/svg+xml';
     case WEBP = 'image/webp';
 
-    public function value(): string
+    public function type(): string
     {
         return $this->value;
     }

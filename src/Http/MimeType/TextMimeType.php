@@ -11,7 +11,7 @@ enum TextMimeType: string implements MimeType
     case PLAIN = 'text/plain';
     case HTML = 'text/html';
 
-    public function value(): string
+    public function type(): string
     {
         return $this->value;
     }

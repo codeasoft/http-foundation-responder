@@ -20,6 +20,6 @@ final class MultipartContentType extends ContentType implements HttpHeader
 
     public function value(): string
     {
-        return sprintf('%s; boundary="%s"', $this->mimeType->value(), $this->boundary);
+        return sprintf('%s; boundary="%s"', $this->mimeType->type(), $this->boundary);
     }
 }

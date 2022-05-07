@@ -23,6 +23,6 @@ class ContentType implements HttpHeader
 
     public function value(): string
     {
-        return sprintf('%s; charset=%s', $this->mimeType->value(), $this->charset->value());
+        return sprintf('%s; charset=%s', $this->mimeType->type(), $this->charset->value());
     }
 }

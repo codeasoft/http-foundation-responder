@@ -13,7 +13,7 @@ enum MultipartMimeType: string implements MimeType
     case MIXED = 'multipart/mixed';
     case RELATED = 'multipart/related';
 
-    public function value(): string
+    public function type(): string
     {
         return $this->value;
     }
