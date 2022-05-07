@@ -15,7 +15,7 @@ use Tuzex\Responder\Response\Resource\Text;
 final class HtmlText extends Resource implements Text
 {
     public function __construct(
-        private string $content,
+        public readonly string $content,
         StatusCode $statusCode = StatusCode::OK,
         Charset $charset = UnicodeCharset::UTF8,
     ) {

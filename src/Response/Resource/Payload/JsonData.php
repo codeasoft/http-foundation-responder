@@ -15,7 +15,7 @@ use Tuzex\Responder\Response\Resource\Data;
 final class JsonData extends Resource implements Data
 {
     public function __construct(
-        private iterable $datalist,
+        public readonly iterable $datalist,
         StatusCode $statusCode = StatusCode::OK,
         Charset $charset = UnicodeCharset::UTF8,
     ) {
