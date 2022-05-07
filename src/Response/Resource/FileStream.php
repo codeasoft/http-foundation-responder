@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
+use Closure;
 use Tuzex\Responder\File\FileFormat;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
@@ -15,11 +16,11 @@ use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
 use Webmozart\Assert\Assert;
 
-abstract class FileContent extends Resource implements Text
+abstract class FileStream extends Resource implements Stream
 {
     final public function __construct(
         public readonly string $filename,
-        public readonly string $content,
+        public readonly Closure $callback,
         StatusCode $statusCode = StatusCode::OK,
         Disposition $disposition = Disposition::ATTACHMENT,
         Charset $charset = UnicodeCharset::UTF8,
@@ -34,27 +35,27 @@ abstract class FileContent extends Resource implements Text
         parent::__construct($statusCode, ...$httpHeaders);
     }
 
-    public static function forDownload(string $filename, string $content): static
+    public static function forDownload(string $filename, Closure $callback): static
     {
         return new static(
             filename: $filename,
-            content: $content,
+            callback: $callback,
             disposition: Disposition::ATTACHMENT,
         );
     }
 
-    public static function forDisplay(string $filename, string $content): static
+    public static function forDisplay(string $filename, Closure $callback): static
     {
         return new static(
             filename: $filename,
-            content: $content,
+            callback: $callback,
             disposition: Disposition::INLINE,
         );
     }
 
-    public function content(): string
+    public function callback(): Closure
     {
-        return $this->content;
+        return $this->callback;
     }
 
     abstract protected function fileFormat(): FileFormat;

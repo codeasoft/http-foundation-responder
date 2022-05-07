@@ -21,6 +21,6 @@ final class FileResponseFactory implements ResponseFactory
 
         $httpConfig = $resource->httpConfig();
 
-        return new BinaryFileResponse($resource->pathname, $httpConfig->statusCode(), $httpConfig->httpHeaders());
+        return new BinaryFileResponse($resource->filepath, $httpConfig->statusCode(), $httpConfig->httpHeaders());
     }
 }
