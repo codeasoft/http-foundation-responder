@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Redirect;
 
-use Assert\Assertion;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource\Redirect;
+use Webmozart\Assert\Assert;
 
 final class RouteRedirect extends Redirect
 {
@@ -15,7 +15,7 @@ final class RouteRedirect extends Redirect
         public readonly array $parameters = [],
         StatusCode $statusCode = StatusCode::FOUND
     ) {
-        Assertion::notEmpty($this->route);
+        Assert::notEmpty($this->route);
 
         parent::__construct($statusCode);
     }

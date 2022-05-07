@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Assert\Assertion;
 use Tuzex\Responder\File\FileFormat;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
@@ -14,6 +13,7 @@ use Tuzex\Responder\Http\HttpHeader\ContentType;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
+use Webmozart\Assert\Assert;
 
 abstract class File extends Resource
 {
@@ -24,7 +24,7 @@ abstract class File extends Resource
         Disposition $disposition = Disposition::ATTACHMENT,
         Charset $charset = UnicodeCharset::UTF8,
     ) {
-        Assertion::allEndsWith([
+        Assert::allEndsWith([
             $this->filepath,
             $this->filename,
         ], $this->fileFormat()->extension());
