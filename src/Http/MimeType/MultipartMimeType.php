@@ -9,7 +9,7 @@ use Tuzex\Responder\Http\MimeType;
 enum MultipartMimeType: string implements MimeType
 {
     case ALTERNATIVE = 'multipart/alternative';
-    case FORMDATA = 'multipart/form-data';
+    case FORM_DATA = 'multipart/form-data';
     case MIXED = 'multipart/mixed';
     case RELATED = 'multipart/related';
 

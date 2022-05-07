@@ -10,14 +10,18 @@ use Webmozart\Assert\Assert;
 
 class ContentDisposition implements HttpHeader
 {
+    protected readonly string $filename;
+
     public function __construct(
-        private Disposition $disposition,
-        private string $filename,
+        protected readonly Disposition $disposition,
+        string $filename = '',
     ) {
-        Assert::regex($this->filename, '/^[\x20-\x7e]*$/', 'The filename of ContentDisposition must only contain ASCII characters.');
-        Assert::notContains('xxx', '%', 'The filename of Content Disposition cannot contain the "%%" character.');
-        Assert::notContains($this->filename, '/', 'The filename of Content Disposition cannot contain the "/" character.');
-        Assert::notContains($this->filename, '\\', 'The filename of Content Disposition cannot contain the "\\" character.');
+        Assert::regex($filename, '/^[\x20-\x7e]*$/', 'The filename of ContentDisposition must only contain ASCII characters.');
+        Assert::notContains($filename, '%', 'The filename of Content Disposition cannot contain the "%%" character.');
+        Assert::notContains($filename, '/', 'The filename of Content Disposition cannot contain the "/" character.');
+        Assert::notContains($filename, '\\', 'The filename of Content Disposition cannot contain the "\\" character.');
+
+        $this->filename = rawurlencode($filename);
     }
 
     public function name(): string
@@ -27,6 +31,11 @@ class ContentDisposition implements HttpHeader
 
     public function value(): string
     {
-        return sprintf('%s; filename="%s"', $this->disposition->value, rawurlencode($this->filename));
+        return sprintf('%s%s', $this->disposition->value, $this->filename());
+    }
+
+    protected function filename(): string
+    {
+        return ! empty($this->filename) ? sprintf('; filename="%s"', $this->filename) : $this->filename;
     }
 }

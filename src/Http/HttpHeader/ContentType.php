@@ -11,8 +11,8 @@ use Tuzex\Responder\Http\MimeType;
 class ContentType implements HttpHeader
 {
     public function __construct(
-        private MimeType $mimeType,
-        private Charset $charset,
+        protected readonly MimeType $mimeType,
+        protected readonly Charset $charset,
     ) {
     }
 
