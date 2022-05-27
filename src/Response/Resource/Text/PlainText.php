@@ -19,7 +19,7 @@ final class PlainText extends Resource implements Text
         StatusCode $statusCode = StatusCode::OK,
         Charset $charset = UnicodeCharset::UTF8,
     ) {
-        parent::__construct($statusCode, new ContentType(TextMimeType::PLAIN, $charset));
+        parent::__construct($statusCode, new ContentType(TextMimeType::TXT, $charset));
     }
 
     public function content(): string
