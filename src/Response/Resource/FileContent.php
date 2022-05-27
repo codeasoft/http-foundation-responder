@@ -8,8 +8,8 @@ use Tuzex\Responder\File\FileFormat;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\Disposition;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\ContentType;
+use Tuzex\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
+use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
@@ -27,8 +27,8 @@ abstract class FileContent extends Resource implements Text
         Assert::endsWith($this->filename, $this->fileFormat()->extension());
 
         $httpHeaders = [
-            new ContentType($this->mimeType(), $charset),
-            new ContentDisposition($disposition, $this->filename),
+            new ContentTypeHttpHeader($this->mimeType(), $charset),
+            new ContentDispositionHttpHeader($disposition, $this->filename),
         ];
 
         parent::__construct($statusCode, ...$httpHeaders);

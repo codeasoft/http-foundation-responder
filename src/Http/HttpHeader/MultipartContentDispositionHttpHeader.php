@@ -7,7 +7,7 @@ namespace Tuzex\Responder\Http\HttpHeader;
 use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\HttpHeader;
 
-final class MultipartContentDisposition extends ContentDisposition implements HttpHeader
+final class MultipartContentDispositionHttpHeader extends ContentDispositionHttpHeader implements HttpHeader
 {
     private readonly string $name;
 

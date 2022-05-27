@@ -8,7 +8,7 @@ use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\HttpHeader;
 use Tuzex\Responder\Http\MimeType\MultipartMimeType;
 
-final class MultipartContentType extends ContentType implements HttpHeader
+final class MultipartContentTypeHttpHeader extends ContentTypeHttpHeader implements HttpHeader
 {
     private readonly string $boundary;
 

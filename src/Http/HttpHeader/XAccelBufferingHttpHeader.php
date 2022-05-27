@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Http\HttpHeader;
 
 use Tuzex\Responder\Http\HttpHeader;
 
-enum XAccelBuffering:string implements HttpHeader
+enum XAccelBufferingHttpHeader:string implements HttpHeader
 {
     case YES = 'yes';
     case NO = 'no';

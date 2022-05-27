@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Test\Http\HttpHeader;
 
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentType;
+use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
 use Tuzex\Responder\Http\MimeType\TextMimeType;
 
 final class ContentTypeTest extends TestCase
@@ -14,7 +14,7 @@ final class ContentTypeTest extends TestCase
     /**
      * @dataProvider provideTestData
      */
-    public function testItContainsValidHttpHeader(ContentType $httpHeader, string $expectedValue): void
+    public function testItContainsValidHttpHeader(ContentTypeHttpHeader $httpHeader, string $expectedValue): void
     {
         $this->assertSame('Content-Type', $httpHeader->name());
         $this->assertSame($expectedValue, $httpHeader->value());
@@ -29,7 +29,7 @@ final class ContentTypeTest extends TestCase
 
         foreach ($data as $mimeType => $charset) {
             yield $mimeType => [
-                'httpHeader' => new ContentType(TextMimeType::from($mimeType), UnicodeCharset::from($charset)),
+                'httpHeader' => new ContentTypeHttpHeader(TextMimeType::from($mimeType), UnicodeCharset::from($charset)),
                 'expectedValue' => sprintf('%s; charset=%s', $mimeType, $charset),
             ];
         }

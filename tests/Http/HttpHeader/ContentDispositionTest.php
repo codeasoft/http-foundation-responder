@@ -6,7 +6,7 @@ namespace Tuzex\Responder\Test\Http\HttpHeader;
 
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Http\Disposition;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition;
+use Tuzex\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
 
 final class ContentDispositionTest extends TestCase
 {
@@ -15,7 +15,7 @@ final class ContentDispositionTest extends TestCase
     /**
      * @dataProvider provideTestData
      */
-    public function testItContainsValidHeader(ContentDisposition $httpHeader, string $expectedValue): void
+    public function testItContainsValidHeader(ContentDispositionHttpHeader $httpHeader, string $expectedValue): void
     {
         $this->assertSame('Content-Disposition', $httpHeader->name());
         $this->assertSame($expectedValue, $httpHeader->value());
@@ -25,11 +25,11 @@ final class ContentDispositionTest extends TestCase
     {
         return [
             'attachment' => [
-                'httpHeader' => new ContentDisposition(Disposition::ATTACHMENT, self::FILENAME),
+                'httpHeader' => new ContentDispositionHttpHeader(Disposition::ATTACHMENT, self::FILENAME),
                 'expectedValue' => sprintf('attachment; filename="%s"', self::FILENAME),
             ],
             'inline' => [
-                'httpHeader' => new ContentDisposition(Disposition::INLINE, self::FILENAME),
+                'httpHeader' => new ContentDispositionHttpHeader(Disposition::INLINE, self::FILENAME),
                 'expectedValue' => sprintf('inline; filename="%s"', self::FILENAME),
             ],
         ];

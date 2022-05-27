@@ -8,7 +8,7 @@ use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\HttpHeader;
 use Tuzex\Responder\Http\MimeType;
 
-class ContentType implements HttpHeader
+class ContentTypeHttpHeader implements HttpHeader
 {
     public function __construct(
         protected readonly MimeType $mimeType,

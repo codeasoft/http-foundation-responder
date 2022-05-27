@@ -6,8 +6,8 @@ namespace Tuzex\Responder\Test\Http\HttpHeader;
 
 use PHPUnit\Framework\TestCase;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentType;
-use Tuzex\Responder\Http\HttpHeader\MultipartContentType;
+use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
+use Tuzex\Responder\Http\HttpHeader\MultipartContentTypeHttpHeader;
 use Tuzex\Responder\Http\MimeType\MultipartMimeType;
 
 final class MultipartContentTypeTest extends TestCase
@@ -15,7 +15,7 @@ final class MultipartContentTypeTest extends TestCase
     /**
      * @dataProvider provideTestData
      */
-    public function testItContainsValidHttpHeader(ContentType $httpHeader, string $expectedValue): void
+    public function testItContainsValidHttpHeader(ContentTypeHttpHeader $httpHeader, string $expectedValue): void
     {
         $this->assertSame('Content-Type', $httpHeader->name());
         $this->assertSame($expectedValue, $httpHeader->value());
@@ -33,7 +33,7 @@ final class MultipartContentTypeTest extends TestCase
             $multipartMimeType = MultipartMimeType::from($mimeType);
 
             yield $mimeType => [
-                'httpHeader' => new MultipartContentType($multipartMimeType, $charset, $boundary),
+                'httpHeader' => new MultipartContentTypeHttpHeader($multipartMimeType, $charset, $boundary),
                 'expectedValue' => vsprintf('%s; boundary="%s"; charset=%s', [
                     $mimeType,
                     trim($boundary),

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Test\Http\HttpHeader;
 
 use PHPUnit\Framework\TestCase;
-use Tuzex\Responder\Http\HttpHeader\ContentDisposition;
-use Tuzex\Responder\Http\HttpHeader\MultipartContentDisposition;
+use Tuzex\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
+use Tuzex\Responder\Http\HttpHeader\MultipartContentDispositionHttpHeader;
 
 final class MultipartContentDispositionTest extends TestCase
 {
@@ -16,7 +16,7 @@ final class MultipartContentDispositionTest extends TestCase
     /**
      * @dataProvider provideTestData
      */
-    public function testItContainsValidHeader(ContentDisposition $httpHeader, string $expectedValue): void
+    public function testItContainsValidHeader(ContentDispositionHttpHeader $httpHeader, string $expectedValue): void
     {
         $this->assertSame('Content-Disposition', $httpHeader->name());
         $this->assertSame($expectedValue, $httpHeader->value());
@@ -26,11 +26,11 @@ final class MultipartContentDispositionTest extends TestCase
     {
         return [
             'form-data' => [
-                'httpHeader' => new MultipartContentDisposition(self::NAME),
+                'httpHeader' => new MultipartContentDispositionHttpHeader(self::NAME),
                 'expectedValue' => sprintf('form-data; name="%s"', self::NAME),
             ],
             'form-data-with-filename' => [
-                'httpHeader' => new MultipartContentDisposition(self::NAME, self::FILENAME),
+                'httpHeader' => new MultipartContentDispositionHttpHeader(self::NAME, self::FILENAME),
                 'expectedValue' => sprintf('form-data; name="%s"; filename="%s"', self::NAME, self::FILENAME),
             ],
         ];

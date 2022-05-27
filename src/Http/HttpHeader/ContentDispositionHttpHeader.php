@@ -8,7 +8,7 @@ use Tuzex\Responder\Http\Disposition;
 use Tuzex\Responder\Http\HttpHeader;
 use Webmozart\Assert\Assert;
 
-class ContentDisposition implements HttpHeader
+class ContentDispositionHttpHeader implements HttpHeader
 {
     protected readonly string $filename;
 
