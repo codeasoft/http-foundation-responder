@@ -9,6 +9,7 @@ use Iterator;
 final class FlashMessageBag implements Iterator
 {
     private array $messages = [];
+
     private int $pointer = 0;
 
     public function __construct(FlashMessage ...$messages)

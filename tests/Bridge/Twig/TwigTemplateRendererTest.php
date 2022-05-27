@@ -17,6 +17,7 @@ use Twig\Error\SyntaxError;
 final class TwigTemplateRendererTest extends TestCase
 {
     private const NAME = 'example.html.twig';
+
     private const CONTENT = 'Hello World!';
 
     public function testItRendersTemplate(): void

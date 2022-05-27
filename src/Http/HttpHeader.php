@@ -7,7 +7,9 @@ namespace Tuzex\Responder\Http;
 interface HttpHeader
 {
     public const CONTENT_TYPE = 'Content-Type';
+
     public const CONTENT_DISPOSITION = 'Content-Disposition';
+
     public const X_ACCEL_BUFFERING = 'X-Accel-Buffering';
 
     public function name(): string;

@@ -11,6 +11,7 @@ use Tuzex\Responder\Http\HttpHeader\MultipartContentDispositionHttpHeader;
 final class MultipartContentDispositionTest extends TestCase
 {
     public const FILENAME = 'example.pdf';
+
     public const NAME = 'input-name';
 
     /**
