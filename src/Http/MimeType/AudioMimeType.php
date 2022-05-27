@@ -16,7 +16,7 @@ enum AudioMimeType: string implements MimeType
     case WAV = 'audio/wav';
     case WEBA = 'audio/webm';
 
-    public function type(): string
+    public function value(): string
     {
         return $this->value;
     }

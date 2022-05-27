@@ -14,7 +14,7 @@ enum VideoMimeType: string implements MimeType
     case OGV = 'video/ogg';
     case WEBM = 'video/webm';
 
-    public function type(): string
+    public function value(): string
     {
         return $this->value;
     }

@@ -25,7 +25,7 @@ final class MultipartContentTypeHttpHeader extends ContentTypeHttpHeader impleme
     public function value(): string
     {
         return vsprintf('%s; boundary="%s"; charset=%s', [
-            $this->mimeType->type(),
+            $this->mimeType->value(),
             $this->boundary,
             $this->charset->value(),
         ]);

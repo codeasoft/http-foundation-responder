@@ -6,5 +6,5 @@ namespace Tuzex\Responder\Http;
 
 interface MimeType
 {
-    public function type(): string;
+    public function value(): string;
 }

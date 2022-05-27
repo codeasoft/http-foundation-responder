@@ -13,7 +13,7 @@ enum FontMimeType: string implements MimeType
     case WOFF = 'font/woff';
     case WOFF2 = 'font/woff2';
 
-    public function type(): string
+    public function value(): string
     {
         return $this->value;
     }

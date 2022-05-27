@@ -15,7 +15,7 @@ enum TextMimeType: string implements MimeType
     case JS = 'text/javascript';
     case TXT = 'text/plain';
 
-    public function type(): string
+    public function value(): string
     {
         return $this->value;
     }
