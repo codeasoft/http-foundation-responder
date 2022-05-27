@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Payload\HtmlText;
-use Tuzex\Responder\Response\Resource\Payload\JsonData;
-use Tuzex\Responder\Response\Resource\Payload\PdfFileContent;
-use Tuzex\Responder\Response\Resource\Payload\PlainText;
+use Tuzex\Responder\Response\Resource\Data\JsonData;
+use Tuzex\Responder\Response\Resource\FileContent\PdfFileContent;
 use Tuzex\Responder\Response\Resource\Text;
+use Tuzex\Responder\Response\Resource\Text\HtmlText;
+use Tuzex\Responder\Response\Resource\Text\PlainText;
 use Tuzex\Responder\Response\ResponseFactory\TextResponseFactory;
 
 final class TextResponseFactoryTest extends ResponseFactoryTest

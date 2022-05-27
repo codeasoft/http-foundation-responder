@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Payload;
+namespace Tuzex\Responder\Response\Resource\Data;
 
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\HttpHeader\ContentType;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
+use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Http\StatusCode;
 use Tuzex\Responder\Response\Resource;
 use Tuzex\Responder\Response\Resource\Data;
@@ -21,7 +21,7 @@ final class JsonData extends Resource implements Data
     ) {
         parent::__construct(
             $statusCode,
-            new ContentType(ApplicationMimeType::JSON, $charset)
+            new ContentType(MimeType::JSON, $charset)
         );
     }
 

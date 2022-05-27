@@ -7,7 +7,7 @@ namespace Tuzex\Responder\Response\ResponseFactory;
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Payload\TwigTemplate;
+use Tuzex\Responder\Response\Resource\Template\TwigTemplate;
 use Tuzex\Responder\Response\ResponseFactory;
 use Tuzex\Responder\Service\TemplateRenderer;
 

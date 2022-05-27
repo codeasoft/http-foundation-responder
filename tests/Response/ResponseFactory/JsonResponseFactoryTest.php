@@ -6,8 +6,8 @@ namespace Tuzex\Responder\Test\Response\ResponseFactory;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Payload\JsonData;
-use Tuzex\Responder\Response\Resource\Payload\PlainText;
+use Tuzex\Responder\Response\Resource\Data\JsonData;
+use Tuzex\Responder\Response\Resource\Text\PlainText;
 use Tuzex\Responder\Response\ResponseFactory\JsonResponseFactory;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest

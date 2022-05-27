@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Payload;
+namespace Tuzex\Responder\Response\Resource\FileContent;
 
 use Tuzex\Responder\File\Archive\ZipFileFormat;
 use Tuzex\Responder\File\FileFormat;

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Payload;
+namespace Tuzex\Responder\Response\Resource\File;
 
 use Tuzex\Responder\File\Archive\ZipFileFormat;
 use Tuzex\Responder\File\FileFormat;
 use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Response\Resource\FileStream;
+use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
+use Tuzex\Responder\Response\Resource\File;
 
-final class ZipFileStream extends FileStream
+final class ZipFile extends File
 {
     protected function fileFormat(): FileFormat
     {
@@ -18,6 +19,6 @@ final class ZipFileStream extends FileStream
 
     protected function mimeType(): MimeType
     {
-        return MimeType\ApplicationMimeType::ZIP;
+        return ApplicationMimeType::ZIP;
     }
 }

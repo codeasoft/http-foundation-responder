@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Payload;
+namespace Tuzex\Responder\Response\Resource\Template;
 
 use Tuzex\Responder\File\FileFormat;
 use Tuzex\Responder\File\Template\TwigFileFormat;
