@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource\Template;
 
-use Tuzex\Responder\File\FileFormat;
-use Tuzex\Responder\File\Template\TwigFileFormat;
+use Tuzex\Responder\File\FileExtension;
+use Tuzex\Responder\File\FileExtension\TemplateFileExtension;
 use Tuzex\Responder\Http\MimeType;
 use Tuzex\Responder\Http\MimeType\TextMimeType;
 use Tuzex\Responder\Response\Resource\Template;
 
 final class TwigTemplate extends Template
 {
-    protected function fileFormat(): FileFormat
+    protected function fileExtension(): FileExtension
     {
-        return new TwigFileFormat();
+        return TemplateFileExtension::TWIG;
     }
 
     protected function mimeType(): MimeType

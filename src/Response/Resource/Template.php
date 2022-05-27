@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Tuzex\Responder\File\FileFormat;
+use Tuzex\Responder\File\FileExtension;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
@@ -21,7 +21,10 @@ abstract class Template extends Resource
         StatusCode $statusCode = StatusCode::OK,
         Charset $charset = UnicodeCharset::UTF8
     ) {
-        Assert::endsWith($this->name, $this->fileFormat()->extension());
+        Assert::endsWith(
+            $this->name,
+            $this->fileExtension()->value()
+        );
 
         $httpHeaders = [
             new ContentTypeHttpHeader($this->mimeType(), $charset),
@@ -30,7 +33,7 @@ abstract class Template extends Resource
         parent::__construct($statusCode, ...$httpHeaders);
     }
 
-    abstract protected function fileFormat(): FileFormat;
+    abstract protected function fileExtension(): FileExtension;
 
     abstract protected function mimeType(): MimeType;
 }

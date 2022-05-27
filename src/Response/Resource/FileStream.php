@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tuzex\Responder\Response\Resource;
 
 use Closure;
-use Tuzex\Responder\File\FileFormat;
+use Tuzex\Responder\File\FileExtension;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\Disposition;
@@ -25,7 +25,10 @@ abstract class FileStream extends Resource implements Stream
         Disposition $disposition = Disposition::ATTACHMENT,
         Charset $charset = UnicodeCharset::UTF8,
     ) {
-        Assert::endsWith($this->filename, $this->fileFormat()->extension());
+        Assert::endsWith(
+            $this->filename,
+            $this->fileExtension()->value()
+        );
 
         $httpHeaders = [
             new ContentTypeHttpHeader($this->mimeType(), $charset),
@@ -58,7 +61,7 @@ abstract class FileStream extends Resource implements Stream
         return $this->callback;
     }
 
-    abstract protected function fileFormat(): FileFormat;
+    abstract protected function fileExtension(): FileExtension;
 
     abstract protected function mimeType(): MimeType;
 }

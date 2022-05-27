@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tuzex\Responder\Response\Resource;
 
-use Tuzex\Responder\File\FileFormat;
+use Tuzex\Responder\File\FileExtension;
 use Tuzex\Responder\Http\Charset;
 use Tuzex\Responder\Http\Charset\UnicodeCharset;
 use Tuzex\Responder\Http\Disposition;
@@ -27,7 +27,7 @@ abstract class File extends Resource
         Assert::allEndsWith([
             $this->filepath,
             $this->filename,
-        ], $this->fileFormat()->extension());
+        ], $this->fileExtension()->value());
 
         $httpHeaders = [
             new ContentTypeHttpHeader($this->mimeType(), $charset),
@@ -73,7 +73,7 @@ abstract class File extends Resource
         );
     }
 
-    abstract protected function fileFormat(): FileFormat;
+    abstract protected function fileExtension(): FileExtension;
 
     abstract protected function mimeType(): MimeType;
 }
