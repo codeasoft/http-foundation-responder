@@ -6,11 +6,11 @@ namespace Tuzex\Responder\Http\Charset;
 
 use Tuzex\Responder\Http\Charset;
 
-enum UnicodeCharset: string implements Charset
+enum IsoCharset: string implements Charset
 {
-    case UTF8 = 'UTF-8';
-    case UTF16 = 'UTF-16';
-    case UTF32 = 'UTF-32';
+    case ISO_8859_1 = 'ISO-8859-1';
+    case ISO_8859_8 = 'ISO-8859-8';
+    case ISO_8859_9 = 'ISO-8859-9';
 
     public function value(): string
     {
