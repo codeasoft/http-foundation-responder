@@ -32,6 +32,11 @@ final class HttpConfig
 
     public function extend(HttpHeader ...$httpHeaders): self
     {
+        $httpHeaders = array_merge(
+            array_values($this->httpHeaders),
+            $httpHeaders,
+        );
+
         return new self($this->statusCode, ...$httpHeaders);
     }
 }
