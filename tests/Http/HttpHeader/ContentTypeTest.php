@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Http\HttpHeader;
+namespace Codea\Responder\Test\Http\HttpHeader;
 
+use Codea\Responder\Http\Charset\UnicodeCharset;
+use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\Responder\Http\MimeType\TextMimeType;
 use PHPUnit\Framework\TestCase;
-use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Tuzex\Responder\Http\MimeType\TextMimeType;
 
 final class ContentTypeTest extends TestCase
 {

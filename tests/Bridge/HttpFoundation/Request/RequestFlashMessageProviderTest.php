@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Test\Bridge\HttpFoundation\Request;
 
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
 
 final class RequestFlashMessageProviderTest extends TestCase
 {

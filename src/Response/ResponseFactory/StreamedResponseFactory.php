@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Http\HttpHeader\XAccelBufferingHttpHeader;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Stream;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Tuzex\Responder\Http\HttpHeader\XAccelBufferingHttpHeader;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Stream;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class StreamedResponseFactory implements ResponseFactory
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
+namespace Codea\Responder\Test\Bridge\HttpFoundation;
 
+use Codea\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
+use Codea\Responder\Service\FlashMessagePublisher;
+use Codea\Responder\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Tuzex\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
-use Tuzex\Responder\Service\FlashMessagePublisher;
-use Tuzex\Responder\Test\FlashMessagesGenerator;
 
 final class TranslatableSessionFlashMessagePublisherTest extends TestCase
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response;
+namespace Codea\Responder\Response;
 
-use Tuzex\Responder\Http\HttpHeader;
-use Tuzex\Responder\Http\StatusCode;
+use Codea\Responder\Http\HttpHeader;
+use Codea\Responder\Http\StatusCode;
 
 abstract class Resource
 {

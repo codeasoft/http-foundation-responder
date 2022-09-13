@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Codea\Responder\Response\Resource;
 
 use Closure;
 

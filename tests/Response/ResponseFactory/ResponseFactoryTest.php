@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Response\ResponseFactory;
+namespace Codea\Responder\Test\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Exception\UnknownResourceException;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\ResponseFactory;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Exception\UnknownResourceException;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\ResponseFactory;
 
 abstract class ResponseFactoryTest extends TestCase
 {

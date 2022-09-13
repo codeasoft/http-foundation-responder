@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http\HttpHeader;
+namespace Codea\Responder\Http\HttpHeader;
 
-use Tuzex\Responder\Http\HttpHeader;
+use Codea\Responder\Http\HttpHeader;
 
 enum XAccelBufferingHttpHeader:string implements HttpHeader
 {

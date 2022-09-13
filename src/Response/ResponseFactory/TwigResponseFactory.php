@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Template\TwigTemplate;
+use Codea\Responder\Response\ResponseFactory;
+use Codea\Responder\Service\TemplateRenderer;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Template\TwigTemplate;
-use Tuzex\Responder\Response\ResponseFactory;
-use Tuzex\Responder\Service\TemplateRenderer;
 
 final class TwigResponseFactory implements ResponseFactory
 {

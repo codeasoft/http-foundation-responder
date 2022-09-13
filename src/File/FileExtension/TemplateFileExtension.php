@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\File\FileExtension;
+namespace Codea\Responder\File\FileExtension;
 
-use Tuzex\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension;
 
 enum TemplateFileExtension: string implements FileExtension
 {

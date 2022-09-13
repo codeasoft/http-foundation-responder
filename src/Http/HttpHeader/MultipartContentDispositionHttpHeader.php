@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http\HttpHeader;
+namespace Codea\Responder\Http\HttpHeader;
 
-use Tuzex\Responder\Http\Disposition;
-use Tuzex\Responder\Http\HttpHeader;
+use Codea\Responder\Http\Disposition;
+use Codea\Responder\Http\HttpHeader;
 
 final class MultipartContentDispositionHttpHeader extends ContentDispositionHttpHeader implements HttpHeader
 {

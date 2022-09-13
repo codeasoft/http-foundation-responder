@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Http\ReferrerProvider;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Redirect\ReferrerRedirect;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Http\ReferrerProvider;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Redirect\ReferrerRedirect;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class ReferrerRedirectResponseFactory implements ResponseFactory
 {

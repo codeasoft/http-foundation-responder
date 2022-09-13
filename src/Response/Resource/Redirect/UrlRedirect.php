@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Redirect;
+namespace Codea\Responder\Response\Resource\Redirect;
 
 use Assert\Assertion as Assert;
-use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\Resource\Redirect;
+use Codea\Responder\Http\StatusCode;
+use Codea\Responder\Response\Resource\Redirect;
 
 final class UrlRedirect extends Redirect
 {

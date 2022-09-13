@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Template;
+namespace Codea\Responder\Response\Resource\Template;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\TemplateFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\TextMimeType;
-use Tuzex\Responder\Response\Resource\Template;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\TemplateFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\TextMimeType;
+use Codea\Responder\Response\Resource\Template;
 
 final class TwigTemplate extends Template
 {

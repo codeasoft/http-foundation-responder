@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http\MimeType;
+namespace Codea\Responder\Http\MimeType;
 
-use Tuzex\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType;
 
 enum VideoMimeType: string implements MimeType
 {

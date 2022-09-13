@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Bridge\HttpFoundation\Request;
 
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\RequestStack;

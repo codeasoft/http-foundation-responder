@@ -1,5 +1,5 @@
 {
-  "name": "tuzex/responder",
+  "name": "codea/symfony-responder",
   "description": "Smart responder with middlewares based on the Symfony HTTP Foundation",
   "type": "library",
   "license": "MIT",
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Tuzex\\Responder\\": "src/"
+      "Codea\\Responder\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tuzex\\Responder\\Test\\": "tests"
+      "Codea\\Responder\\Test\\": "tests"
     }
   },
   "require": {

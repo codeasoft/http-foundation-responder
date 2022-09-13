@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Test\Bridge\HttpFoundation\Request;
 
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestAccessor;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestAccessor;
 
 final class RequestAccessorTest extends TestCase
 {

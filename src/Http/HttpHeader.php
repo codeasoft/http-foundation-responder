@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http;
+namespace Codea\Responder\Http;
 
 interface HttpHeader
 {

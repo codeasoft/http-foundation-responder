@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response;
+namespace Codea\Responder\Response;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;

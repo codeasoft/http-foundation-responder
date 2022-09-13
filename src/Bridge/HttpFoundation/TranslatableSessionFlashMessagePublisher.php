@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation;
+namespace Codea\Responder\Bridge\HttpFoundation;
 
+use Codea\Responder\Response\FlashMessage;
+use Codea\Responder\Service\FlashMessagePublisher;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Tuzex\Responder\Response\FlashMessage;
-use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class TranslatableSessionFlashMessagePublisher implements FlashMessagePublisher
 {

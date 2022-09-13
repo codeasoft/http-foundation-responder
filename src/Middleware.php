@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder;
+namespace Codea\Responder;
 
 use Closure;
+use Codea\Responder\Response\Resource;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Resource;
 
 interface Middleware
 {

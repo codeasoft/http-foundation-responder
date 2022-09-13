@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\FileStream;
+namespace Codea\Responder\Response\Resource\FileStream;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\ArchiveFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
-use Tuzex\Responder\Response\Resource\FileStream;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\ArchiveFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\ApplicationMimeType;
+use Codea\Responder\Response\Resource\FileStream;
 
 final class ZipFileStream extends FileStream
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Exception;
+namespace Codea\Responder\Exception;
 
+use Codea\Responder\Response\Resource;
 use RuntimeException;
-use Tuzex\Responder\Response\Resource;
 
 final class UnknownResourceException extends RuntimeException
 {

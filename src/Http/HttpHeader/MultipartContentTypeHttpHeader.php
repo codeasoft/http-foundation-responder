@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http\HttpHeader;
+namespace Codea\Responder\Http\HttpHeader;
 
-use Tuzex\Responder\Http\Charset;
-use Tuzex\Responder\Http\HttpHeader;
-use Tuzex\Responder\Http\MimeType\MultipartMimeType;
+use Codea\Responder\Http\Charset;
+use Codea\Responder\Http\HttpHeader;
+use Codea\Responder\Http\MimeType\MultipartMimeType;
 
 final class MultipartContentTypeHttpHeader extends ContentTypeHttpHeader implements HttpHeader
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Bridge\HttpFoundation\Request;
 
-use Tuzex\Responder\Http\ReferrerProvider;
+use Codea\Responder\Http\ReferrerProvider;
 
 final class RequestReferrerProvider implements ReferrerProvider
 {

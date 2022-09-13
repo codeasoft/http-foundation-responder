@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Codea\Responder\Response\Resource;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\Http\Charset;
-use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\Resource;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\Http\Charset;
+use Codea\Responder\Http\Charset\UnicodeCharset;
+use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\StatusCode;
+use Codea\Responder\Response\Resource;
 use Webmozart\Assert\Assert;
 
 abstract class Template extends Resource

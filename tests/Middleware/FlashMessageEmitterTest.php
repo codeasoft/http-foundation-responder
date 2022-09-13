@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Middleware;
+namespace Codea\Responder\Test\Middleware;
 
+use Codea\Responder\Middleware\FlashMessageEmitter;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Redirect;
+use Codea\Responder\Response\Resource\Redirect\ReferrerRedirect;
+use Codea\Responder\Response\Resource\Text\PlainText;
+use Codea\Responder\Service\FlashMessagePublisher;
+use Codea\Responder\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Middleware\FlashMessageEmitter;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Redirect;
-use Tuzex\Responder\Response\Resource\Redirect\ReferrerRedirect;
-use Tuzex\Responder\Response\Resource\Text\PlainText;
-use Tuzex\Responder\Service\FlashMessagePublisher;
-use Tuzex\Responder\Test\FlashMessagesGenerator;
 
 final class FlashMessageEmitterTest extends TestCase
 {

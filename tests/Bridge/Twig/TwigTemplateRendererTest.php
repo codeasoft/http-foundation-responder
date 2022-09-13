@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\Twig;
+namespace Codea\Responder\Test\Bridge\Twig;
 
+use Codea\Responder\Bridge\Twig\TwigTemplateRenderer;
+use Codea\Responder\Response\Resource\Template\TwigTemplate;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface as Logger;
-use Tuzex\Responder\Bridge\Twig\TwigTemplateRenderer;
-use Tuzex\Responder\Response\Resource\Template\TwigTemplate;
 use Twig\Environment as Twig;
 use Twig\Error\Error;
 use Twig\Error\LoaderError;

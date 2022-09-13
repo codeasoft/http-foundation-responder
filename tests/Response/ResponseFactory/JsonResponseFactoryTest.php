@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Response\ResponseFactory;
+namespace Codea\Responder\Test\Response\ResponseFactory;
 
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Data\JsonData;
+use Codea\Responder\Response\Resource\Text\PlainText;
+use Codea\Responder\Response\ResponseFactory\JsonResponseFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Data\JsonData;
-use Tuzex\Responder\Response\Resource\Text\PlainText;
-use Tuzex\Responder\Response\ResponseFactory\JsonResponseFactory;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest
 {

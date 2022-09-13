@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\FileStream;
+namespace Codea\Responder\Response\Resource\FileStream;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\VideoFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\VideoMimeType;
-use Tuzex\Responder\Response\Resource\FileStream;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\VideoFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\VideoMimeType;
+use Codea\Responder\Response\Resource\FileStream;
 
 final class Mp4FileStream extends FileStream
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Http\HttpHeader;
+namespace Codea\Responder\Test\Http\HttpHeader;
 
+use Codea\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
+use Codea\Responder\Http\HttpHeader\MultipartContentDispositionHttpHeader;
 use PHPUnit\Framework\TestCase;
-use Tuzex\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
-use Tuzex\Responder\Http\HttpHeader\MultipartContentDispositionHttpHeader;
 
 final class MultipartContentDispositionTest extends TestCase
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\FileContent;
+namespace Codea\Responder\Response\Resource\FileContent;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\DocumentFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
-use Tuzex\Responder\Response\Resource\FileContent;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\DocumentFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\ApplicationMimeType;
+use Codea\Responder\Response\Resource\FileContent;
 
 final class PdfFileContent extends FileContent
 {

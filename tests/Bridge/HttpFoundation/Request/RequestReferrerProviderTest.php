@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Test\Bridge\HttpFoundation\Request;
 
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestAccessor;
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestReferrerProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestAccessor;
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestReferrerProvider;
 
 final class RequestReferrerProviderTest extends TestCase
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Middleware;
+namespace Codea\Responder\Middleware;
 
 use Closure;
+use Codea\Responder\Exception\UnknownResourceException;
+use Codea\Responder\Middleware;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Exception\UnknownResourceException;
-use Tuzex\Responder\Middleware;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class ResponseProducer implements Middleware
 {

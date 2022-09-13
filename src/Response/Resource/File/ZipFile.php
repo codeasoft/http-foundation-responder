@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\File;
+namespace Codea\Responder\Response\Resource\File;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\ArchiveFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
-use Tuzex\Responder\Response\Resource\File;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\ArchiveFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\ApplicationMimeType;
+use Codea\Responder\Response\Resource\File;
 
 final class ZipFile extends File
 {

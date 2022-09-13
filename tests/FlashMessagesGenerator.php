@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test;
+namespace Codea\Responder\Test;
 
-use Tuzex\Responder\Response\FlashMessage;
+use Codea\Responder\Response\FlashMessage;
 
 final class FlashMessagesGenerator
 {

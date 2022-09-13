@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Http\Charset;
+namespace Codea\Responder\Http\Charset;
 
-use Tuzex\Responder\Http\Charset;
+use Codea\Responder\Http\Charset;
 
 enum UnicodeCharset: string implements Charset
 {

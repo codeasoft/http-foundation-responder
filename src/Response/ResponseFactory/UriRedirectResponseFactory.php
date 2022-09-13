@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Http\UriProvider;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Redirect\UriRedirect;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Http\UriProvider;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Redirect\UriRedirect;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class UriRedirectResponseFactory implements ResponseFactory
 {

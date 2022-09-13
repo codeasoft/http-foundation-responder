@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource;
+namespace Codea\Responder\Response\Resource;
 
-use Tuzex\Responder\Http\HttpHeader;
-use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\FlashMessage;
-use Tuzex\Responder\Response\FlashMessageBag;
-use Tuzex\Responder\Response\Resource;
+use Codea\Responder\Http\HttpHeader;
+use Codea\Responder\Http\StatusCode;
+use Codea\Responder\Response\FlashMessage;
+use Codea\Responder\Response\FlashMessageBag;
+use Codea\Responder\Response\Resource;
 
 abstract class Redirect extends Resource
 {

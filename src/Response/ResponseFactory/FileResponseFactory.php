@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\File;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\File;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class FileResponseFactory implements ResponseFactory
 {

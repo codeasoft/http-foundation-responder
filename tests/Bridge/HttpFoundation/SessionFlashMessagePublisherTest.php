@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Bridge\HttpFoundation;
+namespace Codea\Responder\Test\Bridge\HttpFoundation;
 
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Codea\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
+use Codea\Responder\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
-use Tuzex\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
-use Tuzex\Responder\Test\FlashMessagesGenerator;
 
 final class SessionFlashMessagePublisherTest extends TestCase
 {

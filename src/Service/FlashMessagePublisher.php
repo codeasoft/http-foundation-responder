@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Service;
+namespace Codea\Responder\Service;
 
-use Tuzex\Responder\Response\FlashMessage;
+use Codea\Responder\Response\FlashMessage;
 
 interface FlashMessagePublisher
 {

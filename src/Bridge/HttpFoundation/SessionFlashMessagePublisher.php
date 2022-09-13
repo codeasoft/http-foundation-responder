@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation;
+namespace Codea\Responder\Bridge\HttpFoundation;
 
-use Tuzex\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
-use Tuzex\Responder\Response\FlashMessage;
-use Tuzex\Responder\Service\FlashMessagePublisher;
+use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Codea\Responder\Response\FlashMessage;
+use Codea\Responder\Service\FlashMessagePublisher;
 
 final class SessionFlashMessagePublisher implements FlashMessagePublisher
 {

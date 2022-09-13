@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Bridge\HttpFoundation\Request;
+namespace Codea\Responder\Bridge\HttpFoundation\Request;
 
-use Tuzex\Responder\Http\UriProvider;
+use Codea\Responder\Http\UriProvider;
 
 final class RequestUriProvider implements UriProvider
 {

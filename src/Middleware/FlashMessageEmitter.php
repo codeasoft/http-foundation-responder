@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Middleware;
+namespace Codea\Responder\Middleware;
 
 use Closure;
+use Codea\Responder\Middleware;
+use Codea\Responder\Response\FlashMessageBag;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Redirect;
+use Codea\Responder\Service\FlashMessagePublisher;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Middleware;
-use Tuzex\Responder\Response\FlashMessageBag;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Redirect;
-use Tuzex\Responder\Service\FlashMessagePublisher;
 
 final class FlashMessageEmitter implements Middleware
 {

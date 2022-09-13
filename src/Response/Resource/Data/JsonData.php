@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\Data;
+namespace Codea\Responder\Response\Resource\Data;
 
-use Tuzex\Responder\Http\Charset;
-use Tuzex\Responder\Http\Charset\UnicodeCharset;
-use Tuzex\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Tuzex\Responder\Http\MimeType\ApplicationMimeType;
-use Tuzex\Responder\Http\StatusCode;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Data;
+use Codea\Responder\Http\Charset;
+use Codea\Responder\Http\Charset\UnicodeCharset;
+use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\Responder\Http\MimeType\ApplicationMimeType;
+use Codea\Responder\Http\StatusCode;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Data;
 
 final class JsonData extends Resource implements Data
 {

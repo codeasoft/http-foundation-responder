@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\ResponseFactory;
+namespace Codea\Responder\Response\ResponseFactory;
 
 use Closure;
+use Codea\Responder\Response\Resource;
+use Codea\Responder\Response\Resource\Text;
+use Codea\Responder\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
-use Tuzex\Responder\Response\Resource;
-use Tuzex\Responder\Response\Resource\Text;
-use Tuzex\Responder\Response\ResponseFactory;
 
 final class TextResponseFactory implements ResponseFactory
 {

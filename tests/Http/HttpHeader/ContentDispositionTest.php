@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Test\Http\HttpHeader;
+namespace Codea\Responder\Test\Http\HttpHeader;
 
+use Codea\Responder\Http\Disposition;
+use Codea\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
 use PHPUnit\Framework\TestCase;
-use Tuzex\Responder\Http\Disposition;
-use Tuzex\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
 
 final class ContentDispositionTest extends TestCase
 {

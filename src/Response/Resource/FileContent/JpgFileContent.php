@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tuzex\Responder\Response\Resource\FileContent;
+namespace Codea\Responder\Response\Resource\FileContent;
 
-use Tuzex\Responder\File\FileExtension;
-use Tuzex\Responder\File\FileExtension\ImageFileExtension;
-use Tuzex\Responder\Http\MimeType;
-use Tuzex\Responder\Http\MimeType\ImageMimeType;
-use Tuzex\Responder\Response\Resource\FileContent;
+use Codea\Responder\File\FileExtension;
+use Codea\Responder\File\FileExtension\ImageFileExtension;
+use Codea\Responder\Http\MimeType;
+use Codea\Responder\Http\MimeType\ImageMimeType;
+use Codea\Responder\Response\Resource\FileContent;
 
 final class JpgFileContent extends FileContent
 {
