@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Bridge\HttpFoundation;
+namespace Codea\SmartReply\Bridge\HttpFoundation;
 
-use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
-use Codea\Responder\Response\FlashMessage;
-use Codea\Responder\Service\FlashMessagePublisher;
+use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Codea\SmartReply\Response\FlashMessage;
+use Codea\SmartReply\Service\FlashMessagePublisher;
 
 final class SessionFlashMessagePublisher implements FlashMessagePublisher
 {

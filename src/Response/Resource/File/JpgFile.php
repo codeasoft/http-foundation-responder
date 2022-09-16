@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource\File;
+namespace Codea\SmartReply\Response\Resource\File;
 
-use Codea\Responder\File\FileExtension;
-use Codea\Responder\File\FileExtension\ImageFileExtension;
-use Codea\Responder\Http\MimeType;
-use Codea\Responder\Http\MimeType\ImageMimeType;
-use Codea\Responder\Response\Resource\File;
+use Codea\SmartReply\File\FileExtension;
+use Codea\SmartReply\File\FileExtension\ImageFileExtension;
+use Codea\SmartReply\Http\MimeType;
+use Codea\SmartReply\Http\MimeType\ImageMimeType;
+use Codea\SmartReply\Response\Resource\File;
 
 class JpgFile extends File
 {

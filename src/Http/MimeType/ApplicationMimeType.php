@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Http\MimeType;
+namespace Codea\SmartReply\Http\MimeType;
 
-use Codea\Responder\Http\MimeType;
+use Codea\SmartReply\Http\MimeType;
 
 enum ApplicationMimeType: string implements MimeType
 {

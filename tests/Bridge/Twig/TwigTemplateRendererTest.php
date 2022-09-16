@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Bridge\Twig;
+namespace Codea\SmartReply\Test\Bridge\Twig;
 
-use Codea\Responder\Bridge\Twig\TwigTemplateRenderer;
-use Codea\Responder\Response\Resource\Template\TwigTemplate;
+use Codea\SmartReply\Bridge\Twig\TwigTemplateRenderer;
+use Codea\SmartReply\Response\Resource\Template\TwigTemplate;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface as Logger;
 use Twig\Environment as Twig;

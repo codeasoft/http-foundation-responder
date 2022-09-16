@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Http\HttpHeader;
+namespace Codea\SmartReply\Http\HttpHeader;
 
-use Codea\Responder\Http\Disposition;
-use Codea\Responder\Http\HttpHeader;
+use Codea\SmartReply\Http\Disposition;
+use Codea\SmartReply\Http\HttpHeader;
 
 final class MultipartContentDispositionHttpHeader extends ContentDispositionHttpHeader implements HttpHeader
 {

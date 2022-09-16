@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Http;
+namespace Codea\SmartReply\Http;
 
 interface MimeType
 {

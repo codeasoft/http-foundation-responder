@@ -1,6 +1,6 @@
 {
-  "name": "codea/symfony-responder",
-  "description": "Smart responder with middlewares based on the Symfony HTTP Foundation",
+  "name": "codea/smart-reply",
+  "description": "Smart responder supports middlewares based on Symfony HTTP Foundation",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Codea\\Responder\\": "src/"
+      "Codea\\SmartReply\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Codea\\Responder\\Test\\": "tests"
+      "Codea\\SmartReply\\Test\\": "tests"
     }
   },
   "require": {

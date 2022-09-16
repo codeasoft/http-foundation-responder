@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Response\ResponseFactory;
+namespace Codea\SmartReply\Test\Response\ResponseFactory;
 
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Data\JsonData;
-use Codea\Responder\Response\Resource\Text\PlainText;
-use Codea\Responder\Response\ResponseFactory\JsonResponseFactory;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Data\JsonData;
+use Codea\SmartReply\Response\Resource\Text\PlainText;
+use Codea\SmartReply\Response\ResponseFactory\JsonResponseFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest

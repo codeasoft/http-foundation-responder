@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Http\HttpHeader;
+namespace Codea\SmartReply\Http\HttpHeader;
 
-use Codea\Responder\Http\HttpHeader;
+use Codea\SmartReply\Http\HttpHeader;
 
 enum XAccelBufferingHttpHeader:string implements HttpHeader
 {

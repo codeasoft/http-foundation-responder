@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response;
+namespace Codea\SmartReply\Response;
 
 use Iterator;
 

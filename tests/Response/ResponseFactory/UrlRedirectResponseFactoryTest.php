@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Response\ResponseFactory;
+namespace Codea\SmartReply\Test\Response\ResponseFactory;
 
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Redirect\RouteRedirect;
-use Codea\Responder\Response\Resource\Redirect\UrlRedirect;
-use Codea\Responder\Response\ResponseFactory\UrlRedirectResponseFactory;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Redirect\RouteRedirect;
+use Codea\SmartReply\Response\Resource\Redirect\UrlRedirect;
+use Codea\SmartReply\Response\ResponseFactory\UrlRedirectResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest

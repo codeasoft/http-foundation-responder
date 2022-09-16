@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Middleware;
+namespace Codea\SmartReply\Test\Middleware;
 
-use Codea\Responder\Middleware\FlashMessageEmitter;
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Redirect;
-use Codea\Responder\Response\Resource\Redirect\ReferrerRedirect;
-use Codea\Responder\Response\Resource\Text\PlainText;
-use Codea\Responder\Service\FlashMessagePublisher;
-use Codea\Responder\Test\FlashMessagesGenerator;
+use Codea\SmartReply\Middleware\FlashMessageEmitter;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Redirect;
+use Codea\SmartReply\Response\Resource\Redirect\ReferrerRedirect;
+use Codea\SmartReply\Response\Resource\Text\PlainText;
+use Codea\SmartReply\Service\FlashMessagePublisher;
+use Codea\SmartReply\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 

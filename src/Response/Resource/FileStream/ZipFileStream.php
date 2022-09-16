@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource\FileStream;
+namespace Codea\SmartReply\Response\Resource\FileStream;
 
-use Codea\Responder\File\FileExtension;
-use Codea\Responder\File\FileExtension\ArchiveFileExtension;
-use Codea\Responder\Http\MimeType;
-use Codea\Responder\Http\MimeType\ApplicationMimeType;
-use Codea\Responder\Response\Resource\FileStream;
+use Codea\SmartReply\File\FileExtension;
+use Codea\SmartReply\File\FileExtension\ArchiveFileExtension;
+use Codea\SmartReply\Http\MimeType;
+use Codea\SmartReply\Http\MimeType\ApplicationMimeType;
+use Codea\SmartReply\Response\Resource\FileStream;
 
 final class ZipFileStream extends FileStream
 {

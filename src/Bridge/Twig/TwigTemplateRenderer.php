@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Bridge\Twig;
+namespace Codea\SmartReply\Bridge\Twig;
 
-use Codea\Responder\Response\Resource\Template;
-use Codea\Responder\Service\TemplateRenderer;
+use Codea\SmartReply\Response\Resource\Template;
+use Codea\SmartReply\Service\TemplateRenderer;
 use Psr\Log\LoggerInterface as Logger;
 use Twig\Environment as Twig;
 use Twig\Error\LoaderError;

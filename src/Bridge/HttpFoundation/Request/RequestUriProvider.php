@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Bridge\HttpFoundation\Request;
+namespace Codea\SmartReply\Bridge\HttpFoundation\Request;
 
-use Codea\Responder\Http\UriProvider;
+use Codea\SmartReply\Http\UriProvider;
 
 final class RequestUriProvider implements UriProvider
 {

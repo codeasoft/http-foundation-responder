@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\File;
+namespace Codea\SmartReply\File;
 
 interface FileExtension
 {

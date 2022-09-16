@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource;
+namespace Codea\SmartReply\Response\Resource;
 
 interface Text
 {

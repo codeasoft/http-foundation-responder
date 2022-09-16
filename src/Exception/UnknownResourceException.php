@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Exception;
+namespace Codea\SmartReply\Exception;
 
-use Codea\Responder\Response\Resource;
+use Codea\SmartReply\Response\Resource;
 use RuntimeException;
 
 final class UnknownResourceException extends RuntimeException

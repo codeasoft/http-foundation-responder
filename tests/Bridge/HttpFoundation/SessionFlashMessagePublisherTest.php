@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Bridge\HttpFoundation;
+namespace Codea\SmartReply\Test\Bridge\HttpFoundation;
 
-use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
-use Codea\Responder\Bridge\HttpFoundation\SessionFlashMessagePublisher;
-use Codea\Responder\Test\FlashMessagesGenerator;
+use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Codea\SmartReply\Bridge\HttpFoundation\SessionFlashMessagePublisher;
+use Codea\SmartReply\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

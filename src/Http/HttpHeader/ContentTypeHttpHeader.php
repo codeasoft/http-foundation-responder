@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Http\HttpHeader;
+namespace Codea\SmartReply\Http\HttpHeader;
 
-use Codea\Responder\Http\Charset;
-use Codea\Responder\Http\HttpHeader;
-use Codea\Responder\Http\MimeType;
+use Codea\SmartReply\Http\Charset;
+use Codea\SmartReply\Http\HttpHeader;
+use Codea\SmartReply\Http\MimeType;
 
 class ContentTypeHttpHeader implements HttpHeader
 {

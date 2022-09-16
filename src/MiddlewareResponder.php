@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder;
+namespace Codea\SmartReply;
 
 use Closure;
-use Codea\Responder\Middleware\ResponseProducer;
-use Codea\Responder\Response\Resource;
+use Codea\SmartReply\Middleware\ResponseProducer;
+use Codea\SmartReply\Response\Resource;
 use Symfony\Component\HttpFoundation\Response;
 
 final class MiddlewareResponder implements Responder

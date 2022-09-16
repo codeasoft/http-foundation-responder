@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Http\HttpHeader;
+namespace Codea\SmartReply\Test\Http\HttpHeader;
 
-use Codea\Responder\Http\HttpHeader\ContentDispositionHttpHeader;
-use Codea\Responder\Http\HttpHeader\MultipartContentDispositionHttpHeader;
+use Codea\SmartReply\Http\HttpHeader\ContentDispositionHttpHeader;
+use Codea\SmartReply\Http\HttpHeader\MultipartContentDispositionHttpHeader;
 use PHPUnit\Framework\TestCase;
 
 final class MultipartContentDispositionTest extends TestCase

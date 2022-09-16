@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test;
+namespace Codea\SmartReply\Test;
 
-use Codea\Responder\Response\FlashMessage;
+use Codea\SmartReply\Response\FlashMessage;
 
 final class FlashMessagesGenerator
 {

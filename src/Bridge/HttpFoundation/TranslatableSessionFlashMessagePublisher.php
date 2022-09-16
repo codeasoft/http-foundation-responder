@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Bridge\HttpFoundation;
+namespace Codea\SmartReply\Bridge\HttpFoundation;
 
-use Codea\Responder\Response\FlashMessage;
-use Codea\Responder\Service\FlashMessagePublisher;
+use Codea\SmartReply\Response\FlashMessage;
+use Codea\SmartReply\Service\FlashMessagePublisher;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class TranslatableSessionFlashMessagePublisher implements FlashMessagePublisher

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Bridge\HttpFoundation\Request;
+namespace Codea\SmartReply\Test\Bridge\HttpFoundation\Request;
 
-use Codea\Responder\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\File\FileExtension;
+namespace Codea\SmartReply\File\FileExtension;
 
-use Codea\Responder\File\FileExtension;
+use Codea\SmartReply\File\FileExtension;
 
 enum ImageFileExtension: string implements FileExtension
 {

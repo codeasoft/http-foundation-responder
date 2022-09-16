@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\ResponseFactory;
+namespace Codea\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\Responder\Http\HttpHeader\XAccelBufferingHttpHeader;
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Stream;
-use Codea\Responder\Response\ResponseFactory;
+use Codea\SmartReply\Http\HttpHeader\XAccelBufferingHttpHeader;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Stream;
+use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 

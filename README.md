@@ -1,19 +1,19 @@
-# Codea / responder
+# Smart Reply
 
-[![PHP version](https://img.shields.io/packagist/php-v/codea/symfony-responder?style=flat-square)](http://php.net)
-[![Latest Version](https://img.shields.io/packagist/v/codea/symfony-responder?style=flat-square)](https://packagist.org/packages/codea/symfony-responder)
+[![PHP version](https://img.shields.io/packagist/php-v/codea/smart-reply?style=flat-square)](http://php.net)
+[![Latest Version](https://img.shields.io/packagist/v/codea/smart-reply?style=flat-square)](https://packagist.org/packages/codea/smart-reply)
 
-[![Build status](https://img.shields.io/github/workflow/status/codea/symfony-responder/Tests?style=flat-square)](https://github.com/codea/symfony-responder/actions?query=workflow%3ATests)
-[![Code Quality](https://img.shields.io/scrutinizer/quality/g/codea/symfony-responder?style=flat-square)](https://scrutinizer-ci.com/g/codea/symfony-responder/?branch=master)
-[![Coverage Status](https://img.shields.io/coveralls/github/codea/symfony-responder?style=flat-square)](https://coveralls.io/github/codea/symfony-responder?branch=master)
+[![Build status](https://img.shields.io/github/workflow/status/codea/smart-reply/Tests?style=flat-square)](https://github.com/codea/smart-reply/actions?query=workflow%3ATests)
+[![Code Quality](https://img.shields.io/scrutinizer/quality/g/codea/smart-reply?style=flat-square)](https://scrutinizer-ci.com/g/codea/smart-reply/?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/github/codea/smart-reply?style=flat-square)](https://coveralls.io/github/codea/smart-reply?branch=master)
 
-Smart responder with middlewares based on the Symfony HTTP Foundation.
+Smart responder supports middlewares based on Symfony HTTP Foundation.
 
 Install
 ------------
 
-The best way to install codea/symfony-responder is using the [Composer](http://getcomposer.org/):
+The best way to install codea/smart-reply is using the [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require codea/symfony-responder
+$ composer require codea/smart-reply
 ```

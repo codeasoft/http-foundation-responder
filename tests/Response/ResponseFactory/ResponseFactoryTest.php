@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Response\ResponseFactory;
+namespace Codea\SmartReply\Test\Response\ResponseFactory;
 
 use Closure;
-use Codea\Responder\Exception\UnknownResourceException;
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\ResponseFactory;
+use Codea\SmartReply\Exception\UnknownResourceException;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\ResponseFactory;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 

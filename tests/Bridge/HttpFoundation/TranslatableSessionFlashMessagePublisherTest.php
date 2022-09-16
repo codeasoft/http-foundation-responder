@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Bridge\HttpFoundation;
+namespace Codea\SmartReply\Test\Bridge\HttpFoundation;
 
-use Codea\Responder\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
-use Codea\Responder\Service\FlashMessagePublisher;
-use Codea\Responder\Test\FlashMessagesGenerator;
+use Codea\SmartReply\Bridge\HttpFoundation\TranslatableSessionFlashMessagePublisher;
+use Codea\SmartReply\Service\FlashMessagePublisher;
+use Codea\SmartReply\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
 

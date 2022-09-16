@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource\Data;
+namespace Codea\SmartReply\Response\Resource\Data;
 
-use Codea\Responder\Http\Charset;
-use Codea\Responder\Http\Charset\UnicodeCharset;
-use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Codea\Responder\Http\MimeType\ApplicationMimeType;
-use Codea\Responder\Http\StatusCode;
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Data;
+use Codea\SmartReply\Http\Charset;
+use Codea\SmartReply\Http\Charset\UnicodeCharset;
+use Codea\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\SmartReply\Http\MimeType\ApplicationMimeType;
+use Codea\SmartReply\Http\StatusCode;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Data;
 
 final class JsonData extends Resource implements Data
 {

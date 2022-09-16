@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Test\Http\HttpHeader;
+namespace Codea\SmartReply\Test\Http\HttpHeader;
 
-use Codea\Responder\Http\Charset\UnicodeCharset;
-use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Codea\Responder\Http\MimeType\TextMimeType;
+use Codea\SmartReply\Http\Charset\UnicodeCharset;
+use Codea\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\SmartReply\Http\MimeType\TextMimeType;
 use PHPUnit\Framework\TestCase;
 
 final class ContentTypeTest extends TestCase

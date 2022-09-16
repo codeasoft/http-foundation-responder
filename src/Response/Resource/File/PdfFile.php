@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource\File;
+namespace Codea\SmartReply\Response\Resource\File;
 
-use Codea\Responder\File\FileExtension;
-use Codea\Responder\File\FileExtension\DocumentFileExtension;
-use Codea\Responder\Http\MimeType;
-use Codea\Responder\Http\MimeType\ApplicationMimeType;
-use Codea\Responder\Response\Resource\File;
+use Codea\SmartReply\File\FileExtension;
+use Codea\SmartReply\File\FileExtension\DocumentFileExtension;
+use Codea\SmartReply\Http\MimeType;
+use Codea\SmartReply\Http\MimeType\ApplicationMimeType;
+use Codea\SmartReply\Response\Resource\File;
 
 final class PdfFile extends File
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Service;
+namespace Codea\SmartReply\Service;
 
-use Codea\Responder\Response\FlashMessage;
+use Codea\SmartReply\Response\FlashMessage;
 
 interface FlashMessagePublisher
 {

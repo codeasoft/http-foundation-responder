@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\Resource;
+namespace Codea\SmartReply\Response\Resource;
 
-use Codea\Responder\File\FileExtension;
-use Codea\Responder\Http\Charset;
-use Codea\Responder\Http\Charset\UnicodeCharset;
-use Codea\Responder\Http\HttpHeader\ContentTypeHttpHeader;
-use Codea\Responder\Http\MimeType;
-use Codea\Responder\Http\StatusCode;
-use Codea\Responder\Response\Resource;
+use Codea\SmartReply\File\FileExtension;
+use Codea\SmartReply\Http\Charset;
+use Codea\SmartReply\Http\Charset\UnicodeCharset;
+use Codea\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
+use Codea\SmartReply\Http\MimeType;
+use Codea\SmartReply\Http\StatusCode;
+use Codea\SmartReply\Response\Resource;
 use Webmozart\Assert\Assert;
 
 abstract class Template extends Resource

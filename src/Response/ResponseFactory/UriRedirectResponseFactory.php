@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\Responder\Response\ResponseFactory;
+namespace Codea\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\Responder\Http\UriProvider;
-use Codea\Responder\Response\Resource;
-use Codea\Responder\Response\Resource\Redirect\UriRedirect;
-use Codea\Responder\Response\ResponseFactory;
+use Codea\SmartReply\Http\UriProvider;
+use Codea\SmartReply\Response\Resource;
+use Codea\SmartReply\Response\Resource\Redirect\UriRedirect;
+use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
