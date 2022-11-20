@@ -10,7 +10,8 @@ final class RequestReferrerProvider implements ReferrerProvider
 {
     public function __construct(
         private RequestAccessor $requestAccessor
-    ) {}
+    ) {
+    }
 
     public function provide(): string
     {

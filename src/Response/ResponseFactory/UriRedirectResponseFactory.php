@@ -16,7 +16,8 @@ final class UriRedirectResponseFactory implements ResponseFactory
 {
     public function __construct(
         private UriProvider $uriProvider,
-    ) {}
+    ) {
+    }
 
     public function create(Resource $resource, Closure $nextResponseFactory): Response
     {

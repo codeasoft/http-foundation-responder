@@ -12,7 +12,8 @@ final class SessionFlashMessagePublisher implements FlashMessagePublisher
 {
     public function __construct(
         private RequestFlashBagProvider $requestFlashBagProvider,
-    ) {}
+    ) {
+    }
 
     public function publish(FlashMessage $flashMessage): void
     {

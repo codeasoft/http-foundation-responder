@@ -16,7 +16,8 @@ final class RouteRedirectResponseFactory implements ResponseFactory
 {
     public function __construct(
         private UrlGeneratorInterface $urlGenerator,
-    ) {}
+    ) {
+    }
 
     public function create(Resource $resource, Closure $nextResponseFactory): Response
     {

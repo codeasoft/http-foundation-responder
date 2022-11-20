@@ -16,7 +16,8 @@ final class ReferrerRedirectResponseFactory implements ResponseFactory
 {
     public function __construct(
         private ReferrerProvider $referrerProvider,
-    ) {}
+    ) {
+    }
 
     public function create(Resource $resource, Closure $nextResponseFactory): Response
     {

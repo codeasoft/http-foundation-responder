@@ -15,7 +15,8 @@ final class TwigResponseFactory implements ResponseFactory
 {
     public function __construct(
         private TemplateRenderer $templateRenderer
-    ) {}
+    ) {
+    }
 
     public function create(Resource $resource, Closure $nextResponseFactory): Response
     {

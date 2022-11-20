@@ -13,7 +13,8 @@ final class TranslatableSessionFlashMessagePublisher implements FlashMessagePubl
     public function __construct(
         private FlashMessagePublisher $flashMessagePublisher,
         private TranslatorInterface $translator,
-    ) {}
+    ) {
+    }
 
     public function publish(FlashMessage $flashMessage): void
     {

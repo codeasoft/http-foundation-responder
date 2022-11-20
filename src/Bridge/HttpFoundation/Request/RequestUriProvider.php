@@ -10,7 +10,8 @@ final class RequestUriProvider implements UriProvider
 {
     public function __construct(
         private RequestAccessor $requestAccessor
-    ) {}
+    ) {
+    }
 
     public function provide(): string
     {

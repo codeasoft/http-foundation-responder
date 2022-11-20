@@ -12,7 +12,8 @@ final class RequestAccessor
 {
     public function __construct(
         private RequestStack $requestStack,
-    ) {}
+    ) {
+    }
 
     public function get(): Request
     {

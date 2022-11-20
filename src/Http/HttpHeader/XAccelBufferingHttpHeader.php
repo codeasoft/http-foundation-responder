@@ -6,7 +6,7 @@ namespace Termyn\SmartReply\Http\HttpHeader;
 
 use Termyn\SmartReply\Http\HttpHeader;
 
-enum XAccelBufferingHttpHeader:string implements HttpHeader
+enum XAccelBufferingHttpHeader: string implements HttpHeader
 {
     case YES = 'yes';
     case NO = 'no';

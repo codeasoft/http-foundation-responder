@@ -16,7 +16,8 @@ final class FlashMessageEmitter implements Middleware
 {
     public function __construct(
         private FlashMessagePublisher $flashMessagePublisher
-    ) {}
+    ) {
+    }
 
     public function execute(Resource $resource, Closure $nextMiddleware): Response
     {

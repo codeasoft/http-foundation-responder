@@ -17,7 +17,8 @@ final class TwigTemplateRenderer implements TemplateRenderer
     public function __construct(
         private Twig $twig,
         private Logger $logger,
-    ) {}
+    ) {
+    }
 
     public function render(Template $template): string
     {
