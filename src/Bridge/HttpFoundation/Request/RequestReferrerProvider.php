@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Bridge\HttpFoundation\Request;
+namespace Termyn\SmartReply\Bridge\HttpFoundation\Request;
 
-use Codea\SmartReply\Http\ReferrerProvider;
+use Termyn\SmartReply\Http\ReferrerProvider;
 
 final class RequestReferrerProvider implements ReferrerProvider
 {

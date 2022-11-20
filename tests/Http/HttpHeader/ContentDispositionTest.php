@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Http\HttpHeader;
+namespace Termyn\SmartReply\Test\Http\HttpHeader;
 
-use Codea\SmartReply\Http\Disposition;
-use Codea\SmartReply\Http\HttpHeader\ContentDispositionHttpHeader;
 use PHPUnit\Framework\TestCase;
+use Termyn\SmartReply\Http\Disposition;
+use Termyn\SmartReply\Http\HttpHeader\ContentDispositionHttpHeader;
 
 final class ContentDispositionTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Http;
+namespace Termyn\SmartReply\Http;
 
 interface HttpHeader
 {

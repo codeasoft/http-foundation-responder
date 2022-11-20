@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response;
+namespace Termyn\SmartReply\Response;
 
 final class FlashMessage
 {

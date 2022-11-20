@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Middleware;
+namespace Termyn\SmartReply\Middleware;
 
 use Closure;
-use Codea\SmartReply\Exception\UnknownResourceException;
-use Codea\SmartReply\Middleware;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Exception\UnknownResourceException;
+use Termyn\SmartReply\Middleware;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\ResponseFactory;
 
 final class ResponseProducer implements Middleware
 {

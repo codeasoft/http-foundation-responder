@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Service;
+namespace Termyn\SmartReply\Service;
 
-use Codea\SmartReply\Response\Resource\Template;
+use Termyn\SmartReply\Response\Resource\Template;
 
 interface TemplateRenderer
 {

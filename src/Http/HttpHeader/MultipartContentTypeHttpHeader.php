@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Http\HttpHeader;
+namespace Termyn\SmartReply\Http\HttpHeader;
 
-use Codea\SmartReply\Http\Charset;
-use Codea\SmartReply\Http\HttpHeader;
-use Codea\SmartReply\Http\MimeType\MultipartMimeType;
+use Termyn\SmartReply\Http\Charset;
+use Termyn\SmartReply\Http\HttpHeader;
+use Termyn\SmartReply\Http\MimeType\MultipartMimeType;
 
 final class MultipartContentTypeHttpHeader extends ContentTypeHttpHeader implements HttpHeader
 {

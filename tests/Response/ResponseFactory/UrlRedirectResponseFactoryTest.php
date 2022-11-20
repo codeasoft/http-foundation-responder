@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Response\ResponseFactory;
+namespace Termyn\SmartReply\Test\Response\ResponseFactory;
 
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Redirect\RouteRedirect;
-use Codea\SmartReply\Response\Resource\Redirect\UrlRedirect;
-use Codea\SmartReply\Response\ResponseFactory\UrlRedirectResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Redirect\RouteRedirect;
+use Termyn\SmartReply\Response\Resource\Redirect\UrlRedirect;
+use Termyn\SmartReply\Response\ResponseFactory\UrlRedirectResponseFactory;
 
 final class UrlRedirectResponseFactoryTest extends ResponseFactoryTest
 {

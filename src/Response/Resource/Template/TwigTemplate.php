@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\Template;
+namespace Termyn\SmartReply\Response\Resource\Template;
 
-use Codea\SmartReply\File\FileExtension;
-use Codea\SmartReply\File\FileExtension\TemplateFileExtension;
-use Codea\SmartReply\Http\MimeType;
-use Codea\SmartReply\Http\MimeType\TextMimeType;
-use Codea\SmartReply\Response\Resource\Template;
+use Termyn\SmartReply\File\FileExtension;
+use Termyn\SmartReply\File\FileExtension\TemplateFileExtension;
+use Termyn\SmartReply\Http\MimeType;
+use Termyn\SmartReply\Http\MimeType\TextMimeType;
+use Termyn\SmartReply\Response\Resource\Template;
 
 final class TwigTemplate extends Template
 {

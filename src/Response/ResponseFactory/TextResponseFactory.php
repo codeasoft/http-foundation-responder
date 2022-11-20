@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\ResponseFactory;
+namespace Termyn\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Text;
-use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Text;
+use Termyn\SmartReply\Response\ResponseFactory;
 
 final class TextResponseFactory implements ResponseFactory
 {

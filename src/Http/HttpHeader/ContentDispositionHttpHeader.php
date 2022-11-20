@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Http\HttpHeader;
+namespace Termyn\SmartReply\Http\HttpHeader;
 
-use Codea\SmartReply\Http\Disposition;
-use Codea\SmartReply\Http\HttpHeader;
+use Termyn\SmartReply\Http\Disposition;
+use Termyn\SmartReply\Http\HttpHeader;
 use Webmozart\Assert\Assert;
 
 class ContentDispositionHttpHeader implements HttpHeader

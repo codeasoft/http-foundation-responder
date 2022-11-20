@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\File\FileExtension;
+namespace Termyn\SmartReply\File\FileExtension;
 
-use Codea\SmartReply\File\FileExtension;
+use Termyn\SmartReply\File\FileExtension;
 
 enum ArchiveFileExtension: string implements FileExtension
 {

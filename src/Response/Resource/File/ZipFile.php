@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\File;
+namespace Termyn\SmartReply\Response\Resource\File;
 
-use Codea\SmartReply\File\FileExtension;
-use Codea\SmartReply\File\FileExtension\ArchiveFileExtension;
-use Codea\SmartReply\Http\MimeType;
-use Codea\SmartReply\Http\MimeType\ApplicationMimeType;
-use Codea\SmartReply\Response\Resource\File;
+use Termyn\SmartReply\File\FileExtension;
+use Termyn\SmartReply\File\FileExtension\ArchiveFileExtension;
+use Termyn\SmartReply\Http\MimeType;
+use Termyn\SmartReply\Http\MimeType\ApplicationMimeType;
+use Termyn\SmartReply\Response\Resource\File;
 
 final class ZipFile extends File
 {

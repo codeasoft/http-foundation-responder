@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\Redirect;
+namespace Termyn\SmartReply\Response\Resource\Redirect;
 
 use Assert\Assertion as Assert;
-use Codea\SmartReply\Http\StatusCode;
-use Codea\SmartReply\Response\Resource\Redirect;
+use Termyn\SmartReply\Http\StatusCode;
+use Termyn\SmartReply\Response\Resource\Redirect;
 
 final class UrlRedirect extends Redirect
 {

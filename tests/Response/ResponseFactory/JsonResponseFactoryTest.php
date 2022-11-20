@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Response\ResponseFactory;
+namespace Termyn\SmartReply\Test\Response\ResponseFactory;
 
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Data\JsonData;
-use Codea\SmartReply\Response\Resource\Text\PlainText;
-use Codea\SmartReply\Response\ResponseFactory\JsonResponseFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Data\JsonData;
+use Termyn\SmartReply\Response\Resource\Text\PlainText;
+use Termyn\SmartReply\Response\ResponseFactory\JsonResponseFactory;
 
 final class JsonResponseFactoryTest extends ResponseFactoryTest
 {

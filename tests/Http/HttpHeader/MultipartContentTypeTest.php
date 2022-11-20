@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Http\HttpHeader;
+namespace Termyn\SmartReply\Test\Http\HttpHeader;
 
-use Codea\SmartReply\Http\Charset\UnicodeCharset;
-use Codea\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
-use Codea\SmartReply\Http\HttpHeader\MultipartContentTypeHttpHeader;
-use Codea\SmartReply\Http\MimeType\MultipartMimeType;
 use PHPUnit\Framework\TestCase;
+use Termyn\SmartReply\Http\Charset\UnicodeCharset;
+use Termyn\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
+use Termyn\SmartReply\Http\HttpHeader\MultipartContentTypeHttpHeader;
+use Termyn\SmartReply\Http\MimeType\MultipartMimeType;
 
 final class MultipartContentTypeTest extends TestCase
 {

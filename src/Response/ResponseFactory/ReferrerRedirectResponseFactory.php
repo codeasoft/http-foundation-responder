@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\ResponseFactory;
+namespace Termyn\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\SmartReply\Http\ReferrerProvider;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Redirect\ReferrerRedirect;
-use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Http\ReferrerProvider;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Redirect\ReferrerRedirect;
+use Termyn\SmartReply\Response\ResponseFactory;
 
 final class ReferrerRedirectResponseFactory implements ResponseFactory
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\ResponseFactory;
+namespace Termyn\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Template\TwigTemplate;
-use Codea\SmartReply\Response\ResponseFactory;
-use Codea\SmartReply\Service\TemplateRenderer;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Template\TwigTemplate;
+use Termyn\SmartReply\Response\ResponseFactory;
+use Termyn\SmartReply\Service\TemplateRenderer;
 
 final class TwigResponseFactory implements ResponseFactory
 {

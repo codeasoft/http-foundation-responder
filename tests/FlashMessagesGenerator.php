@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test;
+namespace Termyn\SmartReply\Test;
 
-use Codea\SmartReply\Response\FlashMessage;
+use Termyn\SmartReply\Response\FlashMessage;
 
 final class FlashMessagesGenerator
 {

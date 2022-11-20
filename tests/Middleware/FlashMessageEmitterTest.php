@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Middleware;
+namespace Termyn\SmartReply\Test\Middleware;
 
-use Codea\SmartReply\Middleware\FlashMessageEmitter;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Redirect;
-use Codea\SmartReply\Response\Resource\Redirect\ReferrerRedirect;
-use Codea\SmartReply\Response\Resource\Text\PlainText;
-use Codea\SmartReply\Service\FlashMessagePublisher;
-use Codea\SmartReply\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Middleware\FlashMessageEmitter;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Redirect;
+use Termyn\SmartReply\Response\Resource\Redirect\ReferrerRedirect;
+use Termyn\SmartReply\Response\Resource\Text\PlainText;
+use Termyn\SmartReply\Service\FlashMessagePublisher;
+use Termyn\SmartReply\Test\FlashMessagesGenerator;
 
 final class FlashMessageEmitterTest extends TestCase
 {

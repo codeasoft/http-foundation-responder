@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Bridge\HttpFoundation\Request;
+namespace Termyn\SmartReply\Bridge\HttpFoundation\Request;
 
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Request;

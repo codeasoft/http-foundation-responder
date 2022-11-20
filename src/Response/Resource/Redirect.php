@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource;
+namespace Termyn\SmartReply\Response\Resource;
 
-use Codea\SmartReply\Http\HttpHeader;
-use Codea\SmartReply\Http\StatusCode;
-use Codea\SmartReply\Response\FlashMessage;
-use Codea\SmartReply\Response\FlashMessageBag;
-use Codea\SmartReply\Response\Resource;
+use Termyn\SmartReply\Http\HttpHeader;
+use Termyn\SmartReply\Http\StatusCode;
+use Termyn\SmartReply\Response\FlashMessage;
+use Termyn\SmartReply\Response\FlashMessageBag;
+use Termyn\SmartReply\Response\Resource;
 
 abstract class Redirect extends Resource
 {

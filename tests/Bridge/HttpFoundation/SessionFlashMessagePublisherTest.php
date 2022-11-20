@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Bridge\HttpFoundation;
+namespace Termyn\SmartReply\Test\Bridge\HttpFoundation;
 
-use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
-use Codea\SmartReply\Bridge\HttpFoundation\SessionFlashMessagePublisher;
-use Codea\SmartReply\Test\FlashMessagesGenerator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Termyn\SmartReply\Bridge\HttpFoundation\Request\RequestFlashBagProvider;
+use Termyn\SmartReply\Bridge\HttpFoundation\SessionFlashMessagePublisher;
+use Termyn\SmartReply\Test\FlashMessagesGenerator;
 
 final class SessionFlashMessagePublisherTest extends TestCase
 {

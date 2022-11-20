@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response;
+namespace Termyn\SmartReply\Response;
 
-use Codea\SmartReply\Http\HttpHeader;
-use Codea\SmartReply\Http\StatusCode;
+use Termyn\SmartReply\Http\HttpHeader;
+use Termyn\SmartReply\Http\StatusCode;
 
 abstract class Resource
 {

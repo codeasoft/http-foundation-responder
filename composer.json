@@ -1,5 +1,5 @@
 {
-  "name": "codea/smart-reply",
+  "name": "termyn/smart-reply",
   "description": "Smart responder supports middlewares based on Symfony HTTP Foundation",
   "type": "library",
   "license": "MIT",
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Codea\\SmartReply\\": "src/"
+      "Termyn\\SmartReply\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Codea\\SmartReply\\Test\\": "tests"
+      "Termyn\\SmartReply\\Test\\": "tests"
     }
   },
   "require": {

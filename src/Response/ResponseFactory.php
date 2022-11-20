@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response;
+namespace Termyn\SmartReply\Response;
 
 use Closure;
 use Symfony\Component\HttpFoundation\Response;

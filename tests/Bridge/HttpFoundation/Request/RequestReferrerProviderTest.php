@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Bridge\HttpFoundation\Request;
+namespace Termyn\SmartReply\Test\Bridge\HttpFoundation\Request;
 
-use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestAccessor;
-use Codea\SmartReply\Bridge\HttpFoundation\Request\RequestReferrerProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Termyn\SmartReply\Bridge\HttpFoundation\Request\RequestAccessor;
+use Termyn\SmartReply\Bridge\HttpFoundation\Request\RequestReferrerProvider;
 
 final class RequestReferrerProviderTest extends TestCase
 {

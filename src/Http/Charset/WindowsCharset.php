@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Http\Charset;
+namespace Termyn\SmartReply\Http\Charset;
 
-use Codea\SmartReply\Http\Charset;
+use Termyn\SmartReply\Http\Charset;
 
 enum WindowsCharset: string implements Charset
 {

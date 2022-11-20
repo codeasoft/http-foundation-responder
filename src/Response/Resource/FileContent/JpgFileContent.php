@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\FileContent;
+namespace Termyn\SmartReply\Response\Resource\FileContent;
 
-use Codea\SmartReply\File\FileExtension;
-use Codea\SmartReply\File\FileExtension\ImageFileExtension;
-use Codea\SmartReply\Http\MimeType;
-use Codea\SmartReply\Http\MimeType\ImageMimeType;
-use Codea\SmartReply\Response\Resource\FileContent;
+use Termyn\SmartReply\File\FileExtension;
+use Termyn\SmartReply\File\FileExtension\ImageFileExtension;
+use Termyn\SmartReply\Http\MimeType;
+use Termyn\SmartReply\Http\MimeType\ImageMimeType;
+use Termyn\SmartReply\Response\Resource\FileContent;
 
 final class JpgFileContent extends FileContent
 {

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\Text;
+namespace Termyn\SmartReply\Response\Resource\Text;
 
-use Codea\SmartReply\Http\Charset;
-use Codea\SmartReply\Http\Charset\UnicodeCharset;
-use Codea\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
-use Codea\SmartReply\Http\MimeType\TextMimeType;
-use Codea\SmartReply\Http\StatusCode;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Text;
+use Termyn\SmartReply\Http\Charset;
+use Termyn\SmartReply\Http\Charset\UnicodeCharset;
+use Termyn\SmartReply\Http\HttpHeader\ContentTypeHttpHeader;
+use Termyn\SmartReply\Http\MimeType\TextMimeType;
+use Termyn\SmartReply\Http\StatusCode;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Text;
 
 final class PlainText extends Resource implements Text
 {

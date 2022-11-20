@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Middleware;
+namespace Termyn\SmartReply\Middleware;
 
 use Closure;
-use Codea\SmartReply\Middleware;
-use Codea\SmartReply\Response\FlashMessageBag;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Redirect;
-use Codea\SmartReply\Service\FlashMessagePublisher;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Middleware;
+use Termyn\SmartReply\Response\FlashMessageBag;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Redirect;
+use Termyn\SmartReply\Service\FlashMessagePublisher;
 
 final class FlashMessageEmitter implements Middleware
 {

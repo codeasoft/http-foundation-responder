@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Service;
+namespace Termyn\SmartReply\Service;
 
-use Codea\SmartReply\Response\FlashMessage;
+use Termyn\SmartReply\Response\FlashMessage;
 
 interface FlashMessagePublisher
 {

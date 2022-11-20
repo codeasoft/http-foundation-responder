@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Response\ResponseFactory;
+namespace Termyn\SmartReply\Test\Response\ResponseFactory;
 
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Data\JsonData;
-use Codea\SmartReply\Response\Resource\FileContent\PdfFileContent;
-use Codea\SmartReply\Response\Resource\Text;
-use Codea\SmartReply\Response\Resource\Text\HtmlText;
-use Codea\SmartReply\Response\Resource\Text\PlainText;
-use Codea\SmartReply\Response\ResponseFactory\TextResponseFactory;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Data\JsonData;
+use Termyn\SmartReply\Response\Resource\FileContent\PdfFileContent;
+use Termyn\SmartReply\Response\Resource\Text;
+use Termyn\SmartReply\Response\Resource\Text\HtmlText;
+use Termyn\SmartReply\Response\Resource\Text\PlainText;
+use Termyn\SmartReply\Response\ResponseFactory\TextResponseFactory;
 
 final class TextResponseFactoryTest extends ResponseFactoryTest
 {

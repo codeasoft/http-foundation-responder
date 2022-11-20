@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Exception;
+namespace Termyn\SmartReply\Exception;
 
-use Codea\SmartReply\Response\Resource;
 use RuntimeException;
+use Termyn\SmartReply\Response\Resource;
 
 final class UnknownResourceException extends RuntimeException
 {

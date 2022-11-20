@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource\Redirect;
+namespace Termyn\SmartReply\Response\Resource\Redirect;
 
-use Codea\SmartReply\Http\StatusCode;
-use Codea\SmartReply\Response\Resource\Redirect;
+use Termyn\SmartReply\Http\StatusCode;
+use Termyn\SmartReply\Response\Resource\Redirect;
 use Webmozart\Assert\Assert;
 
 final class RouteRedirect extends Redirect

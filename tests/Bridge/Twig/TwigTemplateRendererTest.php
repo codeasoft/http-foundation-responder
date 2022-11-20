@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Test\Bridge\Twig;
+namespace Termyn\SmartReply\Test\Bridge\Twig;
 
-use Codea\SmartReply\Bridge\Twig\TwigTemplateRenderer;
-use Codea\SmartReply\Response\Resource\Template\TwigTemplate;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface as Logger;
+use Termyn\SmartReply\Bridge\Twig\TwigTemplateRenderer;
+use Termyn\SmartReply\Response\Resource\Template\TwigTemplate;
 use Twig\Environment as Twig;
 use Twig\Error\Error;
 use Twig\Error\LoaderError;

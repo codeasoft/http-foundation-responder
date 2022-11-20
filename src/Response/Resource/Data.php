@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\Resource;
+namespace Termyn\SmartReply\Response\Resource;
 
 interface Data
 {

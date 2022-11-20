@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply;
+namespace Termyn\SmartReply;
 
 use Closure;
-use Codea\SmartReply\Response\Resource;
 use Symfony\Component\HttpFoundation\Response;
+use Termyn\SmartReply\Response\Resource;
 
 interface Middleware
 {

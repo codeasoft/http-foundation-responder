@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codea\SmartReply\Response\ResponseFactory;
+namespace Termyn\SmartReply\Response\ResponseFactory;
 
 use Closure;
-use Codea\SmartReply\Http\HttpHeader\XAccelBufferingHttpHeader;
-use Codea\SmartReply\Response\Resource;
-use Codea\SmartReply\Response\Resource\Stream;
-use Codea\SmartReply\Response\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Termyn\SmartReply\Http\HttpHeader\XAccelBufferingHttpHeader;
+use Termyn\SmartReply\Response\Resource;
+use Termyn\SmartReply\Response\Resource\Stream;
+use Termyn\SmartReply\Response\ResponseFactory;
 
 final class StreamedResponseFactory implements ResponseFactory
 {
